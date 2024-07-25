@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    @font-face {
+        font-family: iranYekan;
+        src: url('../assets/fonts/BYekan+.ttf') format('truetype'),
+            url('../assets/fonts/BYekan+\ Bold.ttf') format('truetype');
+    }
+
+    @font-face {
+        font-family: vazir;
+        src: url('../assets/fonts/VAZIR\ REGULAR.TTF') format('truetype'),
+            url('../assets/fonts/IRANSANS-BOLDEDITORTEAM.TTF') format('truetype');
+    }
+
+    @font-face {
+        font-family: iransans;
+        src: url('../assets/fonts/IRANSANS-BOLDEDITORTEAM.TTF') format('truetype'),
+            url('../assets/fonts/IRANSANS-LIGHT\ EDITORTEAM.TTF') format('truetype'),
+            url('../assets/fonts/IRANSANS-MEDIUM_EDITORTEAM.TTF') format('truetype'),
+            url('../assets/fonts/IRANSANS\ EDITORTEAM.TTF') format('truetype'),
+    }
+
+    body {
+        font-family: vazir, iranYekan, iransans;
+    }
+
+    .container:not(.disableP) {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
+
+    }
+
+    .show {
+        display: block !important;
+    }
+
+    .flexShow {
+        display: flex !important;
+    }
+
+    .maxHeight430px {
+        height: 430px;
+    }
+
+    .hideWithTranslateY {
+        transform: translateY(-100%);
+    }
+
+    .headerFormFoucsStyle {
+        background-color: #fff;
+        color: #000;
+        box-shadow: 0 0 10px #ccc;
+    }
+
+    .boxBorder {
+        border: 2px solid #e7eaec;
+    }
+
+    .selectedBeforBorderRight {
+        position: relative;
+    }
+
+    .selectedBeforBorderRight::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        background-color: #ef4056;
+        width: 4px;
+        height: 60%;
+        top: 50%;
+        transform: translateY(-50%);
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    .headerNavHoverStyle {
+        background: #ef4056;
+        color: #fff;
+    }
+
+    .headerAccountUlNav {
+        position: absolute;
+    }
+
+    .headerAccountUlNav li a {
+        transition: all .3s;
+    }
+
+    .headerAccountUlNav>li:first-child {
+        position: relative;
+        z-index: 2;
+        background: #fff;
+        border-radius: 8px;
+    }
+
+    .headerAccountUlNav::after {
+        content: "";
+        position: absolute;
+        top: -9px;
+        left: 11px;
+        width: 20px;
+        height: 20px;
+        rotate: 45deg;
+        background: #fff;
+        box-shadow: 0 0 10px #bbb;
+        z-index: 1;
+    }
+}
