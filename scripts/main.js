@@ -82,12 +82,12 @@ window.addEventListener("click", (e) => {
 });
 accountSetting.addEventListener("click", () => {
   accountSettingCont.classList.toggle("show");
+
   istouch = true;
 });
 mainMenuNavBarClickElement.forEach((btn, index) => {
   btn.addEventListener("click", () => {
-    mainMenuNavBarClickElementUls[index].classList.toggle("show");
-    console.log(index, mainMenuNavBarClickElementUls[index]);
+    mainMenuNavBarClickElementUls[index].classList.toggle("showUl");
   });
 });
 

@@ -138,10 +138,6 @@
         cursor: pointer;
     }
 
-    .mainMenuNavBarLink li {
-        width: 100%;
-    }
-
     .mainMenuNavBarLink ul {
         max-height: 0px;
         transition: all .5s;
@@ -150,18 +146,26 @@
         flex-direction: column;
         gap: 10px;
         overflow: hidden;
-        padding: 0;
         cursor: default;
+        transition: all .2s;
     }
 
     .mainMenuNavBarLink>ul {
         background-color: #f0f0f1;
     }
 
-    .mainMenuNavBarLink ul.show {
-        max-height: max-content;
+    .mainMenuNavBarLink>ul.showUl {
+        padding-bottom: 15px;
+    }
+
+    .mainMenuNavBarLink ul.showUl {
+        max-height: 2000px;
         padding-top: 15px;
-        padding-right: 20px;
+        transition: all .3s;
+    }
+
+    .mainMenuNavBarLink ul.show>li {
+        padding-right: 15px;
     }
 
     #mainMenuNavBarsec:not(.setDisplay) {
@@ -170,7 +174,7 @@
 
     #mainMenuNavBarsec:not(.active) {
         opacity: 0;
-        animation: opacityHide .5s linear;
+        animation: opacityHide .2s linear;
     }
 
     #mainMenuNavBarsec.setDisplay {
@@ -179,18 +183,17 @@
 
     #mainMenuNavBarsec.active {
         opacity: 1;
-        animation: opacityShow .5s linear;
+        animation: opacityShow .2s linear;
     }
 
-    #mainMenuNavBarsec>nav {
-        transition: all .3s;
+    #mainMenuNavBarsec:not(.active)>nav {
         transform: translateX(100%);
+        animation: translateXHide .3s linear;
     }
 
     #mainMenuNavBarsec.active>nav {
         transform: translateX(0%);
-        transition: all .3s;
-        transition-delay: 1s;
+        animation: translateXShow .3s linear;
     }
 
 
@@ -233,6 +236,46 @@
 
         100% {
             opacity: 0;
+        }
+    }
+
+    @keyframes translateXShow {
+        0% {
+            transform: translate(100%);
+        }
+
+        100% {
+            transform: translate(0);
+        }
+    }
+
+    @keyframes translateXHide {
+        0% {
+            transform: translate(0);
+        }
+
+        100% {
+            transform: translate(100%);
+        }
+    }
+
+    @keyframes heightShow {
+        0% {
+            max-height: 0px;
+        }
+
+        100% {
+            max-height: 2000px;
+        }
+    }
+
+    @keyframes heightHide {
+        0% {
+            max-height: 2000px;
+        }
+
+        100% {
+            max-height: 0px;
         }
     }
 }
