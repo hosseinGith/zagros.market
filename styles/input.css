@@ -5,8 +5,8 @@
 @layer utilities {
     @font-face {
         font-family: iranYekan;
-        src: url('../assets/fonts/BYekan+.ttf') format('truetype'),
-            url('../assets/fonts/BYekan+\ Bold.ttf') format('truetype');
+        src: url('../assets/fonts/iranyekan-regular.woff2') format('woff2'),
+            url('../assets/fonts/iranyekan-regular.woff2') format('woff2');
     }
 
     @font-face {
@@ -24,7 +24,7 @@
     }
 
     body {
-        font-family: vazir, iranYekan, iransans;
+        font-family: iranYekan, vazir, iransans;
     }
 
     .container:not(.disableP) {
@@ -32,7 +32,6 @@
         padding-bottom: 15px;
         padding-left: 10px;
         padding-right: 10px;
-
     }
 
     .show {
