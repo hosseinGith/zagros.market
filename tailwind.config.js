@@ -17,6 +17,9 @@ module.exports = {
       lowGreenColor: "#28a745",
       headerNavBgColor: "#f5f5f5",
       lowOpacityColorBg: "#00000059",
+      pinkRolor: "#f59dff",
+      orangeColor: "#ff7E44",
+      lowerGray: "#f0f1f2",
     },
     container: {
       center: true,
