@@ -11,14 +11,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- <link
-      rel="stylesheet"
-      href="https://unpkg.com/@majidh1/jalalidatepicker/dist/jalalidatepicker.min.css"
-    />
-    <script
-      type="text/javascript"
-      src="https://unpkg.com/@majidh1/jalalidatepicker/dist/jalalidatepicker.min.js"
-    ></script> -->
+    <link rel="stylesheet" href="../../styles/jalalidatepicker.min.css" />
     <title>پروفایل</title>
   </head>
   <body>
@@ -947,12 +940,12 @@
           <p>اطلاعات حساب</p>
         </div>
       </section>
-    </header>
-    <main class="lg:pt-[120px]">
       <section
         id="hiddenContent"
         class="bg-lowOpacityColorBg items-start hidden fixed z-[9] top-0 right-0 w-full h-screen"
       ></section>
+    </header>
+    <main class="lg:pt-[120px]">
       <section>
         <div
           class="container flex lg:flex-row justify-between items-start flex-col p-2 gap-5"
@@ -1264,124 +1257,11 @@
       </section>
     </main>
     <footer></footer>
-    <script>
-      const productName = document.querySelectorAll(".productName");
-      const navBarLinks = document.querySelector("#navBarLinks");
-      const hiddenContent = document.querySelector("#hiddenContent");
-      const hiddenScrollDiv = document.querySelector("#hiddenScrollDiv");
-      const sortsProductsLinkCont = document.querySelectorAll(
-        "#sortsProductsLinkCont a"
-      );
-      const producsUl = document.querySelectorAll("#producsUlParent ul");
-      const accountSetting = document.querySelector("#accountSetting");
-      const accountSettingCont = document.querySelector("#accountSettingCont");
-      const mainMenuNavBarClickElement = document.querySelectorAll(
-        ".mainMenuNavBarClickElement"
-      );
-      const mainMenuNavBarClickElementUls = document.querySelectorAll(
-        ".mainMenuNavBarClickElement + ul"
-      );
-      const closeMainMenuNavBar = document.querySelector(
-        "#closeMainMenuNavBar"
-      );
-      const mainMenuNavBarsec = document.querySelector("#mainMenuNavBarsec");
-      const openMainMenuNavBar = document.querySelector("#openMainMenuNavBar");
-
-      let oldScrollY = scrollY;
-      let istouch = true;
-      productName.forEach((input) => {
-        input.addEventListener("focus", () => {
-          hiddenContent.classList.add("show");
-          document.body.classList.add("overflow-hidden");
-          input.parentElement.classList.add("headerFormFoucsStyle");
-          input.id = "search";
-          location.hash = input.id;
-        });
-        input.addEventListener("blur", () => {
-          hiddenContent.classList.remove("show");
-          document.body.classList.remove("overflow-hidden");
-          input.parentElement.classList.remove("headerFormFoucsStyle");
-          input.id = "";
-          location.hash = "";
-        });
-      });
-
-      navBarLinks.addEventListener("mouseover", () => {
-        productName.forEach((input) => {
-          input.blur();
-        });
-        hiddenContent.classList.add("show");
-        document.body.classList.add("overflow-hidden");
-      });
-      navBarLinks.addEventListener("mouseleave", () => {
-        hiddenContent.classList.remove("show");
-        document.body.classList.remove("overflow-hidden");
-      });
-
-      window.addEventListener("scroll", () => {
-        if (oldScrollY > scrollY) {
-          oldScrollY = scrollY;
-          hiddenScrollDiv.parentElement.classList.remove("hideWithTranslateY");
-        } else if (oldScrollY <= scrollY) {
-          oldScrollY = scrollY;
-          hiddenScrollDiv.parentElement.classList.add("hideWithTranslateY");
-        }
-      });
-
-      Array.from(sortsProductsLinkCont).forEach((link, index) => {
-        link.addEventListener("mouseover", () => {
-          Array.from(sortsProductsLinkCont).forEach((item, ind) => {
-            producsUl[ind].classList.remove("flexShow");
-            item.classList.remove("headerNavHoverStyle");
-          });
-          link.classList.add("headerNavHoverStyle");
-          producsUl.forEach((ul) => {
-            if (link.value === producsUl[index].value)
-              producsUl[index].classList.add("flexShow");
-          });
-        });
-      });
-      window.addEventListener("click", (e) => {
-        if (
-          e.target !== accountSetting &&
-          e.target !== accountSetting.children[0] &&
-          e.target !== accountSetting.children[1]
-        )
-          accountSettingCont.classList.remove("show");
-      });
-      accountSetting.addEventListener("click", () => {
-        accountSettingCont.classList.toggle("show");
-        istouch = true;
-      });
-      mainMenuNavBarClickElement.forEach((btn, index) => {
-        btn.addEventListener("click", () => {
-          mainMenuNavBarClickElementUls[index].classList.toggle("show");
-          console.log(index, mainMenuNavBarClickElementUls[index]);
-        });
-      });
-
-      openMainMenuNavBar.addEventListener("click", () => {
-        mainMenuNavBarsec.classList.remove("hidden");
-        mainMenuNavBarsec.classList.add("setDisplay");
-        mainMenuNavBarsec.classList.add("active");
-      });
-
-      mainMenuNavBarsec.addEventListener("click", (e) => {
-        console.log(e.target);
-        if (e.target !== mainMenuNavBarsec && e.target !== openMainMenuNavBar)
-          return;
-        mainMenuNavBarsec.classList.remove("active");
-      });
-
-      mainMenuNavBarsec.onanimationend = () => {
-        if (!mainMenuNavBarsec.classList.contains("active"))
-          mainMenuNavBarsec.classList.remove("setDisplay");
-      };
-
-      closeMainMenuNavBar.addEventListener("click", () =>
-        mainMenuNavBarsec.click()
-      );
-    </script>
+    <script
+      type="text/javascript"
+      src="../../scripts/jalalidatepicker.min.js"
+    ></script>
+    <script src="../../scripts/main.js"></script>
     <script>
       let addUs_birthday = document.querySelector("#user_birthday");
       jalaliDatepicker.startWatch({
