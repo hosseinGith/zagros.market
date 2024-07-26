@@ -718,6 +718,14 @@ video {
   min-height: 450px;
 }
 
+.w-\[120px\] {
+  width: 120px;
+}
+
+.w-\[135px\] {
+  width: 135px;
+}
+
 .w-\[300px\] {
   width: 300px;
 }
@@ -730,10 +738,6 @@ video {
   width: 350px;
 }
 
-.w-\[40\.5px\] {
-  width: 40.5px;
-}
-
 .w-\[40px\] {
   width: 40px;
 }
@@ -744,10 +748,6 @@ video {
 
 .w-\[50px\] {
   width: 50px;
-}
-
-.w-\[65px\] {
-  width: 65px;
 }
 
 .w-\[max-content\] {
