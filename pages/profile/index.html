@@ -47,7 +47,7 @@
               />
             </form>
           </div>
-          <button class="w-[40px] lg:hidden p-1">
+          <button id="openMainMenuNavBar" class="w-[40px] lg:hidden p-1">
             <svg
               fill="none"
               viewBox="0 0 24 24"
@@ -165,6 +165,322 @@
           </div>
         </div>
       </section>
+      <section
+        class="bg-lowOpacityColorBg fixed top-0 right-0 z-[11] w-full h-screen grid-rows-1"
+        id="mainMenuNavBarsec"
+      >
+        <nav
+          class="bg-whiteColor max-w-[300px] overflow-y-auto overflow-x-hidden flex flex-col gap-2 divide-y-2 divide-submitPageColorBorderLowBlack"
+        >
+          <ul class="px-4 py-4 flex w-full items-center justify-between">
+            <li>
+              <a class="block" href="#">
+                <img
+                  class="w-[65px]"
+                  src="../../assets/images/photo_2024-06-12_00-17-17.jpg"
+                  alt=""
+                />
+              </a>
+            </li>
+            <li>
+              <button
+                id="closeMainMenuNavBar"
+                class="px-2 py-2 flex items-center justify-between text-lg"
+              >
+                <i class="fa fa-times"></i>
+              </button>
+            </li>
+          </ul>
+          <ul class="flex flex-col gap-5 py-4 text-sm">
+            <li>
+              <a href="#" class="mainMenuNavBarLink">
+                <span>صفحه اصلی</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mainMenuNavBarLink">
+                <span>نحوه ثبت سفارش</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mainMenuNavBarLink">
+                <span>سفارشات من</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mainMenuNavBarLink">
+                <span>درباره ما</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mainMenuNavBarLink">
+                <span>تماس با ما</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mainMenuNavBarLink">
+                <span>فروشگاه</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mainMenuNavBarLink">
+                <span>دسته بندی کالاها</span>
+              </a>
+            </li>
+            <li>
+              <div class="mainMenuNavBarLink">
+                <span class="mainMenuNavBarClickElement"
+                  >خواربار
+                  <i class="fa fas fa-angle-down"></i>
+                </span>
+                <ul>
+                  <li>
+                    <span class="mainMenuNavBarClickElement"
+                      >روغن
+                      <i class="fa fa-angle-down"></i>
+                    </span>
+                    <ul>
+                      <li>
+                        <span class="mainMenuNavBarClickElement"
+                          >روغن
+                          <i class="fa fa-angle-down"></i>
+                        </span>
+                        <ul>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="mainMenuNavBarLink">
+                <span class="mainMenuNavBarClickElement"
+                  >خانه و آشپزخانه
+
+                  <i class="fa fas fa-angle-down"></i>
+                </span>
+                <ul>
+                  <li>
+                    <span class="mainMenuNavBarClickElement"
+                      >روغن
+                      <i class="fa fa-angle-down"></i>
+                    </span>
+                    <ul>
+                      <li>
+                        <span class="mainMenuNavBarClickElement"
+                          >روغن
+                          <i class="fa fa-angle-down"></i>
+                        </span>
+                        <ul>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="mainMenuNavBarLink">
+                <span class="mainMenuNavBarClickElement"
+                  >نوشیدنی و دمنوش
+
+                  <i class="fa fas fa-angle-down"></i>
+                </span>
+                <ul>
+                  <li>
+                    <span class="mainMenuNavBarClickElement"
+                      >روغن
+                      <i class="fa fa-angle-down"></i>
+                    </span>
+                    <ul>
+                      <li>
+                        <span class="mainMenuNavBarClickElement"
+                          >روغن
+                          <i class="fa fa-angle-down"></i>
+                        </span>
+                        <ul>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="mainMenuNavBarLink">
+                <span class="mainMenuNavBarClickElement"
+                  >آرایشی و بهداشتی
+
+                  <i class="fa fas fa-angle-down"></i>
+                </span>
+                <ul>
+                  <li>
+                    <span class="mainMenuNavBarClickElement"
+                      >روغن
+                      <i class="fa fa-angle-down"></i>
+                    </span>
+                    <ul>
+                      <li>
+                        <span class="mainMenuNavBarClickElement"
+                          >روغن
+                          <i class="fa fa-angle-down"></i>
+                        </span>
+                        <ul>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="mainMenuNavBarLink">
+                <span class="mainMenuNavBarClickElement"
+                  >متفرقه
+
+                  <i class="fa fas fa-angle-down"></i>
+                </span>
+                <ul>
+                  <li>
+                    <span class="mainMenuNavBarClickElement"
+                      >روغن
+                      <i class="fa fa-angle-down"></i>
+                    </span>
+                    <ul>
+                      <li>
+                        <span class="mainMenuNavBarClickElement"
+                          >روغن
+                          <i class="fa fa-angle-down"></i>
+                        </span>
+                        <ul>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="mainMenuNavBarLink">
+                <span class="mainMenuNavBarClickElement"
+                  >مواد غذایی
+
+                  <i class="fa fas fa-angle-down"></i>
+                </span>
+                <ul>
+                  <li>
+                    <span class="mainMenuNavBarClickElement"
+                      >روغن
+                      <i class="fa fa-angle-down"></i>
+                    </span>
+                    <ul>
+                      <li>
+                        <span class="mainMenuNavBarClickElement"
+                          >روغن
+                          <i class="fa fa-angle-down"></i>
+                        </span>
+                        <ul>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                          <li>
+                            <a href="#">روغن</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </section>
       <section class="lg:hidden shadow-lg bg-whiteColor relative z-10">
         <div class="container flex gap-2 justify-between items-center">
           <form class="bg-inputSearchBar basis-[86%] flex items-center">
@@ -225,7 +541,7 @@
                       value="link_1"
                       class="headerNavHoverStyle w-full block px-4 py-5"
                     >
-                      خواریار
+                      خواربار
                     </a>
                     <a href="#" value="link_2" class="w-full block px-4 py-5">
                       خانه و آشپزخانه
@@ -639,7 +955,7 @@
     <main class="lg:pt-[120px]">
       <section
         id="hiddenContent"
-        class="bg-lowGray opacity-80 items-start hidden fixed z-[9] top-0 right-0 w-full h-screen"
+        class="bg-lowOpacityColorBg items-start hidden fixed z-[9] top-0 right-0 w-full h-screen"
       ></section>
       <section>
         <div
@@ -963,6 +1279,17 @@
       const producsUl = document.querySelectorAll("#producsUlParent ul");
       const accountSetting = document.querySelector("#accountSetting");
       const accountSettingCont = document.querySelector("#accountSettingCont");
+      const mainMenuNavBarClickElement = document.querySelectorAll(
+        ".mainMenuNavBarClickElement"
+      );
+      const mainMenuNavBarClickElementUls = document.querySelectorAll(
+        ".mainMenuNavBarClickElement + ul"
+      );
+      const closeMainMenuNavBar = document.querySelector(
+        "#closeMainMenuNavBar"
+      );
+      const mainMenuNavBarsec = document.querySelector("#mainMenuNavBarsec");
+      const openMainMenuNavBar = document.querySelector("#openMainMenuNavBar");
 
       let oldScrollY = scrollY;
       let istouch = true;
@@ -1030,6 +1357,34 @@
         accountSettingCont.classList.toggle("show");
         istouch = true;
       });
+      mainMenuNavBarClickElement.forEach((btn, index) => {
+        btn.addEventListener("click", () => {
+          mainMenuNavBarClickElementUls[index].classList.toggle("show");
+          console.log(index, mainMenuNavBarClickElementUls[index]);
+        });
+      });
+
+      openMainMenuNavBar.addEventListener("click", () => {
+        mainMenuNavBarsec.classList.remove("hidden");
+        mainMenuNavBarsec.classList.add("setDisplay");
+        mainMenuNavBarsec.classList.add("active");
+      });
+
+      mainMenuNavBarsec.addEventListener("click", (e) => {
+        console.log(e.target);
+        if (e.target !== mainMenuNavBarsec && e.target !== openMainMenuNavBar)
+          return;
+        mainMenuNavBarsec.classList.remove("active");
+      });
+
+      mainMenuNavBarsec.onanimationend = () => {
+        if (!mainMenuNavBarsec.classList.contains("active"))
+          mainMenuNavBarsec.classList.remove("setDisplay");
+      };
+
+      closeMainMenuNavBar.addEventListener("click", () =>
+        mainMenuNavBarsec.click()
+      );
     </script>
     <script>
       let addUs_birthday = document.querySelector("#user_birthday");

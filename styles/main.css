@@ -654,6 +654,10 @@ video {
   z-index: 10;
 }
 
+.z-\[11\] {
+  z-index: 11;
+}
+
 .z-\[9\] {
   z-index: 9;
 }
@@ -742,6 +746,10 @@ video {
   width: 50px;
 }
 
+.w-\[65px\] {
+  width: 65px;
+}
+
 .w-\[max-content\] {
   width: -moz-max-content;
   width: max-content;
@@ -761,6 +769,10 @@ video {
 
 .max-w-\[100px\] {
   max-width: 100px;
+}
+
+.max-w-\[300px\] {
+  max-width: 300px;
 }
 
 .basis-\[10\%\] {
@@ -805,6 +817,10 @@ video {
 
 .grid-cols-\[28px\] {
   grid-template-columns: 28px;
+}
+
+.grid-rows-1 {
+  grid-template-rows: repeat(1, minmax(0, 1fr));
 }
 
 .grid-rows-\[20px_40px\] {
@@ -917,6 +933,14 @@ video {
   overflow: hidden;
 }
 
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
 .rounded {
   border-radius: 0.25rem;
 }
@@ -982,9 +1006,8 @@ video {
   background-color: rgb(240 240 241 / var(--tw-bg-opacity));
 }
 
-.bg-lowGray {
-  --tw-bg-opacity: 1;
-  background-color: rgb(66 71 80 / var(--tw-bg-opacity));
+.bg-lowOpacityColorBg {
+  background-color: #00000059;
 }
 
 .bg-primary {
@@ -1320,6 +1343,108 @@ body {
   background: #fff;
   box-shadow: 0 0 10px #bbb;
   z-index: 1;
+}
+
+.mainMenuNavBarLink {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainMenuNavBarLink span.mainMenuNavBarSortsProductTitle {
+  color: #424750;
+}
+
+.mainMenuNavBarLink span {
+  padding: 0 16px;
+}
+
+.mainMenuNavBarLink>span {
+  padding: 5px 16px;
+  display: block;
+}
+
+.mainMenuNavBarLink span.mainMenuNavBarClickElement {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.mainMenuNavBarLink li {
+  width: 100%;
+}
+
+.mainMenuNavBarLink ul {
+  max-height: 0px;
+  transition: all .5s;
+  padding-right: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+  padding: 0;
+  cursor: default;
+}
+
+.mainMenuNavBarLink>ul {
+  background-color: #f0f0f1;
+}
+
+.mainMenuNavBarLink ul.show {
+  max-height: -moz-max-content;
+  max-height: max-content;
+  padding-top: 15px;
+  padding-right: 20px;
+}
+
+#mainMenuNavBarsec:not(.setDisplay) {
+  display: none;
+}
+
+#mainMenuNavBarsec:not(.active) {
+  opacity: 0;
+  animation: opacityHide .5s linear;
+}
+
+#mainMenuNavBarsec.setDisplay {
+  display: grid;
+}
+
+#mainMenuNavBarsec.active {
+  opacity: 1;
+  animation: opacityShow .5s linear;
+}
+
+#mainMenuNavBarsec>nav {
+  transition: all .3s;
+  transform: translateX(100%);
+}
+
+#mainMenuNavBarsec.active>nav {
+  transform: translateX(0%);
+  transition: all .3s;
+  transition-delay: 1s;
+}
+
+@keyframes opacityShow {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacityHide {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 .hover\:bg-headerLinksBgColor:hover {
