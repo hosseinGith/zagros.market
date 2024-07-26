@@ -1761,6 +1761,10 @@ body {
     max-width: 400px;
   }
 
+  .sm\:max-w-\[180px\] {
+    max-width: 180px;
+  }
+
   .sm\:grid-cols-\[repeat\(auto-fit\2c minmax\(166px\2c 180px\)\)\] {
     grid-template-columns: repeat(auto-fit,minmax(166px,180px));
   }
