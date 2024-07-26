@@ -1752,6 +1752,18 @@ body {
 }
 
 @media (min-width: 640px) {
+  .sm\:grid {
+    display: grid;
+  }
+
+  .sm\:h-\[320px\] {
+    height: 320px;
+  }
+
+  .sm\:max-h-\[320px\] {
+    max-height: 320px;
+  }
+
   .sm\:max-w-\[400px\] {
     max-width: 400px;
   }
