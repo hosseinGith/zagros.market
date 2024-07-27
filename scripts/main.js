@@ -88,6 +88,7 @@ accountSetting.addEventListener("click", () => {
 mainMenuNavBarClickElement.forEach((btn, index) => {
   btn.addEventListener("click", () => {
     mainMenuNavBarClickElementUls[index].classList.toggle("showUl");
+    btn.classList.toggle("showed");
   });
 });
 

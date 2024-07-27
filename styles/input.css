@@ -158,6 +158,19 @@
         padding-bottom: 15px;
     }
 
+    .mainMenuNavBarLink span.showed {
+        color: #ef4056;
+    }
+
+    .mainMenuNavBarLink span i {
+        transition: rotate .3s;
+    }
+
+    .mainMenuNavBarLink span.showed i {
+        color: #000;
+        rotate: 180deg;
+    }
+
     .mainMenuNavBarLink ul.showUl {
         max-height: 2000px;
         padding-top: 15px;
@@ -165,6 +178,11 @@
     }
 
     .mainMenuNavBarLink ul.show>li {
+        padding-right: 15px;
+    }
+
+    .sortsTilteLi {
+        color: #424750;
         padding-right: 15px;
     }
 
