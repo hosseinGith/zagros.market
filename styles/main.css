@@ -1582,7 +1582,7 @@ body {
   gap: 10px;
   overflow: hidden;
   cursor: default;
-  transition: all .2s;
+  transition: all .3s;
 }
 
 .mainMenuNavBarLink>ul {
@@ -1609,7 +1609,6 @@ body {
 .mainMenuNavBarLink ul.showUl {
   max-height: 2000px;
   padding-top: 15px;
-  transition: all .3s;
 }
 
 .mainMenuNavBarLink ul.show>li {
