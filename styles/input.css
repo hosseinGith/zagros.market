@@ -278,4 +278,10 @@
             max-height: 0px;
         }
     }
+
+    @media screen and (width<500px) {
+        .price {
+            font-size: 12px;
+        }
+    }
 }

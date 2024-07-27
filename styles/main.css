@@ -828,6 +828,10 @@ video {
   min-width: 338px;
 }
 
+.max-w-\[160px\] {
+  max-width: 160px;
+}
+
 .max-w-\[200px\] {
   max-width: 200px;
 }
@@ -1707,6 +1711,12 @@ body {
   }
 }
 
+@media screen and (width<500px) {
+  .price {
+    font-size: 12px;
+  }
+}
+
 .after\:absolute::after {
   content: var(--tw-content);
   position: absolute;
@@ -1801,10 +1811,6 @@ body {
 
   .sm\:max-h-\[320px\] {
     max-height: 320px;
-  }
-
-  .sm\:max-w-\[180px\] {
-    max-width: 180px;
   }
 
   .sm\:max-w-\[400px\] {
