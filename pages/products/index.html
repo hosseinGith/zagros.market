@@ -2153,6 +2153,7 @@
           interVal = null;
           filterCont.removeClass(classes[1]);
           filterCont.addClass(classes[2]);
+          document.body.classList.remove("overflow-hidden");
         }, 500);
       }
 
@@ -2171,11 +2172,13 @@
       $("#showFilterSect").on("click", function () {
         $("#filterCont").addClass("showFilterSec");
         $("#filterCont").removeClass("hidden");
+        document.body.classList.add("overflow-hidden");
       });
 
       $("#showSortSectionBtn").on("click", function () {
         $("#sortsFilterSec").addClass("showFilterSec");
         $("#sortsFilterSec").removeClass("hidden");
+        document.body.classList.add("overflow-hidden");
       });
 
       $("#closeFilterWindow").on("click", function () {
