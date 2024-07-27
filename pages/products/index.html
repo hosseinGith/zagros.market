@@ -1,0 +1,2203 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../../styles/jalalidatepicker.min.css" />
+    <link href="../../styles/nouislider.css" rel="stylesheet" />
+    <script src="../../scripts/nouislider.js"></script>
+    <title>محصولات</title>
+  </head>
+  <body>
+    <header
+      class="lg:fixed w-full top-0 z-10 lg:divide-y-0 divide-y-2 divide-submitPageColorBorderLowBlack"
+    >
+      <section class="bg-whiteColor relative z-10">
+        <div class="container flex justify-between">
+          <div class="lg:flex items-center hidden gap-4">
+            <a href="#" class="block w-[120px]">
+              <img
+                src="../../assets/images/logo.png"
+                class="w-full"
+                alt="عکس"
+              />
+            </a>
+            <form
+              class="bg-inputSearchBar lg:w-[500px] w-[350px] flex items-center"
+            >
+              <button type="submit" class="flex items-center px-2 py-2">
+                <i class="fa fa-search"></i>
+              </button>
+              <input
+                class="productName bg-[transparent] w-full px-4 py-2 outline-none rounded-sm"
+                type="search"
+                name="product"
+                placeholder="جستجو"
+              />
+            </form>
+          </div>
+          <button id="openMainMenuNavBar" class="w-[40px] lg:hidden p-1">
+            <svg
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-full"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </button>
+          <a href="#" class="lg:hidden block w-[120px]">
+            <img src="../../assets/images/logo.png" class="w-full" alt="عکس" />
+          </a>
+          <div
+            class="grid gap-3 grid-cols-[28px] lg:grid-cols-[28px_10px_28px] grid-rows-[28px] content-center"
+          >
+            <button
+              id="accountSetting"
+              class="lg:flex hidden items-center justify-center relative"
+            >
+              <i class="text-[20px] far fa-user"></i>
+              <i class="fa fa-angle-down"></i>
+              <ul
+                id="accountSettingCont"
+                class="headerAccountUlNav hidden absolute divide-y-2 divide-submitPageColorBorderLowBlack cursor-default top-[50px] w-[max-content] rounded-md shadow-md shadow-[#bbb] bg-whiteColor left-0"
+              >
+                <li class="rounded-md">
+                  <a
+                    href="#"
+                    class="w-full hover:bg-submitPageColorBorderLowBlack flex gap-4 items-center px-4 py-4"
+                  >
+                    <img
+                      loading="lazy"
+                      class="w-[32px]"
+                      src="https://www.zagros.market/themes/shop-theme1/images/avatar.svg"
+                      alt="پروفایل"
+                    />
+                    <p>09000000000</p>
+                  </a>
+                </li>
+                <li class="">
+                  <a
+                    href="#"
+                    class="w-full hover:bg-submitPageColorBorderLowBlack flex gap-4 items-center px-4 py-4"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184"
+                      ></path>
+                    </svg>
+                    <p>سفارش ها</p>
+                  </a>
+                </li>
+                <li class="">
+                  <a
+                    href="#"
+                    class="w-full hover:bg-submitPageColorBorderLowBlack flex gap-4 items-center px-4 py-4"
+                  >
+                    <i class="text-2xl w-[32px] far fa-user"></i>
+
+                    <p>اطلاعات حساب کاربری</p>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="w-full hover:bg-submitPageColorBorderLowBlack flex gap-4 items-center px-4 py-4"
+                  >
+                    <i class="fa fa-sign-out text-2xl"></i>
+                    <p>خروج</p>
+                  </a>
+                </li>
+              </ul>
+            </button>
+            <span
+              class="border-r-2 lg:inline hidden border-submitPageColorBorderLowBlack"
+            >
+            </span>
+            <a href="#" class="p-1 block relative">
+              <svg
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-full"
+                fill="none"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
+                />
+              </svg>
+              <span
+                class="bg-primary p-1 min-w-[15px] text-[10px] h-[20px] absolute -right-[4px] top-4 text-whiteColor rounded-lg text-center flex items-center justify-center"
+              >
+                0
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section
+        class="bg-lowOpacityColorBg border-none fixed top-0 right-0 z-[11] w-full h-screen grid-rows-1"
+        id="mainMenuNavBarsec"
+      >
+        <nav
+          class="bg-whiteColor max-w-[300px] overflow-y-auto overflow-x-hidden flex flex-col gap-2 divide-y-2 divide-submitPageColorBorderLowBlack"
+        >
+          <ul class="px-4 py-4 flex w-full items-center justify-between">
+            <li>
+              <a class="block" href="#">
+                <img
+                  class="w-[135px]"
+                  src="../../assets/images/logo.png"
+                  alt=""
+                />
+              </a>
+            </li>
+            <li>
+              <button
+                id="closeMainMenuNavBar"
+                class="px-2 py-2 flex items-center justify-between text-lg"
+              >
+                <i class="fa fa-times"></i>
+              </button>
+            </li>
+          </ul>
+          <ul class="flex flex-col gap-5 py-4 text-sm">
+            <li>
+              <a href="#" class="mainMenuNavBarLink">
+                <span>صفحه اصلی</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mainMenuNavBarLink">
+                <span>نحوه ثبت سفارش</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mainMenuNavBarLink">
+                <span>سفارشات من</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mainMenuNavBarLink">
+                <span>درباره ما</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mainMenuNavBarLink">
+                <span>تماس با ما</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mainMenuNavBarLink">
+                <span>فروشگاه</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mainMenuNavBarLink">
+                <span>دسته بندی کالاها</span>
+              </a>
+            </li>
+            <li>
+              <div class="mainMenuNavBarLink">
+                <span class="mainMenuNavBarClickElement"
+                  >خواربار
+                  <i class="fa fas fa-angle-down"></i>
+                </span>
+                <ul>
+                  <li class="sortsTilteLi">
+                    <a href="#">همه ی موارد این دسته</a>
+                  </li>
+                  <li>
+                    <span class="mainMenuNavBarClickElement"
+                      >روغن
+                      <i class="fa fa-angle-down"></i>
+                    </span>
+                    <ul>
+                      <li class="sortsTilteLi">
+                        <a href="#">همه ی موارد این دسته</a>
+                      </li>
+                      <li>
+                        <span class="mainMenuNavBarClickElement"
+                          >روغن
+                          <i class="fa fa-angle-down"></i>
+                        </span>
+                        <ul>
+                          <li class="sortsTilteLi">
+                            <a href="#">همه ی موارد این دسته</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="mainMenuNavBarLink">
+                <span class="mainMenuNavBarClickElement"
+                  >خانه و آشپزخانه
+
+                  <i class="fa fas fa-angle-down"></i>
+                </span>
+                <ul>
+                  <li class="sortsTilteLi">
+                    <a href="#">همه ی موارد این دسته</a>
+                  </li>
+                  <li>
+                    <span class="mainMenuNavBarClickElement"
+                      >روغن
+                      <i class="fa fa-angle-down"></i>
+                    </span>
+                    <ul>
+                      <li class="sortsTilteLi">
+                        <a href="#">همه ی موارد این دسته</a>
+                      </li>
+                      <li>
+                        <span class="mainMenuNavBarClickElement"
+                          >روغن
+                          <i class="fa fa-angle-down"></i>
+                        </span>
+                        <ul>
+                          <li class="sortsTilteLi">
+                            <a href="#">همه ی موارد این دسته</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="mainMenuNavBarLink">
+                <span class="mainMenuNavBarClickElement"
+                  >نوشیدنی و دمنوش
+
+                  <i class="fa fas fa-angle-down"></i>
+                </span>
+                <ul>
+                  <li class="sortsTilteLi">
+                    <a href="#">همه ی موارد این دسته</a>
+                  </li>
+                  <li>
+                    <span class="mainMenuNavBarClickElement"
+                      >روغن
+                      <i class="fa fa-angle-down"></i>
+                    </span>
+                    <ul>
+                      <li class="sortsTilteLi">
+                        <a href="#">همه ی موارد این دسته</a>
+                      </li>
+                      <li>
+                        <span class="mainMenuNavBarClickElement"
+                          >روغن
+                          <i class="fa fa-angle-down"></i>
+                        </span>
+                        <ul>
+                          <li class="sortsTilteLi">
+                            <a href="#">همه ی موارد این دسته</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="mainMenuNavBarLink">
+                <span class="mainMenuNavBarClickElement"
+                  >آرایشی و بهداشتی
+
+                  <i class="fa fas fa-angle-down"></i>
+                </span>
+                <ul>
+                  <li class="sortsTilteLi">
+                    <a href="#">همه ی موارد این دسته</a>
+                  </li>
+                  <li>
+                    <span class="mainMenuNavBarClickElement"
+                      >روغن
+                      <i class="fa fa-angle-down"></i>
+                    </span>
+                    <ul>
+                      <li class="sortsTilteLi">
+                        <a href="#">همه ی موارد این دسته</a>
+                      </li>
+                      <li>
+                        <span class="mainMenuNavBarClickElement"
+                          >روغن
+                          <i class="fa fa-angle-down"></i>
+                        </span>
+                        <ul>
+                          <li class="sortsTilteLi">
+                            <a href="#">همه ی موارد این دسته</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="mainMenuNavBarLink">
+                <span class="mainMenuNavBarClickElement"
+                  >متفرقه
+
+                  <i class="fa fas fa-angle-down"></i>
+                </span>
+                <ul>
+                  <li class="sortsTilteLi">
+                    <a href="#">همه ی موارد این دسته</a>
+                  </li>
+                  <li>
+                    <span class="mainMenuNavBarClickElement"
+                      >روغن
+                      <i class="fa fa-angle-down"></i>
+                    </span>
+                    <ul>
+                      <li class="sortsTilteLi">
+                        <a href="#">همه ی موارد این دسته</a>
+                      </li>
+                      <li>
+                        <span class="mainMenuNavBarClickElement"
+                          >روغن
+                          <i class="fa fa-angle-down"></i>
+                        </span>
+                        <ul>
+                          <li class="sortsTilteLi">
+                            <a href="#">همه ی موارد این دسته</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="mainMenuNavBarLink">
+                <span class="mainMenuNavBarClickElement"
+                  >مواد غذایی
+
+                  <i class="fa fas fa-angle-down"></i>
+                </span>
+                <ul>
+                  <li class="sortsTilteLi">
+                    <a href="#">همه ی موارد این دسته</a>
+                  </li>
+                  <li>
+                    <span class="mainMenuNavBarClickElement"
+                      >روغن
+                      <i class="fa fa-angle-down"></i>
+                    </span>
+                    <ul>
+                      <li class="sortsTilteLi">
+                        <a href="#">همه ی موارد این دسته</a>
+                      </li>
+                      <li>
+                        <span class="mainMenuNavBarClickElement"
+                          >روغن
+                          <i class="fa fa-angle-down"></i>
+                        </span>
+                        <ul>
+                          <li class="sortsTilteLi">
+                            <a href="#">همه ی موارد این دسته</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                          <li class="sortsTilteLi">
+                            <a href="#">روغن</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </section>
+      <section class="lg:hidden shadow-lg bg-whiteColor relative z-10">
+        <div class="container flex gap-2 justify-between items-center">
+          <form class="bg-inputSearchBar basis-[86%] flex items-center">
+            <button type="submit" class="flex items-center px-2 py-2">
+              <i class="fa fa-search"></i>
+            </button>
+            <input
+              class="productName bg-[transparent] w-full px-4 py-2 outline-none rounded-sm"
+              type="search"
+              name="product"
+              placeholder="جستجو"
+            />
+          </form>
+          <a
+            href="#"
+            class="basis-[10%] text-xl p-2 flex items-center justify-center"
+          >
+            <i class="far fa-user"></i>
+          </a>
+        </div>
+      </section>
+      <section
+        class="bg-whiteColor lg:block hidden translate-y-0 shadow-lg transition-all relative"
+      >
+        <div
+          id="hiddenScrollDiv"
+          class="container disableP py-0 px-2 transition-all"
+        >
+          <ul class="flex items-center text-[14px] font-light text-lowGray">
+            <li>
+              <h2
+                id="navBarLinks"
+                class="rounded-md hover:text-primary hover:bg-headerLinksBgColor flex gap-2 items-center cursor-pointer px-3 py-1 group"
+              >
+                <svg
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-7"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  />
+                </svg>
+                <span class="font-bold">دسته بندی محصولات</span>
+                <nav
+                  class="container rounded-b-md bg-whiteColor z-9 shadow-lg group-hover:flex cursor-default disableP h-[430px] absolute hidden top-[36px] right-1/2 translate-x-1/2 w-full"
+                >
+                  <div
+                    class="bg-headerNavBgColor flex flex-col w-[300px] text-blackColor"
+                    id="sortsProductsLinkCont"
+                  >
+                    <a
+                      href="#"
+                      value="link_1"
+                      class="headerNavHoverStyle w-full block px-4 py-5"
+                    >
+                      خواربار
+                    </a>
+                    <a href="#" value="link_2" class="w-full block px-4 py-5">
+                      خانه و آشپزخانه
+                    </a>
+                    <a href="#" value="link_3" class="w-full block px-4 py-5">
+                      نوشیدنی و دمنوش
+                    </a>
+                    <a href="#" value="link_4" class="w-full block px-4 py-5">
+                      آرایشی و بهداشتی
+                    </a>
+                    <a href="#" value="link_5" class="w-full block px-4 py-5">
+                      متفرقه
+                    </a>
+                    <a href="#" value="link_6" class="w-full block px-4 py-5">
+                      مواد غذایی
+                    </a>
+                  </div>
+                  <div class="w-full">
+                    <div id="producsUlParent">
+                      <ul
+                        class="hidden maxHeight430px flexShow flex-col gap-10 list-disc text-primary content-start flex-wrap w-full px-4 text-[12px] py-2"
+                        value="link_1"
+                      >
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                      </ul>
+                      <ul
+                        class="hidden maxHeight430px flex-col gap-10 list-disc text-primary content-start flex-wrap w-full px-4 text-[12px] py-2"
+                        value="link_2"
+                      >
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">صوتی تصویری</a>
+                          <a href="#" class="block text-blackColor">باتی</a>
+                          <a href="#" class="block text-blackColor">تلویزیون</a>
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">صوتی تصویری</a>
+                          <a href="#" class="block text-blackColor">باتی</a>
+                          <a href="#" class="block text-blackColor">تلویزیون</a>
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">صوتی تصویری</a>
+                          <a href="#" class="block text-blackColor">باتی</a>
+                          <a href="#" class="block text-blackColor">تلویزیون</a>
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">صوتی تصویری</a>
+                          <a href="#" class="block text-blackColor">باتی</a>
+                          <a href="#" class="block text-blackColor">تلویزیون</a>
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">صوتی تصویری</a>
+                          <a href="#" class="block text-blackColor">باتی</a>
+                          <a href="#" class="block text-blackColor">تلویزیون</a>
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">صوتی تصویری</a>
+                          <a href="#" class="block text-blackColor">باتی</a>
+                          <a href="#" class="block text-blackColor">تلویزیون</a>
+                        </li>
+                      </ul>
+                      <ul
+                        class="hidden maxHeight430px flex-col gap-10 list-disc text-primary content-start flex-wrap w-full px-4 text-[12px] py-2"
+                        value="link_3"
+                      >
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                      </ul>
+                      <ul
+                        class="hidden maxHeight430px flex-col gap-10 list-disc text-primary content-start flex-wrap w-full px-4 text-[12px] py-2"
+                        value="link_4"
+                      >
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                      </ul>
+                      <ul
+                        class="hidden maxHeight430px flex-col gap-10 list-disc text-primary content-start flex-wrap w-full px-4 text-[12px] py-2"
+                        value="link_5"
+                      >
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                      </ul>
+                      <ul
+                        class="hidden maxHeight430px flex-col gap-10 list-disc text-primary content-start flex-wrap w-full px-4 text-[12px] py-2"
+                        value="link_6"
+                      >
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                        <li class="space-y-2">
+                          <a href="#" class="block text-primary">روغن</a>
+                          <a href="#" class="block text-blackColor"
+                            >روغن جامد و نیمه جامد</a
+                          >
+                          <a href="#" class="block text-blackColor"
+                            >روغن مایع</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+              </h2>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-primary hover:bg-headerLinksBgColor py-1 px-3 transition-all duration-300"
+                >صفحه اصلی</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-primary hover:bg-headerLinksBgColor py-1 px-3 transition-all duration-300"
+                >نحوه ثبت سفارش</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-primary hover:bg-headerLinksBgColor py-1 px-3 transition-all duration-300"
+                >سفارشات من</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-primary hover:bg-headerLinksBgColor py-1 px-3 transition-all duration-300"
+                >درباره ما</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-primary hover:bg-headerLinksBgColor py-1 px-3 transition-all duration-300"
+                >تماس با ما</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-primary hover:bg-headerLinksBgColor py-1 px-3 transition-all duration-300"
+                >فروشگاه</a
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="hidden bg-whiteColor relative z-10">
+        <div class="container flex gap-4 items-center">
+          <p>صفحه اصلی</p>
+        </div>
+      </section>
+    </header>
+    <main class="lg:pt-[180px]">
+      <section
+        id="hiddenContent"
+        class="bg-lowOpacityColorBg items-start hidden fixed z-[9] top-0 right-0 w-full h-screen"
+      ></section>
+      <section>
+        <div
+          class="container flex lg:flex-row justify-between items-start flex-col p-2 gap-5"
+        >
+          <aside
+            class="min-w-[300px] lg:block hidden sticky top-[120px] boxBorder rounded-md py-5 px-4"
+          >
+            <nav>
+              <ul class="space-y-8">
+                <li><h2 class="text-xl text-lowGray">فیلترها</h2></li>
+                <li class="border-b-2 border-submitPageColorBorderLowBlack">
+                  <button
+                    class="dropDownBtn flex justify-between w-full items-center py-2"
+                  >
+                    <span>جستجو در نتایج</span>
+                    <i class="fa fa-angle-down"></i>
+                  </button>
+                  <form class="space-y-2">
+                    <div
+                      class="boxBorder gap-2 boxBorder flex items-center px-2"
+                    >
+                      <button type="submit" class="basis-[5%] p-2">
+                        <i class="fa fa-search"></i>
+                      </button>
+                      <input
+                        class="basis-[95%] text-sm outline-none"
+                        type="text"
+                        name="searchProduct"
+                        placeholder="کد یا نام محصول مورد نظر را بنویسید"
+                        id="searchProduct"
+                      />
+                    </div>
+                    <a href="#" class="hidden">[searched result]</a>
+                  </form>
+                  <p class="hidden text-lowGray">[searched result]</p>
+                </li>
+                <li class="border-b-2 border-submitPageColorBorderLowBlack">
+                  <button
+                    class="dropDownBtn flex justify-between w-full items-center py-2"
+                  >
+                    <span>فیلتر قیمت</span>
+                    <i class="fa fa-angle-down"></i>
+                  </button>
+                  <form class="space-y-2 flex flex-col gap-2 items-center">
+                    <div
+                      id="rangeSlider"
+                      class="opacity-80 w-[80%]"
+                      style="filter: grayscale(100%)"
+                    ></div>
+                    <div class="flex gap-2">
+                      <div
+                        class="flex boxBorder items-center text-sm flex-col gap-2 text-lowGray px-4"
+                      >
+                        <span>تا</span>
+                        <input
+                          disabled="true"
+                          class="bg-lowerGray w-full text-center text-blackColor"
+                          value="0"
+                          type="text"
+                          name="toPrice"
+                          id="toPrice"
+                        />
+                        <span>تومان</span>
+                      </div>
+                      <div
+                        class="flex boxBorder items-center text-sm flex-col gap-2 text-lowGray px-4"
+                      >
+                        <span>از</span>
+                        <input
+                          disabled="true"
+                          class="bg-lowerGray w-full text-center text-blackColor"
+                          value="0"
+                          type="text"
+                          name="fromPrice"
+                          id="fromPrice"
+                        />
+                        <span>تومان</span>
+                      </div>
+                    </div>
+                    <button
+                      class="bg-redColor opacity-75 hover:opacity-100 transition-all text-whiteColor w-[80%] py-2 rounded-md"
+                    >
+                      اعمال فیلتر
+                    </button>
+                    <a href="#" class="hidden">[searched result]</a>
+                  </form>
+                  <p class="hidden text-lowGray">[searched result]</p>
+                </li>
+                <li class="space-y-4">
+                  <form>
+                    <label class="flex gap-2" for="minProductsOnly">
+                      <input
+                        type="checkbox"
+                        class="hidden inputCheckbox"
+                        id="minProductsOnly"
+                        name="checkBoxName"
+                        id=""
+                      />
+                      <div class="customeCheckbox"></div>
+                      فقط محصولات دارای موجودی
+                    </label>
+                  </form>
+                  <form>
+                    <label class="flex gap-2" for="imageProductsOnly">
+                      <input
+                        type="checkbox"
+                        class="hidden inputCheckbox"
+                        id="imageProductsOnly"
+                        name="checkBoxName"
+                        id=""
+                      />
+                      <div class="customeCheckbox"></div>
+                      فقط محصولات دارای تصویر
+                    </label>
+                  </form>
+                </li>
+              </ul>
+            </nav>
+          </aside>
+          <div
+            class="md:pt-[20px] w-full text-lowGray divide-y-2 divide-submitPageColorBorderLowBlack"
+          >
+            <div class="flex justify-between w-full">
+              <h2>خواربار</h2>
+              <p class="text-[12px]">
+                نمایش <span>1</span> تا <span>24</span> از
+                <span>530</span> محصول
+              </p>
+            </div>
+            <ul class="md:flex hidden gap-6 text-[12px] py-5">
+              <li class="flex gap-2">
+                <i class="fa fa-sort-amount-down text-[20px]"></i>
+                <p>مرتب سازی بر اساس :</p>
+              </li>
+              <li>
+                <a href="#" class="text-primary">پرفروش‌ترین‌</a>
+              </li>
+              <li>
+                <a href="#">بیشترین تخفیف</a>
+              </li>
+              <li>
+                <a href="#">جدیدترین</a>
+              </li>
+              <li>
+                <a href="#">ارزان‌ترین</a>
+              </li>
+              <li>
+                <a href="#"> گران‌ترین</a>
+              </li>
+              <li>
+                <a href="#">پربازدیدترین</a>
+              </li>
+            </ul>
+            <ul class="md:hidden flex gap-4 py-5 text-blackColor text-sm">
+              <li>
+                <button id="showFilterSect">
+                  <i class="fa fa-sliders-h"></i>
+                  <span>فیلتر</span>
+                </button>
+              </li>
+              <li>
+                <button id="showSortSectionBtn">
+                  <i class="fa fa-sort-amount-down"></i>
+                  <span>پرفروش‌ترین‌</span>
+                </button>
+              </li>
+            </ul>
+            <div
+              class="grid divide-x-2 divide-y-2 divide-submitPageColorBorderLowBlack sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+            >
+              <div
+                class="flex relative p-4 sm:flex-col gap-4 items-end justify-between border-2 border-[transparent] transition-all hover:shadow-md shadow-submitPageColorBorderLowBlack"
+              >
+                <a href="#" class="w-full flex items-center sm:flex-col">
+                  <img
+                    loading="lazy"
+                    class="sm:max-w-[300px] w-full max-w-[114px] sm:h-[200px] aspect-auto object-contain"
+                    src="../../assets/images/6260423300215-296x300.jpg"
+                    alt="#"
+                  />
+                  <h3
+                    class="w-full pb-10 text-[12px] sm:text-[14px] md:text-[12px] xl:text-[15px] max-h-[50px] overflow-hidden"
+                  >
+                    سه نان نان تست طلایی
+                  </h3>
+                </a>
+                <div
+                  class="flex absolute sm:static left-[10px] bottom-[10px] flex-col sm:flex-row sm:items-center items-end sm:w-full justify-between"
+                >
+                  <span class="sm:hidden inline-block">45,000تومان</span>
+                  <a
+                    href="#"
+                    class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </a>
+                  <span class="sm:inline-block hidden">45,000تومان</span>
+                </div>
+              </div>
+              <div
+                class="flex relative p-4 sm:flex-col gap-4 items-end justify-between border-2 border-[transparent] transition-all hover:shadow-md shadow-submitPageColorBorderLowBlack"
+              >
+                <a href="#" class="w-full flex items-center sm:flex-col">
+                  <img
+                    loading="lazy"
+                    class="sm:max-w-[300px] w-full max-w-[114px] sm:h-[200px] aspect-auto object-contain"
+                    src="../../assets/images/6260161405470-300x207.jpg"
+                    alt="#"
+                  />
+                  <h3
+                    class="w-full pb-10 text-[12px] sm:text-[14px] md:text-[12px] xl:text-[15px] max-h-[50px] overflow-hidden"
+                  >
+                    سه نان نان تست طلایی
+                  </h3>
+                </a>
+                <div
+                  class="flex absolute sm:static left-[10px] bottom-[10px] flex-col sm:flex-row sm:items-center items-end sm:w-full justify-between"
+                >
+                  <span class="sm:hidden inline-block">45,000تومان</span>
+                  <a
+                    href="#"
+                    class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </a>
+                  <span class="sm:inline-block hidden">45,000تومان</span>
+                </div>
+              </div>
+              <div
+                class="flex relative p-4 sm:flex-col gap-4 items-end justify-between border-2 border-[transparent] transition-all hover:shadow-md shadow-submitPageColorBorderLowBlack"
+              >
+                <a href="#" class="w-full flex items-center sm:flex-col">
+                  <img
+                    loading="lazy"
+                    class="sm:max-w-[300px] w-full max-w-[114px] sm:h-[200px] aspect-auto object-contain"
+                    src="../../assets/images/6260865800021-300x300.jpg"
+                    alt="#"
+                  />
+                  <h3
+                    class="w-full pb-10 text-[12px] sm:text-[14px] md:text-[12px] xl:text-[15px] max-h-[50px] overflow-hidden"
+                  >
+                    سه نان نان تست طلایی
+                  </h3>
+                </a>
+                <div
+                  class="flex absolute sm:static left-[10px] bottom-[10px] flex-col sm:flex-row sm:items-center items-end sm:w-full justify-between"
+                >
+                  <span class="sm:hidden inline-block">45,000تومان</span>
+                  <a
+                    href="#"
+                    class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </a>
+                  <span class="sm:inline-block hidden">45,000تومان</span>
+                </div>
+              </div>
+              <div
+                class="flex relative p-4 sm:flex-col gap-4 items-end justify-between border-2 border-[transparent] transition-all hover:shadow-md shadow-submitPageColorBorderLowBlack"
+              >
+                <a href="#" class="w-full flex items-center sm:flex-col">
+                  <img
+                    loading="lazy"
+                    class="sm:max-w-[300px] w-full max-w-[114px] sm:h-[200px] aspect-auto object-contain"
+                    src="../../assets/images/6262227000209-300x300.jpg"
+                    alt="#"
+                  />
+                  <h3
+                    class="w-full pb-10 text-[12px] sm:text-[14px] md:text-[12px] xl:text-[15px] max-h-[50px] overflow-hidden"
+                  >
+                    سه نان نان تست طلایی
+                  </h3>
+                </a>
+                <div
+                  class="flex absolute sm:static left-[10px] bottom-[10px] flex-col sm:flex-row sm:items-center items-end sm:w-full justify-between"
+                >
+                  <span class="sm:hidden inline-block">45,000تومان</span>
+                  <a
+                    href="#"
+                    class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </a>
+                  <span class="sm:inline-block hidden">45,000تومان</span>
+                </div>
+              </div>
+              <div
+                class="flex relative p-4 sm:flex-col gap-4 items-end justify-between border-2 border-[transparent] transition-all hover:shadow-md shadow-submitPageColorBorderLowBlack"
+              >
+                <a href="#" class="w-full flex items-center sm:flex-col">
+                  <img
+                    loading="lazy"
+                    class="sm:max-w-[300px] w-full max-w-[114px] sm:h-[200px] aspect-auto object-contain"
+                    src="../../assets/images/6260865800021-300x300.jpg"
+                    alt="#"
+                  />
+                  <h3
+                    class="w-full pb-10 text-[12px] sm:text-[14px] md:text-[12px] xl:text-[15px] max-h-[50px] overflow-hidden"
+                  >
+                    سه نان نان تست طلایی
+                  </h3>
+                </a>
+                <div
+                  class="flex absolute sm:static left-[10px] bottom-[10px] flex-col sm:flex-row sm:items-center items-end sm:w-full justify-between"
+                >
+                  <span class="sm:hidden inline-block">45,000تومان</span>
+                  <a
+                    href="#"
+                    class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </a>
+                  <span class="sm:inline-block hidden">45,000تومان</span>
+                </div>
+              </div>
+              <div
+                class="flex relative p-4 sm:flex-col gap-4 items-end justify-between border-2 border-[transparent] transition-all hover:shadow-md shadow-submitPageColorBorderLowBlack"
+              >
+                <a href="#" class="w-full flex items-center sm:flex-col">
+                  <img
+                    loading="lazy"
+                    class="sm:max-w-[300px] w-full max-w-[114px] sm:h-[200px] aspect-auto object-contain"
+                    src="../../assets/images/6260532810032-300x300.jpg"
+                    alt="#"
+                  />
+                  <h3
+                    class="w-full pb-10 text-[12px] sm:text-[14px] md:text-[12px] xl:text-[15px] max-h-[50px] overflow-hidden"
+                  >
+                    سه نان نان تست طلایی
+                  </h3>
+                </a>
+                <div
+                  class="flex absolute sm:static left-[10px] bottom-[10px] flex-col sm:flex-row sm:items-center items-end sm:w-full justify-between"
+                >
+                  <span class="sm:hidden inline-block">45,000تومان</span>
+                  <a
+                    href="#"
+                    class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </a>
+                  <span class="sm:inline-block hidden">45,000تومان</span>
+                </div>
+              </div>
+              <div
+                class="flex relative p-4 sm:flex-col gap-4 items-end justify-between border-2 border-[transparent] transition-all hover:shadow-md shadow-submitPageColorBorderLowBlack"
+              >
+                <a href="#" class="w-full flex items-center sm:flex-col">
+                  <img
+                    loading="lazy"
+                    class="sm:max-w-[300px] w-full max-w-[114px] sm:h-[200px] aspect-auto object-contain"
+                    src="../../assets/images/6260394502106-300x300.jpg"
+                    alt="#"
+                  />
+                  <h3
+                    class="w-full pb-10 text-[12px] sm:text-[14px] md:text-[12px] xl:text-[15px] max-h-[50px] overflow-hidden"
+                  >
+                    سه نان نان تست طلایی
+                  </h3>
+                </a>
+                <div
+                  class="flex absolute sm:static left-[10px] bottom-[10px] flex-col sm:flex-row sm:items-center items-end sm:w-full justify-between"
+                >
+                  <span class="sm:hidden inline-block">45,000تومان</span>
+                  <a
+                    href="#"
+                    class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </a>
+                  <span class="sm:inline-block hidden">45,000تومان</span>
+                </div>
+              </div>
+              <div
+                class="flex relative p-4 sm:flex-col gap-4 items-end justify-between border-2 border-[transparent] transition-all hover:shadow-md shadow-submitPageColorBorderLowBlack"
+              >
+                <a href="#" class="w-full flex items-center sm:flex-col">
+                  <img
+                    loading="lazy"
+                    class="sm:max-w-[300px] w-full max-w-[114px] sm:h-[200px] aspect-auto object-contain"
+                    src="../../assets/images/6262092001912-300x300.jpg"
+                    alt="#"
+                  />
+                  <h3
+                    class="w-full pb-10 text-[12px] sm:text-[14px] md:text-[12px] xl:text-[15px] max-h-[50px] overflow-hidden"
+                  >
+                    سه نان نان تست طلایی
+                  </h3>
+                </a>
+                <div
+                  class="flex absolute sm:static left-[10px] bottom-[10px] flex-col sm:flex-row sm:items-center items-end sm:w-full justify-between"
+                >
+                  <span class="sm:hidden inline-block">45,000تومان</span>
+                  <a
+                    href="#"
+                    class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </a>
+                  <span class="sm:inline-block hidden">45,000تومان</span>
+                </div>
+              </div>
+              <div
+                class="flex relative p-4 sm:flex-col gap-4 items-end justify-between border-2 border-[transparent] transition-all hover:shadow-md shadow-submitPageColorBorderLowBlack"
+              >
+                <a href="#" class="w-full flex items-center sm:flex-col">
+                  <img
+                    loading="lazy"
+                    class="sm:max-w-[300px] w-full max-w-[114px] sm:h-[200px] aspect-auto object-contain"
+                    src="../../assets/images/1-3024-300x300.jpg"
+                    alt="#"
+                  />
+                  <h3
+                    class="w-full pb-10 text-[12px] sm:text-[14px] md:text-[12px] xl:text-[15px] max-h-[50px] overflow-hidden"
+                  >
+                    سه نان نان تست طلایی
+                  </h3>
+                </a>
+                <div
+                  class="flex absolute sm:static left-[10px] bottom-[10px] flex-col sm:flex-row sm:items-center items-end sm:w-full justify-between"
+                >
+                  <span class="sm:hidden inline-block">45,000تومان</span>
+                  <a
+                    href="#"
+                    class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </a>
+                  <span class="sm:inline-block hidden">45,000تومان</span>
+                </div>
+              </div>
+              <div
+                class="flex relative p-4 sm:flex-col gap-4 items-end justify-between border-2 border-[transparent] transition-all hover:shadow-md shadow-submitPageColorBorderLowBlack"
+              >
+                <a href="#" class="w-full flex items-center sm:flex-col">
+                  <img
+                    loading="lazy"
+                    class="sm:max-w-[300px] w-full max-w-[114px] sm:h-[200px] aspect-auto object-contain"
+                    src="../../assets/images/6260865800021-300x300.jpg"
+                    alt="#"
+                  />
+                  <h3
+                    class="w-full pb-10 text-[12px] sm:text-[14px] md:text-[12px] xl:text-[15px] max-h-[50px] overflow-hidden"
+                  >
+                    سه نان نان تست طلایی
+                  </h3>
+                </a>
+                <div
+                  class="flex absolute sm:static left-[10px] bottom-[10px] flex-col sm:flex-row sm:items-center items-end sm:w-full justify-between"
+                >
+                  <span class="sm:hidden inline-block">45,000تومان</span>
+                  <a
+                    href="#"
+                    class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </a>
+                  <span class="sm:inline-block hidden">45,000تومان</span>
+                </div>
+              </div>
+              <div
+                class="flex relative p-4 sm:flex-col gap-4 items-end justify-between border-2 border-[transparent] transition-all hover:shadow-md shadow-submitPageColorBorderLowBlack"
+              >
+                <a href="#" class="w-full flex items-center sm:flex-col">
+                  <img
+                    loading="lazy"
+                    class="sm:max-w-[300px] w-full max-w-[114px] sm:h-[200px] aspect-auto object-contain"
+                    src="../../assets/images/6260423300215-296x300.jpg"
+                    alt="#"
+                  />
+                  <h3
+                    class="w-full pb-10 text-[12px] sm:text-[14px] md:text-[12px] xl:text-[15px] max-h-[50px] overflow-hidden"
+                  >
+                    سه نان نان تست طلایی
+                  </h3>
+                </a>
+                <div
+                  class="flex absolute sm:static left-[10px] bottom-[10px] flex-col sm:flex-row sm:items-center items-end sm:w-full justify-between"
+                >
+                  <span class="sm:hidden inline-block">45,000تومان</span>
+                  <a
+                    href="#"
+                    class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </a>
+                  <span class="sm:inline-block hidden">45,000تومان</span>
+                </div>
+              </div>
+              <div
+                class="flex relative p-4 sm:flex-col gap-4 items-end justify-between border-2 border-[transparent] transition-all hover:shadow-md shadow-submitPageColorBorderLowBlack"
+              >
+                <a href="#" class="w-full flex items-center sm:flex-col">
+                  <img
+                    loading="lazy"
+                    class="sm:max-w-[300px] w-full max-w-[114px] sm:h-[200px] aspect-auto object-contain"
+                    src="../../assets/images/6260161405470-300x207.jpg"
+                    alt="#"
+                  />
+                  <h3
+                    class="w-full pb-10 text-[12px] sm:text-[14px] md:text-[12px] xl:text-[15px] max-h-[50px] overflow-hidden"
+                  >
+                    سه نان نان تست طلایی
+                  </h3>
+                </a>
+                <div
+                  class="flex absolute sm:static left-[10px] bottom-[10px] flex-col sm:flex-row sm:items-center items-end sm:w-full justify-between"
+                >
+                  <span class="sm:hidden inline-block">45,000تومان</span>
+                  <a
+                    href="#"
+                    class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </a>
+                  <span class="sm:inline-block hidden">45,000تومان</span>
+                </div>
+              </div>
+              <div
+                class="flex relative p-4 sm:flex-col gap-4 items-end justify-between border-2 border-[transparent] transition-all hover:shadow-md shadow-submitPageColorBorderLowBlack"
+              >
+                <a href="#" class="w-full flex items-center sm:flex-col">
+                  <img
+                    loading="lazy"
+                    class="sm:max-w-[300px] w-full max-w-[114px] sm:h-[200px] aspect-auto object-contain"
+                    src="../../assets/images/6260865800021-300x300.jpg"
+                    alt="#"
+                  />
+                  <h3
+                    class="w-full pb-10 text-[12px] sm:text-[14px] md:text-[12px] xl:text-[15px] max-h-[50px] overflow-hidden"
+                  >
+                    سه نان نان تست طلایی
+                  </h3>
+                </a>
+                <div
+                  class="flex absolute sm:static left-[10px] bottom-[10px] flex-col sm:flex-row sm:items-center items-end sm:w-full justify-between"
+                >
+                  <span class="sm:hidden inline-block">45,000تومان</span>
+                  <a
+                    href="#"
+                    class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </a>
+                  <span class="sm:inline-block hidden">45,000تومان</span>
+                </div>
+              </div>
+              <div
+                class="flex relative p-4 sm:flex-col gap-4 items-end justify-between border-2 border-[transparent] transition-all hover:shadow-md shadow-submitPageColorBorderLowBlack"
+              >
+                <a href="#" class="w-full flex items-center sm:flex-col">
+                  <img
+                    loading="lazy"
+                    class="sm:max-w-[300px] w-full max-w-[114px] sm:h-[200px] aspect-auto object-contain"
+                    src="../../assets/images/6262227000209-300x300.jpg"
+                    alt="#"
+                  />
+                  <h3
+                    class="w-full pb-10 text-[12px] sm:text-[14px] md:text-[12px] xl:text-[15px] max-h-[50px] overflow-hidden"
+                  >
+                    سه نان نان تست طلایی
+                  </h3>
+                </a>
+                <div
+                  class="flex absolute sm:static left-[10px] bottom-[10px] flex-col sm:flex-row sm:items-center items-end sm:w-full justify-between"
+                >
+                  <span class="sm:hidden inline-block">45,000تومان</span>
+                  <a
+                    href="#"
+                    class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </a>
+                  <span class="sm:inline-block hidden">45,000تومان</span>
+                </div>
+              </div>
+              <div
+                class="flex relative p-4 sm:flex-col gap-4 items-end justify-between border-2 border-[transparent] transition-all hover:shadow-md shadow-submitPageColorBorderLowBlack"
+              >
+                <a href="#" class="w-full flex items-center sm:flex-col">
+                  <img
+                    loading="lazy"
+                    class="sm:max-w-[300px] w-full max-w-[114px] sm:h-[200px] aspect-auto object-contain"
+                    src="../../assets/images/6260865800021-300x300.jpg"
+                    alt="#"
+                  />
+                  <h3
+                    class="w-full pb-10 text-[12px] sm:text-[14px] md:text-[12px] xl:text-[15px] max-h-[50px] overflow-hidden"
+                  >
+                    سه نان نان تست طلایی
+                  </h3>
+                </a>
+                <div
+                  class="flex absolute sm:static left-[10px] bottom-[10px] flex-col sm:flex-row sm:items-center items-end sm:w-full justify-between"
+                >
+                  <span class="sm:hidden inline-block">45,000تومان</span>
+                  <a
+                    href="#"
+                    class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </a>
+                  <span class="sm:inline-block hidden">45,000تومان</span>
+                </div>
+              </div>
+              <div
+                class="flex relative p-4 sm:flex-col gap-4 items-end justify-between border-2 border-[transparent] transition-all hover:shadow-md shadow-submitPageColorBorderLowBlack"
+              >
+                <a href="#" class="w-full flex items-center sm:flex-col">
+                  <img
+                    loading="lazy"
+                    class="sm:max-w-[300px] w-full max-w-[114px] sm:h-[200px] aspect-auto object-contain"
+                    src="../../assets/images/6260532810032-300x300.jpg"
+                    alt="#"
+                  />
+                  <h3
+                    class="w-full pb-10 text-[12px] sm:text-[14px] md:text-[12px] xl:text-[15px] max-h-[50px] overflow-hidden"
+                  >
+                    سه نان نان تست طلایی
+                  </h3>
+                </a>
+                <div
+                  class="flex absolute sm:static left-[10px] bottom-[10px] flex-col sm:flex-row sm:items-center items-end sm:w-full justify-between"
+                >
+                  <span class="sm:hidden inline-block">45,000تومان</span>
+                  <a
+                    href="#"
+                    class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </a>
+                  <span class="sm:inline-block hidden">45,000تومان</span>
+                </div>
+              </div>
+              <div
+                class="flex relative p-4 sm:flex-col gap-4 items-end justify-between border-2 border-[transparent] transition-all hover:shadow-md shadow-submitPageColorBorderLowBlack"
+              >
+                <a href="#" class="w-full flex items-center sm:flex-col">
+                  <img
+                    loading="lazy"
+                    class="sm:max-w-[300px] w-full max-w-[114px] sm:h-[200px] aspect-auto object-contain"
+                    src="../../assets/images/6260394502106-300x300.jpg"
+                    alt="#"
+                  />
+                  <h3
+                    class="w-full pb-10 text-[12px] sm:text-[14px] md:text-[12px] xl:text-[15px] max-h-[50px] overflow-hidden"
+                  >
+                    سه نان نان تست طلایی
+                  </h3>
+                </a>
+                <div
+                  class="flex absolute sm:static left-[10px] bottom-[10px] flex-col sm:flex-row sm:items-center items-end sm:w-full justify-between"
+                >
+                  <span class="sm:hidden inline-block">45,000تومان</span>
+                  <a
+                    href="#"
+                    class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </a>
+                  <span class="sm:inline-block hidden">45,000تومان</span>
+                </div>
+              </div>
+              <div
+                class="flex relative p-4 sm:flex-col gap-4 items-end justify-between border-2 border-[transparent] transition-all hover:shadow-md shadow-submitPageColorBorderLowBlack"
+              >
+                <a href="#" class="w-full flex items-center sm:flex-col">
+                  <img
+                    loading="lazy"
+                    class="sm:max-w-[300px] w-full max-w-[114px] sm:h-[200px] aspect-auto object-contain"
+                    src="../../assets/images/6262092001912-300x300.jpg"
+                    alt="#"
+                  />
+                  <h3
+                    class="w-full pb-10 text-[12px] sm:text-[14px] md:text-[12px] xl:text-[15px] max-h-[50px] overflow-hidden"
+                  >
+                    سه نان نان تست طلایی
+                  </h3>
+                </a>
+                <div
+                  class="flex absolute sm:static left-[10px] bottom-[10px] flex-col sm:flex-row sm:items-center items-end sm:w-full justify-between"
+                >
+                  <span class="sm:hidden inline-block">45,000تومان</span>
+                  <a
+                    href="#"
+                    class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </a>
+                  <span class="sm:inline-block hidden">45,000تومان</span>
+                </div>
+              </div>
+              <div
+                class="flex relative p-4 sm:flex-col gap-4 items-end justify-between border-2 border-[transparent] transition-all hover:shadow-md shadow-submitPageColorBorderLowBlack"
+              >
+                <a href="#" class="w-full flex items-center sm:flex-col">
+                  <img
+                    loading="lazy"
+                    class="sm:max-w-[300px] w-full max-w-[114px] sm:h-[200px] aspect-auto object-contain"
+                    src="../../assets/images/1-3024-300x300.jpg"
+                    alt="#"
+                  />
+                  <h3
+                    class="w-full pb-10 text-[12px] sm:text-[14px] md:text-[12px] xl:text-[15px] max-h-[50px] overflow-hidden"
+                  >
+                    سه نان نان تست طلایی
+                  </h3>
+                </a>
+                <div
+                  class="flex absolute sm:static left-[10px] bottom-[10px] flex-col sm:flex-row sm:items-center items-end sm:w-full justify-between"
+                >
+                  <span class="sm:hidden inline-block">45,000تومان</span>
+                  <a
+                    href="#"
+                    class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </a>
+                  <span class="sm:inline-block hidden">45,000تومان</span>
+                </div>
+              </div>
+              <div
+                class="flex relative p-4 sm:flex-col gap-4 items-end justify-between border-2 border-[transparent] transition-all hover:shadow-md shadow-submitPageColorBorderLowBlack"
+              >
+                <a href="#" class="w-full flex items-center sm:flex-col">
+                  <img
+                    loading="lazy"
+                    class="sm:max-w-[300px] w-full max-w-[114px] sm:h-[200px] aspect-auto object-contain"
+                    src="../../assets/images/6260865800021-300x300.jpg"
+                    alt="#"
+                  />
+                  <h3
+                    class="w-full pb-10 text-[12px] sm:text-[14px] md:text-[12px] xl:text-[15px] max-h-[50px] overflow-hidden"
+                  >
+                    سه نان نان تست طلایی
+                  </h3>
+                </a>
+                <div
+                  class="flex absolute sm:static left-[10px] bottom-[10px] flex-col sm:flex-row sm:items-center items-end sm:w-full justify-between"
+                >
+                  <span class="sm:hidden inline-block">45,000تومان</span>
+                  <a
+                    href="#"
+                    class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </a>
+                  <span class="sm:inline-block hidden">45,000تومان</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="md:hidden filterContWithAnimate hidden bg-lowOpacityColorBg fixed w-full h-screen top-0 left-0 z-40"
+        id="filterCont"
+      >
+        <div
+          class="bg-whiteColor space-y-4 flex flex-col w-full h-screen absolute px-5 py-4"
+        >
+          <div class="justify-between flex">
+            <span>فیلترها</span>
+            <button class="p-2" id="closeFilterWindow">
+              <i class="fa fa-remove"></i>
+            </button>
+          </div>
+          <div class="border-b-2 border-submitPageColorBorderLowBlack">
+            <button
+              class="dropDownBtn flex justify-between w-full items-center py-2"
+            >
+              <span>جستجو در نتایج</span>
+              <i class="fa fa-angle-down"></i>
+            </button>
+            <form class="space-y-2">
+              <div class="boxBorder gap-2 boxBorder flex items-center px-2">
+                <button type="submit" class="basis-[5%] p-2">
+                  <i class="fa fa-search"></i>
+                </button>
+                <input
+                  class="basis-[95%] text-sm outline-none"
+                  type="text"
+                  name="searchProduct"
+                  placeholder="کد یا نام محصول مورد نظر را بنویسید"
+                  id="searchProduct2"
+                />
+              </div>
+              <a href="#" class="hidden">[searched result]</a>
+            </form>
+          </div>
+          <div class="border-b-2 border-submitPageColorBorderLowBlack">
+            <button
+              class="dropDownBtn flex justify-between w-full items-center py-2"
+            >
+              <span>فیلتر</span>
+              <i class="fa fa-angle-down"></i>
+            </button>
+            <form class="space-y-2 flex flex-col gap-2 items-center p-0">
+              <div
+                id="rangeSlider2"
+                class="opacity-80 w-[80%]"
+                style="filter: grayscale(100%)"
+              ></div>
+              <div class="flex gap-2">
+                <div
+                  class="flex boxBorder items-center text-sm flex-col gap-2 text-lowGray px-4"
+                >
+                  <span>تا</span>
+                  <input
+                    disabled="true"
+                    class="bg-lowerGray w-full text-center text-blackColor"
+                    value="0"
+                    type="text"
+                    name="toPrice"
+                    id="toPrice2"
+                  />
+                  <span>تومان</span>
+                </div>
+                <div
+                  class="flex boxBorder items-center text-sm flex-col gap-2 text-lowGray px-4"
+                >
+                  <span>از</span>
+                  <input
+                    disabled="true"
+                    class="bg-lowerGray w-full text-center text-blackColor"
+                    value="0"
+                    type="text"
+                    name="fromPrice"
+                    id="fromPrice2"
+                  />
+                  <span>تومان</span>
+                </div>
+              </div>
+              <button
+                class="bg-redColor opacity-75 hover:opacity-100 transition-all text-whiteColor w-[80%] py-2 rounded-md"
+              >
+                اعمال فیلتر
+              </button>
+              <a href="#" class="hidden">[searched result]</a>
+            </form>
+          </div>
+          <div class="space-y-4">
+            <form>
+              <label class="flex gap-2" for="minProductsOnly2">
+                <input
+                  type="checkbox"
+                  class="hidden inputCheckbox"
+                  id="minProductsOnly2"
+                  name="checkBoxName"
+                />
+                <div class="customeCheckbox"></div>
+                فقط محصولات دارای موجودی
+              </label>
+            </form>
+            <form>
+              <label class="flex gap-2" for="imageProductsOnly2">
+                <input
+                  type="checkbox"
+                  class="hidden inputCheckbox"
+                  id="imageProductsOnly2"
+                  name="checkBoxName"
+                />
+                <div class="customeCheckbox"></div>
+                فقط محصولات دارای تصویر
+              </label>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section
+        class="md:hidden hidden filterContWithAnimate bg-lowOpacityColorBg fixed w-full h-screen top-0 left-0 z-40"
+        id="sortsFilterSec"
+      >
+        <div
+          class="h-[370px] bg-whiteColor rounded-t-lg absolute bottom-0 w-full p-4"
+        >
+          <div class="flex justify-between">
+            <h4 class="sm:text-xl text-lg">مرتب سازی بر اساس</h4>
+            <button id="closeSortsFilterSecBtn" class="p-2">
+              <i class="fa fa-times fa-size-px"></i>
+            </button>
+          </div>
+          <ul
+            class="gap-2 flex max-h-full divide-y-2 divide-submitPageColorBorderLowBlack flex-col h-[300px] overflow-auto"
+          >
+            <li>
+              <a href="#" class="w-full py-2 block text-primary font-bold"
+                >پرفروش‌ترین‌</a
+              >
+            </li>
+            <li><a href="#" class="w-full py-2 block">بیشترین تخفیف</a></li>
+            <li><a href="#" class="w-full py-2 block">جدیدترین</a></li>
+            <li><a href="#" class="w-full py-2 block">ارزان‌ترین</a></li>
+            <li><a href="#" class="w-full py-2 block">گران‌ترین</a></li>
+            <li><a href="#" class="w-full py-2 block">پربازدیدترین</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <footer class="divide-y-2 divide-submitPageColorBorderLowBlack">
+      <section class="border-t border-submitPageColorBorderLowBlack">
+        <div class="container">
+          <p class="text-lowGray py-4">آدرس: | تلفن: ‎ | پست الکترونیک:</p>
+          <div
+            class="grid lg:grid-cols-[repeat(auto-fit,minmax(100px,150px))] grid-cols-2 grid-rows-[100px] justify-around items-center gap-6"
+          >
+            <div class="flex items-center flex-col">
+              <img
+                loading="lazy"
+                class="h-[60px]"
+                src="../../assets/images/8f570b58.png"
+                alt="تحویل پیک"
+              />
+              <span>تحویل پیک</span>
+            </div>
+            <div class="flex items-center flex-col">
+              <img
+                loading="lazy"
+                class="h-[60px]"
+                src="../../assets/images/a9286d2f.png"
+                alt="پشتیبانی همه روزه"
+              />
+              <span>پشتیبانی همه روزه</span>
+            </div>
+            <div class="flex items-center flex-col">
+              <img
+                loading="lazy"
+                class="h-[60px]"
+                src="../../assets/images/22414818.png"
+                alt="پرداخت سریع و راحت"
+              />
+              <span>پرداخت سریع و راحت</span>
+            </div>
+            <div class="flex items-center flex-col">
+              <img
+                loading="lazy"
+                class="h-[60px]"
+                src="../../assets/images/fdb293e6.png"
+                alt="ضمانت اصل بودن کالا"
+              />
+              <span>ضمانت اصل بودن کالا</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div
+            class="sm:flex grid grid-cols-2 gap-10 px-2 justify-around scale-90"
+          >
+            <div class="text-lowGray">
+              <p class="text-blackColor">زاگرس مارکت</p>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="hover:text-blackColor text-sm"
+                    >فرصت‌های شغلی</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blackColor text-sm"
+                    >تماس با ما</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blackColor text-sm"
+                    >درباره ما</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="text-lowGray">
+              <p class="text-blackColor">خدمات مشتریان</p>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="hover:text-blackColor text-sm"
+                    >سوالات متداول</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blackColor text-sm"
+                    >رویه‌های بازگرداندن کالا</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blackColor text-sm"
+                    >حریم خصوصی</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blackColor text-sm"
+                    >قوانین و مقررات</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="text-lowGray">
+              <p class="text-blackColor">راهنمای خرید</p>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="hover:text-blackColor text-sm"
+                    >نحوه ثبت سفارش</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blackColor text-sm"
+                    >شیوه های پرداخت</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-blackColor text-sm"
+                    >رویه ارسال سفارش</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="flex flex-col justify-start">
+              <p class="text-blackColor">با ما همراه باشید</p>
+              <a href="#">
+                <i
+                  class="fab fa-instagram text-lowGray text-4xl"
+                  aria-hidden="true"
+                ></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container flex sm:flex-row flex-col justify-between gap-2">
+          <div class="basis-[60%]">
+            <p>زاگرس مارکت</p>
+            <p class="text-lowGray text-sm">
+              فروشگاه بزرگ زاگرس جهت رفاه حال مشتریان عزیز خود اقدام به راه
+              اندازی سیستم ثبت سفارش به صورت آنلاین کرده است آدرس : خیابان
+              شهیدان نیرنگ(مسجدالرضا) جنب مسجدالرضا | تلفن : 38347772-035
+            </p>
+          </div>
+          <div class="basis-[40%] flex justify-center gap-10 scale-75">
+            <a href="#" class="block boxBorder">
+              <img
+                loading="lazy"
+                src="../../assets/images/setare.png"
+                class="w-[110px]"
+                alt="فوتر"
+              />
+            </a>
+            <a href="#" class="block boxBorder">
+              <img
+                loading="lazy"
+                src="../../assets/images/footerimage2.png"
+                class="w-[110px]"
+                alt="فوتر"
+              />
+            </a>
+            <a href="#" class="block boxBorder">
+              <img
+                loading="lazy"
+                src="../../assets/images/654654654.svg"
+                class="w-[110px]"
+                alt="فوتر"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div
+          class="container flex gap-2 justify-center text-[12px] text-lowGray"
+        >
+          <p>
+            © تمامی حقوق این سایت متعلق به زاگرس مارکت می باشد. | طراحی و کد
+            نویسی: سپکام سیستم اجرا و توسعه
+            <a href="#" class="hover:text-blackColor"
+              >:آژانس دیجیتال مارکتینگ سپتا</a
+            >
+          </p>
+        </div>
+      </section>
+      <section>
+        <div class="container flex flex-col gap-4 items-center justify-center">
+          <a
+            class="flex flex-col gap-4 items-center justify-center"
+            href="http://patterndp.ir"
+            target="_blank"
+          >
+            <img
+              src="../../assets/images/logo-pattern.png"
+              class="sm:max-w-[400px]"
+              alt="گروه پترن"
+            />
+            <span>گروه پَتِرن</span>
+          </a>
+        </div>
+      </section>
+    </footer>
+    <script
+      type="text/javascript"
+      src="../../scripts/jalalidatepicker.min.js"
+    ></script>
+    <script src="../../scripts/jquery.js"></script>
+    <script src="../../scripts/main.js"></script>
+    <script>
+      let addUs_birthday = document.querySelector("#user_birthday");
+      jalaliDatepicker.startWatch({
+        dayRendering: function (dayOptions, addUs_birthday) {
+          return {
+            isHollyDay: dayOptions.month == 1 && dayOptions.day <= 4,
+          };
+        },
+      });
+      // set her max products price
+      let maxPrice = 1499000;
+      let rangeSlider = noUiSlider.create($("#rangeSlider")[0], {
+        start: [0, maxPrice],
+        connect: true,
+        color: "red",
+        rangColor: "red",
+        range: {
+          min: 0,
+          max: maxPrice,
+        },
+      });
+      let rangeSlider2 = noUiSlider.create($("#rangeSlider2")[0], {
+        start: [0, maxPrice],
+        connect: true,
+        color: "red",
+        rangColor: "red",
+        range: {
+          min: 0,
+          max: maxPrice,
+        },
+      });
+      let closeFilterWindowInterVal = null;
+      rangeSlider.on("update", () => {
+        $("#fromPrice").val(Math.round(rangeSlider.get()[0]).toLocaleString());
+        $("#toPrice").val(Math.round(rangeSlider.get()[1]).toLocaleString());
+      });
+      rangeSlider2.on("update", () => {
+        $("#fromPrice2").val(
+          Math.round(rangeSlider2.get()[0]).toLocaleString()
+        );
+        $("#toPrice2").val(Math.round(rangeSlider2.get()[1]).toLocaleString());
+      });
+
+      function closeSectionFilters(interVal, filterCont, classes) {
+        if (interVal) clearInterval(interVal);
+        filterCont.removeClass(classes[0]);
+        filterCont.addClass(classes[1]);
+        interVal = setTimeout(() => {
+          interVal = null;
+          filterCont.removeClass(classes[1]);
+          filterCont.addClass(classes[2]);
+        }, 500);
+      }
+
+      $(".dropDownBtn").on("click", function () {
+        $(this).toggleClass("showFilter");
+      });
+      $(".inputCheckbox").on("change", function () {
+        console.log(this.nextElementSibling);
+        if (this.checked) {
+          this.nextElementSibling.classList.add("active");
+          $(this)[0].parentElement.parentElement.submit();
+        } else {
+          this.nextElementSibling.classList.remove("active");
+        }
+      });
+      $("#showFilterSect").on("click", function () {
+        $("#filterCont").addClass("showFilterSec");
+        $("#filterCont").removeClass("hidden");
+      });
+
+      $("#showSortSectionBtn").on("click", function () {
+        $("#sortsFilterSec").addClass("showFilterSec");
+        $("#sortsFilterSec").removeClass("hidden");
+      });
+
+      $("#closeFilterWindow").on("click", function () {
+        closeSectionFilters(closeFilterWindowInterVal, $("#filterCont"), [
+          "showFilterSec",
+          "hideFilterSec",
+          "hidden",
+        ]);
+      });
+      $("#filterCont").on("click", function (e) {
+        if (e.target == this) $("#closeFilterWindow").click();
+      });
+      $("#closeSortsFilterSecBtn").on("click", function () {
+        closeSectionFilters(closeFilterWindowInterVal, $("#sortsFilterSec"), [
+          "showFilterSec",
+          "hideFilterSec",
+          "hidden",
+        ]);
+      });
+      $("#sortsFilterSec").on("click", function () {
+        if (e.target == this) $("#closeSortsFilterSecBtn").click();
+      });
+    </script>
+  </body>
+</html>
