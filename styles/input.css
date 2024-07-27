@@ -264,8 +264,7 @@
     .dropDownBtn+form {
         max-height: 0;
         overflow: hidden;
-        transition: max-height .3s;
-        padding-top: 10px;
+        transition: all .3s;
     }
 
     .dropDownBtn.showFilter i {
@@ -274,7 +273,8 @@
 
     .dropDownBtn.showFilter+form {
         max-height: 600px;
-        transition: max-height 1s;
+        transition: all 1s;
+        padding-top: 10px;
     }
 
     .customeCheckbox {
