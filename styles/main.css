@@ -2163,10 +2163,6 @@ body {
     display: flex;
   }
 
-  .md\:hidden {
-    display: none;
-  }
-
   .md\:max-h-\[240px\] {
     max-height: 240px;
   }
