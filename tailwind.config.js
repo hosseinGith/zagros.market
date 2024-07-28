@@ -19,7 +19,9 @@ module.exports = {
       lowOpacityColorBg: "#00000059",
       pinkRolor: "#f59dff",
       orangeColor: "#ff7E44",
+      mdGray: "#acacac",
       lowerGray: "#f0f1f2",
+      lowBlue: "#0275d8",
     },
     container: {
       center: true,

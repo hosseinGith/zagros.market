@@ -25,6 +25,7 @@
 
     body {
         font-family: iranYekan, vazir, iransans;
+        scroll-behavior: smooth;
     }
 
     .container:not(.disableP) {
@@ -348,6 +349,26 @@
 
     .paginationLiActive a:hover {
         background: #ef4056;
+    }
+
+    .oldPrice {
+        display: flex;
+        gap: 2px;
+    }
+
+    .swiper-button-disabled {
+        visibility: hidden;
+    }
+
+    @media screen and (width<500) {
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            display: none !important;
+            z-index: -1 !important;
+            opacity: 0 !important;
+
+        }
     }
 
     @keyframes opacityShow {

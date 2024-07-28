@@ -17,6 +17,7 @@ const mainMenuNavBarClickElementUls = document.querySelectorAll(
 const closeMainMenuNavBar = document.querySelector("#closeMainMenuNavBar");
 const mainMenuNavBarsec = document.querySelector("#mainMenuNavBarsec");
 const openMainMenuNavBar = document.querySelector("#openMainMenuNavBar");
+const scrollTop = document.querySelector("#scrollTop");
 
 let oldScrollY = scrollY;
 let istouch = true;
@@ -110,3 +111,4 @@ mainMenuNavBarsec.onanimationend = () => {
 };
 
 closeMainMenuNavBar.addEventListener("click", () => mainMenuNavBarsec.click());
+scrollTop.addEventListener("click", () => scrollTo(0, 0));

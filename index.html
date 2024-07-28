@@ -22,7 +22,7 @@
       class="lg:fixed w-full top-0 z-10 lg:divide-y-0 divide-y-2 divide-submitPageColorBorderLowBlack"
     >
       <section class="bg-whiteColor relative z-10">
-        <div class="container flex justify-between">
+        <div class="2xl:container p-4 flex justify-between">
           <div class="lg:flex items-center hidden gap-4">
             <a href="#" class="block w-[120px]">
               <img src="assets/images/logo.png" class="w-full" alt="عکس" />
@@ -523,7 +523,7 @@
         </nav>
       </section>
       <section class="lg:hidden shadow-lg bg-whiteColor relative z-10">
-        <div class="container flex gap-2 justify-between items-center">
+        <div class="2xl:container p-4 flex gap-2 justify-between items-center">
           <form class="bg-inputSearchBar basis-[86%] flex items-center">
             <button type="submit" class="flex items-center px-2 py-2">
               <i class="fa fa-search"></i>
@@ -548,7 +548,7 @@
       >
         <div
           id="hiddenScrollDiv"
-          class="container disableP py-0 px-2 transition-all"
+          class="2xl:container p-4 disableP py-0 px-2 transition-all"
         >
           <ul class="flex items-center text-[14px] font-light text-lowGray">
             <li>
@@ -571,7 +571,7 @@
                 </svg>
                 <span class="font-bold">دسته بندی محصولات</span>
                 <nav
-                  class="container rounded-b-md bg-whiteColor z-9 shadow-lg group-hover:flex cursor-default disableP h-[430px] absolute hidden top-[36px] right-1/2 translate-x-1/2 w-full"
+                  class="2xl:container p-4 rounded-b-md bg-whiteColor z-9 shadow-lg group-hover:flex cursor-default disableP h-[430px] absolute hidden top-[36px] right-1/2 translate-x-1/2 w-full"
                 >
                   <div
                     class="bg-headerNavBgColor flex flex-col w-[300px] text-blackColor"
@@ -983,7 +983,7 @@
         </div>
       </section>
       <section class="hidden bg-whiteColor relative z-10">
-        <div class="container flex gap-4 items-center">
+        <div class="2xl:container p-4 flex gap-4 items-center">
           <p>صفحه اصلی</p>
         </div>
       </section>
@@ -994,7 +994,9 @@
         class="bg-lowOpacityColorBg items-start hidden fixed z-[9] top-0 right-0 w-full h-screen"
       ></section>
       <section>
-        <div class="container md:flex block gap-[20px] md:space-y-0 space-y-4">
+        <div
+          class="2xl:container p-4 md:flex block gap-[20px] md:space-y-0 space-y-4"
+        >
           <div
             class="flex w-full md:w-[max-content] flex-shrink-[3] overflow-hidden rounded-md"
           >
@@ -1025,7 +1027,7 @@
         </div>
       </section>
       <section>
-        <div class="container">
+        <div class="2xl:container p-4">
           <div class="bg-pinkRolor rounded-md flex flex-col gap-2 p-5">
             <div>
               <h1>میوه و سبزیجات</h1>
@@ -1041,7 +1043,7 @@
             </div>
             <div class="swiper miveSabzSlider w-full">
               <div class="swiper-wrapper select-none">
-                <div class="swiper-slide">
+                <div class="swiper-slide min-w-[200px] max-w-[300px]">
                   <a
                     href="#"
                     class="flex h-full w-full flex-col px-2 items-center"
@@ -1049,7 +1051,7 @@
                     <img
                       loading="lazy"
                       src="assets/images/goldonMiveSabz.png"
-                      class="max-w-[160px]"
+                      class="md:max-w-full max-w-[200px]"
                       alt="سبزیجات"
                     />
                     <span
@@ -1059,7 +1061,7 @@
                   </a>
                 </div>
                 <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
+                  class="swiper-slide min-w-[200px] max-w-[300px] bg-whiteColor rounded-md overflow-hidden space-y-2 p-3"
                 >
                   <a
                     href="#"
@@ -1068,7 +1070,7 @@
                   >
                     <img
                       loading="lazy"
-                      class="max-w-[200px]"
+                      class="w-[200px]"
                       src="assets/images/1-7491-300x300.jpg"
                       alt="عکس"
                     />
@@ -1078,21 +1080,38 @@
                       سبزان سبزی جعفری خشک 100گرمی
                     </p>
                   </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>54,550</span>
-                      <span>تومان</span>
+                  <div class="py-2">
+                    <div class="flex gap-2 justify-between items-start">
+                      <a
+                        href="#"
+                        class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <div class="price">
+                        <div class="text-[12px] flex gap-2">
+                          <del class="text-mdGray">
+                            54,550
+                            <span>تومان</span>
+                          </del>
+                          <span
+                            class="px-2 text-sm text-whiteColor bg-primary rounded-2xl"
+                            >13%</span
+                          >
+                        </div>
+                        <p class="text-end">
+                          <span>54,550</span>
+                          <span>تومان</span>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm text-lowBlue py-3">
+                      (1) عدد در سبد خرید شما
                     </p>
                   </div>
                 </div>
                 <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
+                  class="swiper-slide max-w-[300px] min-w-[200px] bg-whiteColor rounded-md overflow-hidden space-y-2 p-3"
                 >
                   <a
                     href="#"
@@ -1101,7 +1120,7 @@
                   >
                     <img
                       loading="lazy"
-                      class="max-w-[200px]"
+                      class="w-[200px]"
                       src="assets/images/1-7491-300x300.jpg"
                       alt="عکس"
                     />
@@ -1111,21 +1130,38 @@
                       سبزان سبزی جعفری خشک 100گرمی
                     </p>
                   </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>54,550</span>
-                      <span>تومان</span>
+                  <div class="py-2">
+                    <div class="flex gap-2 justify-between items-start">
+                      <a
+                        href="#"
+                        class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <div class="price">
+                        <div class="text-[12px] flex gap-2 invisible">
+                          <del class="text-mdGray">
+                            54,550
+                            <span>تومان</span>
+                          </del>
+                          <span
+                            class="px-2 text-sm text-whiteColor bg-primary rounded-2xl"
+                            >13%</span
+                          >
+                        </div>
+                        <p class="text-end">
+                          <span>54,550</span>
+                          <span>تومان</span>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm text-lowBlue py-3">
+                      (1) عدد در سبد خرید شما
                     </p>
                   </div>
                 </div>
                 <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
+                  class="swiper-slide min-w-[200px] max-w-[300px] bg-whiteColor rounded-md overflow-hidden space-y-2 p-3"
                 >
                   <a
                     href="#"
@@ -1134,7 +1170,7 @@
                   >
                     <img
                       loading="lazy"
-                      class="max-w-[200px]"
+                      class="w-[200px]"
                       src="assets/images/1-7491-300x300.jpg"
                       alt="عکس"
                     />
@@ -1144,21 +1180,38 @@
                       سبزان سبزی جعفری خشک 100گرمی
                     </p>
                   </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>54,550</span>
-                      <span>تومان</span>
+                  <div class="py-2">
+                    <div class="flex gap-2 justify-between items-start">
+                      <a
+                        href="#"
+                        class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <div class="price">
+                        <div class="text-[12px] flex gap-2">
+                          <del class="text-mdGray">
+                            54,550
+                            <span>تومان</span>
+                          </del>
+                          <span
+                            class="px-2 text-sm text-whiteColor bg-primary rounded-2xl"
+                            >13%</span
+                          >
+                        </div>
+                        <p class="text-end">
+                          <span>54,550</span>
+                          <span>تومان</span>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm text-lowBlue py-3">
+                      (1) عدد در سبد خرید شما
                     </p>
                   </div>
                 </div>
                 <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
+                  class="swiper-slide max-w-[300px] min-w-[200px] bg-whiteColor rounded-md overflow-hidden space-y-2 p-3"
                 >
                   <a
                     href="#"
@@ -1167,7 +1220,7 @@
                   >
                     <img
                       loading="lazy"
-                      class="max-w-[200px]"
+                      class="w-[200px]"
                       src="assets/images/1-7491-300x300.jpg"
                       alt="عکس"
                     />
@@ -1177,21 +1230,38 @@
                       سبزان سبزی جعفری خشک 100گرمی
                     </p>
                   </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>54,550</span>
-                      <span>تومان</span>
+                  <div class="py-2">
+                    <div class="flex gap-2 justify-between items-start">
+                      <a
+                        href="#"
+                        class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <div class="price">
+                        <div class="text-[12px] flex gap-2 invisible">
+                          <del class="text-mdGray">
+                            54,550
+                            <span>تومان</span>
+                          </del>
+                          <span
+                            class="px-2 text-sm text-whiteColor bg-primary rounded-2xl"
+                            >13%</span
+                          >
+                        </div>
+                        <p class="text-end">
+                          <span>54,550</span>
+                          <span>تومان</span>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm text-lowBlue py-3">
+                      (1) عدد در سبد خرید شما
                     </p>
                   </div>
                 </div>
                 <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
+                  class="swiper-slide min-w-[200px] max-w-[300px] bg-whiteColor rounded-md overflow-hidden space-y-2 p-3"
                 >
                   <a
                     href="#"
@@ -1200,7 +1270,7 @@
                   >
                     <img
                       loading="lazy"
-                      class="max-w-[200px]"
+                      class="w-[200px]"
                       src="assets/images/1-7491-300x300.jpg"
                       alt="عکس"
                     />
@@ -1210,21 +1280,38 @@
                       سبزان سبزی جعفری خشک 100گرمی
                     </p>
                   </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>54,550</span>
-                      <span>تومان</span>
+                  <div class="py-2">
+                    <div class="flex gap-2 justify-between items-start">
+                      <a
+                        href="#"
+                        class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <div class="price">
+                        <div class="text-[12px] flex gap-2">
+                          <del class="text-mdGray">
+                            54,550
+                            <span>تومان</span>
+                          </del>
+                          <span
+                            class="px-2 text-sm text-whiteColor bg-primary rounded-2xl"
+                            >13%</span
+                          >
+                        </div>
+                        <p class="text-end">
+                          <span>54,550</span>
+                          <span>تومان</span>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm text-lowBlue py-3">
+                      (1) عدد در سبد خرید شما
                     </p>
                   </div>
                 </div>
                 <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
+                  class="swiper-slide max-w-[300px] min-w-[200px] bg-whiteColor rounded-md overflow-hidden space-y-2 p-3"
                 >
                   <a
                     href="#"
@@ -1233,7 +1320,7 @@
                   >
                     <img
                       loading="lazy"
-                      class="max-w-[200px]"
+                      class="w-[200px]"
                       src="assets/images/1-7491-300x300.jpg"
                       alt="عکس"
                     />
@@ -1243,21 +1330,38 @@
                       سبزان سبزی جعفری خشک 100گرمی
                     </p>
                   </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>54,550</span>
-                      <span>تومان</span>
+                  <div class="py-2">
+                    <div class="flex gap-2 justify-between items-start">
+                      <a
+                        href="#"
+                        class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <div class="price">
+                        <div class="text-[12px] flex gap-2 invisible">
+                          <del class="text-mdGray">
+                            54,550
+                            <span>تومان</span>
+                          </del>
+                          <span
+                            class="px-2 text-sm text-whiteColor bg-primary rounded-2xl"
+                            >13%</span
+                          >
+                        </div>
+                        <p class="text-end">
+                          <span>54,550</span>
+                          <span>تومان</span>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm text-lowBlue py-3">
+                      (1) عدد در سبد خرید شما
                     </p>
                   </div>
                 </div>
                 <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
+                  class="swiper-slide min-w-[200px] max-w-[300px] bg-whiteColor rounded-md overflow-hidden space-y-2 p-3"
                 >
                   <a
                     href="#"
@@ -1266,7 +1370,7 @@
                   >
                     <img
                       loading="lazy"
-                      class="max-w-[200px]"
+                      class="w-[200px]"
                       src="assets/images/1-7491-300x300.jpg"
                       alt="عکس"
                     />
@@ -1276,21 +1380,38 @@
                       سبزان سبزی جعفری خشک 100گرمی
                     </p>
                   </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>54,550</span>
-                      <span>تومان</span>
+                  <div class="py-2">
+                    <div class="flex gap-2 justify-between items-start">
+                      <a
+                        href="#"
+                        class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <div class="price">
+                        <div class="text-[12px] flex gap-2">
+                          <del class="text-mdGray">
+                            54,550
+                            <span>تومان</span>
+                          </del>
+                          <span
+                            class="px-2 text-sm text-whiteColor bg-primary rounded-2xl"
+                            >13%</span
+                          >
+                        </div>
+                        <p class="text-end">
+                          <span>54,550</span>
+                          <span>تومان</span>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm text-lowBlue py-3">
+                      (1) عدد در سبد خرید شما
                     </p>
                   </div>
                 </div>
                 <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
+                  class="swiper-slide max-w-[300px] min-w-[200px] bg-whiteColor rounded-md overflow-hidden space-y-2 p-3"
                 >
                   <a
                     href="#"
@@ -1299,7 +1420,7 @@
                   >
                     <img
                       loading="lazy"
-                      class="max-w-[200px]"
+                      class="w-[200px]"
                       src="assets/images/1-7491-300x300.jpg"
                       alt="عکس"
                     />
@@ -1309,16 +1430,233 @@
                       سبزان سبزی جعفری خشک 100گرمی
                     </p>
                   </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                  <div class="py-2">
+                    <div class="flex gap-2 justify-between items-start">
+                      <a
+                        href="#"
+                        class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <div class="price">
+                        <div class="text-[12px] flex gap-2 invisible">
+                          <del class="text-mdGray">
+                            54,550
+                            <span>تومان</span>
+                          </del>
+                          <span
+                            class="px-2 text-sm text-whiteColor bg-primary rounded-2xl"
+                            >13%</span
+                          >
+                        </div>
+                        <p class="text-end">
+                          <span>54,550</span>
+                          <span>تومان</span>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm text-lowBlue py-3">
+                      (1) عدد در سبد خرید شما
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide min-w-[200px] max-w-[300px] bg-whiteColor rounded-md overflow-hidden space-y-2 p-3"
+                >
+                  <a
+                    href="#"
+                    target="_blank"
+                    class="flex gap-2 flex-col justify-center items-center"
+                  >
+                    <img
+                      loading="lazy"
+                      class="w-[200px]"
+                      src="assets/images/1-7491-300x300.jpg"
+                      alt="عکس"
+                    />
+                    <p
+                      class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
                     >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>54,550</span>
-                      <span>تومان</span>
+                      سبزان سبزی جعفری خشک 100گرمی
+                    </p>
+                  </a>
+                  <div class="py-2">
+                    <div class="flex gap-2 justify-between items-start">
+                      <a
+                        href="#"
+                        class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <div class="price">
+                        <div class="text-[12px] flex gap-2">
+                          <del class="text-mdGray">
+                            54,550
+                            <span>تومان</span>
+                          </del>
+                          <span
+                            class="px-2 text-sm text-whiteColor bg-primary rounded-2xl"
+                            >13%</span
+                          >
+                        </div>
+                        <p class="text-end">
+                          <span>54,550</span>
+                          <span>تومان</span>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm text-lowBlue py-3">
+                      (1) عدد در سبد خرید شما
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide max-w-[300px] min-w-[200px] bg-whiteColor rounded-md overflow-hidden space-y-2 p-3"
+                >
+                  <a
+                    href="#"
+                    target="_blank"
+                    class="flex gap-2 flex-col justify-center items-center"
+                  >
+                    <img
+                      loading="lazy"
+                      class="w-[200px]"
+                      src="assets/images/1-7491-300x300.jpg"
+                      alt="عکس"
+                    />
+                    <p
+                      class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
+                    >
+                      سبزان سبزی جعفری خشک 100گرمی
+                    </p>
+                  </a>
+                  <div class="py-2">
+                    <div class="flex gap-2 justify-between items-start">
+                      <a
+                        href="#"
+                        class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <div class="price">
+                        <div class="text-[12px] flex gap-2 invisible">
+                          <del class="text-mdGray">
+                            54,550
+                            <span>تومان</span>
+                          </del>
+                          <span
+                            class="px-2 text-sm text-whiteColor bg-primary rounded-2xl"
+                            >13%</span
+                          >
+                        </div>
+                        <p class="text-end">
+                          <span>54,550</span>
+                          <span>تومان</span>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm text-lowBlue py-3">
+                      (1) عدد در سبد خرید شما
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide min-w-[200px] max-w-[300px] bg-whiteColor rounded-md overflow-hidden space-y-2 p-3"
+                >
+                  <a
+                    href="#"
+                    target="_blank"
+                    class="flex gap-2 flex-col justify-center items-center"
+                  >
+                    <img
+                      loading="lazy"
+                      class="w-[200px]"
+                      src="assets/images/1-7491-300x300.jpg"
+                      alt="عکس"
+                    />
+                    <p
+                      class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
+                    >
+                      سبزان سبزی جعفری خشک 100گرمی
+                    </p>
+                  </a>
+                  <div class="py-2">
+                    <div class="flex gap-2 justify-between items-start">
+                      <a
+                        href="#"
+                        class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <div class="price">
+                        <div class="text-[12px] flex gap-2">
+                          <del class="text-mdGray">
+                            54,550
+                            <span>تومان</span>
+                          </del>
+                          <span
+                            class="px-2 text-sm text-whiteColor bg-primary rounded-2xl"
+                            >13%</span
+                          >
+                        </div>
+                        <p class="text-end">
+                          <span>54,550</span>
+                          <span>تومان</span>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm text-lowBlue py-3">
+                      (1) عدد در سبد خرید شما
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide max-w-[300px] min-w-[200px] bg-whiteColor rounded-md overflow-hidden space-y-2 p-3"
+                >
+                  <a
+                    href="#"
+                    target="_blank"
+                    class="flex gap-2 flex-col justify-center items-center"
+                  >
+                    <img
+                      loading="lazy"
+                      class="w-[200px]"
+                      src="assets/images/1-7491-300x300.jpg"
+                      alt="عکس"
+                    />
+                    <p
+                      class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
+                    >
+                      سبزان سبزی جعفری خشک 100گرمی
+                    </p>
+                  </a>
+                  <div class="py-2">
+                    <div class="flex gap-2 justify-between items-start">
+                      <a
+                        href="#"
+                        class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <div class="price">
+                        <div class="text-[12px] flex gap-2 invisible">
+                          <del class="text-mdGray">
+                            54,550
+                            <span>تومان</span>
+                          </del>
+                          <span
+                            class="px-2 text-sm text-whiteColor bg-primary rounded-2xl"
+                            >13%</span
+                          >
+                        </div>
+                        <p class="text-end">
+                          <span>54,550</span>
+                          <span>تومان</span>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm text-lowBlue py-3">
+                      (1) عدد در سبد خرید شما
                     </p>
                   </div>
                 </div>
@@ -1330,8 +1668,8 @@
           </div>
         </div>
       </section>
-      <section>
-        <div class="container">
+      <section class="py-4">
+        <div class="2xl:container p-4">
           <h1 class="text-center sm:text-2xl text-lg text-lowGray">
             دسته بندی کالاهای هایپر زاگرس
           </h1>
@@ -1504,7 +1842,7 @@
         </div>
       </section>
       <section>
-        <div class="container">
+        <div class="2xl:container p-4">
           <div class="bg-orangeColor rounded-md flex flex-col gap-2 p-5">
             <div>
               <h1>نوشیدنی انرژی زا</h1>
@@ -1521,7 +1859,7 @@
             <div class="swiper miveSabzSlider w-full">
               <div class="swiper-wrapper select-none">
                 <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
+                  class="swiper-slide min-w-[200px] max-w-[300px] bg-whiteColor rounded-md overflow-hidden space-y-2 p-3"
                 >
                   <a
                     href="#"
@@ -1530,31 +1868,48 @@
                   >
                     <img
                       loading="lazy"
-                      class="max-w-[200px]"
+                      class="w-[200px]"
                       src="assets/images/6269198700640.jpg"
                       alt="عکس"
                     />
                     <p
                       class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
                     >
-                      تی ان تی قهوه قوطی 250 میلی
+                      سبزان سبزی جعفری خشک 100گرمی
                     </p>
                   </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>40,000</span>
-                      <span>تومان</span>
+                  <div class="py-2">
+                    <div class="flex gap-2 justify-between items-start">
+                      <a
+                        href="#"
+                        class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <div class="price">
+                        <div class="text-[12px] flex gap-2">
+                          <del class="text-mdGray">
+                            54,550
+                            <span>تومان</span>
+                          </del>
+                          <span
+                            class="px-2 text-sm text-whiteColor bg-primary rounded-2xl"
+                            >13%</span
+                          >
+                        </div>
+                        <p class="text-end">
+                          <span>54,550</span>
+                          <span>تومان</span>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm text-lowBlue py-3">
+                      (1) عدد در سبد خرید شما
                     </p>
                   </div>
                 </div>
                 <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
+                  class="swiper-slide max-w-[300px] min-w-[200px] bg-whiteColor rounded-md overflow-hidden space-y-2 p-3"
                 >
                   <a
                     href="#"
@@ -1563,31 +1918,48 @@
                   >
                     <img
                       loading="lazy"
-                      class="max-w-[200px]"
+                      class="w-[200px]"
                       src="assets/images/6269198700640.jpg"
                       alt="عکس"
                     />
                     <p
                       class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
                     >
-                      تی ان تی قهوه قوطی 250 میلی
+                      سبزان سبزی جعفری خشک 100گرمی
                     </p>
                   </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>40,000</span>
-                      <span>تومان</span>
+                  <div class="py-2">
+                    <div class="flex gap-2 justify-between items-start">
+                      <a
+                        href="#"
+                        class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <div class="price">
+                        <div class="text-[12px] flex gap-2 invisible">
+                          <del class="text-mdGray">
+                            54,550
+                            <span>تومان</span>
+                          </del>
+                          <span
+                            class="px-2 text-sm text-whiteColor bg-primary rounded-2xl"
+                            >13%</span
+                          >
+                        </div>
+                        <p class="text-end">
+                          <span>54,550</span>
+                          <span>تومان</span>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm text-lowBlue py-3">
+                      (1) عدد در سبد خرید شما
                     </p>
                   </div>
                 </div>
                 <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
+                  class="swiper-slide min-w-[200px] max-w-[300px] bg-whiteColor rounded-md overflow-hidden space-y-2 p-3"
                 >
                   <a
                     href="#"
@@ -1596,31 +1968,48 @@
                   >
                     <img
                       loading="lazy"
-                      class="max-w-[200px]"
+                      class="w-[200px]"
                       src="assets/images/6269198700640.jpg"
                       alt="عکس"
                     />
                     <p
                       class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
                     >
-                      تی ان تی قهوه قوطی 250 میلی
+                      سبزان سبزی جعفری خشک 100گرمی
                     </p>
                   </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>40,000</span>
-                      <span>تومان</span>
+                  <div class="py-2">
+                    <div class="flex gap-2 justify-between items-start">
+                      <a
+                        href="#"
+                        class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <div class="price">
+                        <div class="text-[12px] flex gap-2">
+                          <del class="text-mdGray">
+                            54,550
+                            <span>تومان</span>
+                          </del>
+                          <span
+                            class="px-2 text-sm text-whiteColor bg-primary rounded-2xl"
+                            >13%</span
+                          >
+                        </div>
+                        <p class="text-end">
+                          <span>54,550</span>
+                          <span>تومان</span>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm text-lowBlue py-3">
+                      (1) عدد در سبد خرید شما
                     </p>
                   </div>
                 </div>
                 <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
+                  class="swiper-slide max-w-[300px] min-w-[200px] bg-whiteColor rounded-md overflow-hidden space-y-2 p-3"
                 >
                   <a
                     href="#"
@@ -1629,158 +2018,43 @@
                   >
                     <img
                       loading="lazy"
-                      class="max-w-[200px]"
+                      class="w-[200px]"
                       src="assets/images/6269198700640.jpg"
                       alt="عکس"
                     />
                     <p
                       class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
                     >
-                      تی ان تی قهوه قوطی 250 میلی
+                      سبزان سبزی جعفری خشک 100گرمی
                     </p>
                   </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>40,000</span>
-                      <span>تومان</span>
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
-                >
-                  <a
-                    href="#"
-                    target="_blank"
-                    class="flex gap-2 flex-col justify-center items-center"
-                  >
-                    <img
-                      loading="lazy"
-                      class="max-w-[200px]"
-                      src="assets/images/6269198700640.jpg"
-                      alt="عکس"
-                    />
-                    <p
-                      class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
-                    >
-                      تی ان تی قهوه قوطی 250 میلی
-                    </p>
-                  </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>40,000</span>
-                      <span>تومان</span>
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
-                >
-                  <a
-                    href="#"
-                    target="_blank"
-                    class="flex gap-2 flex-col justify-center items-center"
-                  >
-                    <img
-                      loading="lazy"
-                      class="max-w-[200px]"
-                      src="assets/images/6269198700640.jpg"
-                      alt="عکس"
-                    />
-                    <p
-                      class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
-                    >
-                      تی ان تی قهوه قوطی 250 میلی
-                    </p>
-                  </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>40,000</span>
-                      <span>تومان</span>
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
-                >
-                  <a
-                    href="#"
-                    target="_blank"
-                    class="flex gap-2 flex-col justify-center items-center"
-                  >
-                    <img
-                      loading="lazy"
-                      class="max-w-[200px]"
-                      src="assets/images/6269198700640.jpg"
-                      alt="عکس"
-                    />
-                    <p
-                      class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
-                    >
-                      تی ان تی قهوه قوطی 250 میلی
-                    </p>
-                  </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>40,000</span>
-                      <span>تومان</span>
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
-                >
-                  <a
-                    href="#"
-                    target="_blank"
-                    class="flex gap-2 flex-col justify-center items-center"
-                  >
-                    <img
-                      loading="lazy"
-                      class="max-w-[200px]"
-                      src="assets/images/6269198700640.jpg"
-                      alt="عکس"
-                    />
-                    <p
-                      class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
-                    >
-                      تی ان تی قهوه قوطی 250 میلی
-                    </p>
-                  </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>40,000</span>
-                      <span>تومان</span>
+                  <div class="py-2">
+                    <div class="flex gap-2 justify-between items-start">
+                      <a
+                        href="#"
+                        class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <div class="price">
+                        <div class="text-[12px] flex gap-2 invisible">
+                          <del class="text-mdGray">
+                            54,550
+                            <span>تومان</span>
+                          </del>
+                          <span
+                            class="px-2 text-sm text-whiteColor bg-primary rounded-2xl"
+                            >13%</span
+                          >
+                        </div>
+                        <p class="text-end">
+                          <span>54,550</span>
+                          <span>تومان</span>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm text-lowBlue py-3">
+                      (1) عدد در سبد خرید شما
                     </p>
                   </div>
                 </div>
@@ -1792,7 +2066,7 @@
         </div>
       </section>
       <section>
-        <div class="container grid md:grid-cols-2 grid-cols-1 gap-5">
+        <div class="2xl:container p-4 grid md:grid-cols-2 grid-cols-1 gap-5">
           <a href="#" target="_blank" class="rounded-md overflow-hidden">
             <img
               loading="lazy"
@@ -1828,7 +2102,7 @@
         </div>
       </section>
       <section>
-        <div class="container">
+        <div class="2xl:container p-4">
           <div
             class="bg-lowerGray boxBorder rounded-md flex flex-col gap-2 p-5"
           >
@@ -1843,7 +2117,7 @@
             <div class="swiper miveSabzSlider w-full">
               <div class="swiper-wrapper select-none">
                 <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
+                  class="swiper-slide min-w-[200px] max-w-[300px] bg-whiteColor rounded-md overflow-hidden space-y-2 p-3"
                 >
                   <a
                     href="#"
@@ -1852,31 +2126,48 @@
                   >
                     <img
                       loading="lazy"
-                      class="max-w-[200px]"
+                      class="w-[200px]"
                       src="assets/images/6260108399909-300x300.jpg"
                       alt="عکس"
                     />
                     <p
                       class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
                     >
-                      بهار روغن سرخ کردنی کم جذب 1620 گرم
+                      سبزان سبزی جعفری خشک 100گرمی
                     </p>
                   </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>90,200</span>
-                      <span>تومان</span>
+                  <div class="py-2">
+                    <div class="flex gap-2 justify-between items-start">
+                      <a
+                        href="#"
+                        class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <div class="price">
+                        <div class="text-[12px] flex gap-2">
+                          <del class="text-mdGray">
+                            54,550
+                            <span>تومان</span>
+                          </del>
+                          <span
+                            class="px-2 text-sm text-whiteColor bg-primary rounded-2xl"
+                            >13%</span
+                          >
+                        </div>
+                        <p class="text-end">
+                          <span>54,550</span>
+                          <span>تومان</span>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm text-lowBlue py-3">
+                      (1) عدد در سبد خرید شما
                     </p>
                   </div>
                 </div>
                 <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
+                  class="swiper-slide min-w-[200px] max-w-[300px] bg-whiteColor rounded-md overflow-hidden space-y-2 p-3"
                 >
                   <a
                     href="#"
@@ -1885,31 +2176,48 @@
                   >
                     <img
                       loading="lazy"
-                      class="max-w-[200px]"
+                      class="w-[200px]"
                       src="assets/images/6260108399909-300x300.jpg"
                       alt="عکس"
                     />
                     <p
                       class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
                     >
-                      بهار روغن سرخ کردنی کم جذب 1620 گرم
+                      سبزان سبزی جعفری خشک 100گرمی
                     </p>
                   </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>90,200</span>
-                      <span>تومان</span>
+                  <div class="py-2">
+                    <div class="flex gap-2 justify-between items-start">
+                      <a
+                        href="#"
+                        class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <div class="price">
+                        <div class="text-[12px] flex gap-2">
+                          <del class="text-mdGray">
+                            54,550
+                            <span>تومان</span>
+                          </del>
+                          <span
+                            class="px-2 text-sm text-whiteColor bg-primary rounded-2xl"
+                            >13%</span
+                          >
+                        </div>
+                        <p class="text-end">
+                          <span>54,550</span>
+                          <span>تومان</span>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm text-lowBlue py-3">
+                      (1) عدد در سبد خرید شما
                     </p>
                   </div>
                 </div>
                 <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
+                  class="swiper-slide min-w-[200px] max-w-[300px] bg-whiteColor rounded-md overflow-hidden space-y-2 p-3"
                 >
                   <a
                     href="#"
@@ -1918,31 +2226,48 @@
                   >
                     <img
                       loading="lazy"
-                      class="max-w-[200px]"
+                      class="w-[200px]"
                       src="assets/images/6260108399909-300x300.jpg"
                       alt="عکس"
                     />
                     <p
                       class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
                     >
-                      بهار روغن سرخ کردنی کم جذب 1620 گرم
+                      سبزان سبزی جعفری خشک 100گرمی
                     </p>
                   </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>90,200</span>
-                      <span>تومان</span>
+                  <div class="py-2">
+                    <div class="flex gap-2 justify-between items-start">
+                      <a
+                        href="#"
+                        class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <div class="price">
+                        <div class="text-[12px] flex gap-2">
+                          <del class="text-mdGray">
+                            54,550
+                            <span>تومان</span>
+                          </del>
+                          <span
+                            class="px-2 text-sm text-whiteColor bg-primary rounded-2xl"
+                            >13%</span
+                          >
+                        </div>
+                        <p class="text-end">
+                          <span>54,550</span>
+                          <span>تومان</span>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm text-lowBlue py-3">
+                      (1) عدد در سبد خرید شما
                     </p>
                   </div>
                 </div>
                 <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
+                  class="swiper-slide min-w-[200px] max-w-[300px] bg-whiteColor rounded-md overflow-hidden space-y-2 p-3"
                 >
                   <a
                     href="#"
@@ -1951,31 +2276,48 @@
                   >
                     <img
                       loading="lazy"
-                      class="max-w-[200px]"
+                      class="w-[200px]"
                       src="assets/images/6260108399909-300x300.jpg"
                       alt="عکس"
                     />
                     <p
                       class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
                     >
-                      بهار روغن سرخ کردنی کم جذب 1620 گرم
+                      سبزان سبزی جعفری خشک 100گرمی
                     </p>
                   </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>90,200</span>
-                      <span>تومان</span>
+                  <div class="py-2">
+                    <div class="flex gap-2 justify-between items-start">
+                      <a
+                        href="#"
+                        class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <div class="price">
+                        <div class="text-[12px] flex gap-2">
+                          <del class="text-mdGray">
+                            54,550
+                            <span>تومان</span>
+                          </del>
+                          <span
+                            class="px-2 text-sm text-whiteColor bg-primary rounded-2xl"
+                            >13%</span
+                          >
+                        </div>
+                        <p class="text-end">
+                          <span>54,550</span>
+                          <span>تومان</span>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm text-lowBlue py-3">
+                      (1) عدد در سبد خرید شما
                     </p>
                   </div>
                 </div>
                 <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
+                  class="swiper-slide min-w-[200px] max-w-[300px] bg-whiteColor rounded-md overflow-hidden space-y-2 p-3"
                 >
                   <a
                     href="#"
@@ -1984,31 +2326,48 @@
                   >
                     <img
                       loading="lazy"
-                      class="max-w-[200px]"
+                      class="w-[200px]"
                       src="assets/images/6260108399909-300x300.jpg"
                       alt="عکس"
                     />
                     <p
                       class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
                     >
-                      بهار روغن سرخ کردنی کم جذب 1620 گرم
+                      سبزان سبزی جعفری خشک 100گرمی
                     </p>
                   </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>90,200</span>
-                      <span>تومان</span>
+                  <div class="py-2">
+                    <div class="flex gap-2 justify-between items-start">
+                      <a
+                        href="#"
+                        class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <div class="price">
+                        <div class="text-[12px] flex gap-2">
+                          <del class="text-mdGray">
+                            54,550
+                            <span>تومان</span>
+                          </del>
+                          <span
+                            class="px-2 text-sm text-whiteColor bg-primary rounded-2xl"
+                            >13%</span
+                          >
+                        </div>
+                        <p class="text-end">
+                          <span>54,550</span>
+                          <span>تومان</span>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm text-lowBlue py-3">
+                      (1) عدد در سبد خرید شما
                     </p>
                   </div>
                 </div>
                 <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
+                  class="swiper-slide min-w-[200px] max-w-[300px] bg-whiteColor rounded-md overflow-hidden space-y-2 p-3"
                 >
                   <a
                     href="#"
@@ -2017,31 +2376,48 @@
                   >
                     <img
                       loading="lazy"
-                      class="max-w-[200px]"
+                      class="w-[200px]"
                       src="assets/images/6260108399909-300x300.jpg"
                       alt="عکس"
                     />
                     <p
                       class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
                     >
-                      بهار روغن سرخ کردنی کم جذب 1620 گرم
+                      سبزان سبزی جعفری خشک 100گرمی
                     </p>
                   </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>90,200</span>
-                      <span>تومان</span>
+                  <div class="py-2">
+                    <div class="flex gap-2 justify-between items-start">
+                      <a
+                        href="#"
+                        class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <div class="price">
+                        <div class="text-[12px] flex gap-2">
+                          <del class="text-mdGray">
+                            54,550
+                            <span>تومان</span>
+                          </del>
+                          <span
+                            class="px-2 text-sm text-whiteColor bg-primary rounded-2xl"
+                            >13%</span
+                          >
+                        </div>
+                        <p class="text-end">
+                          <span>54,550</span>
+                          <span>تومان</span>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm text-lowBlue py-3">
+                      (1) عدد در سبد خرید شما
                     </p>
                   </div>
                 </div>
                 <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
+                  class="swiper-slide min-w-[200px] max-w-[300px] bg-whiteColor rounded-md overflow-hidden space-y-2 p-3"
                 >
                   <a
                     href="#"
@@ -2050,31 +2426,48 @@
                   >
                     <img
                       loading="lazy"
-                      class="max-w-[200px]"
+                      class="w-[200px]"
                       src="assets/images/6260108399909-300x300.jpg"
                       alt="عکس"
                     />
                     <p
                       class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
                     >
-                      بهار روغن سرخ کردنی کم جذب 1620 گرم
+                      سبزان سبزی جعفری خشک 100گرمی
                     </p>
                   </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>90,200</span>
-                      <span>تومان</span>
+                  <div class="py-2">
+                    <div class="flex gap-2 justify-between items-start">
+                      <a
+                        href="#"
+                        class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <div class="price">
+                        <div class="text-[12px] flex gap-2">
+                          <del class="text-mdGray">
+                            54,550
+                            <span>تومان</span>
+                          </del>
+                          <span
+                            class="px-2 text-sm text-whiteColor bg-primary rounded-2xl"
+                            >13%</span
+                          >
+                        </div>
+                        <p class="text-end">
+                          <span>54,550</span>
+                          <span>تومان</span>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm text-lowBlue py-3">
+                      (1) عدد در سبد خرید شما
                     </p>
                   </div>
                 </div>
                 <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
+                  class="swiper-slide min-w-[200px] max-w-[300px] bg-whiteColor rounded-md overflow-hidden space-y-2 p-3"
                 >
                   <a
                     href="#"
@@ -2083,26 +2476,43 @@
                   >
                     <img
                       loading="lazy"
-                      class="max-w-[200px]"
+                      class="w-[200px]"
                       src="assets/images/6260108399909-300x300.jpg"
                       alt="عکس"
                     />
                     <p
                       class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
                     >
-                      بهار روغن سرخ کردنی کم جذب 1620 گرم
+                      سبزان سبزی جعفری خشک 100گرمی
                     </p>
                   </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>90,200</span>
-                      <span>تومان</span>
+                  <div class="py-2">
+                    <div class="flex gap-2 justify-between items-start">
+                      <a
+                        href="#"
+                        class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <div class="price">
+                        <div class="text-[12px] flex gap-2">
+                          <del class="text-mdGray">
+                            54,550
+                            <span>تومان</span>
+                          </del>
+                          <span
+                            class="px-2 text-sm text-whiteColor bg-primary rounded-2xl"
+                            >13%</span
+                          >
+                        </div>
+                        <p class="text-end">
+                          <span>54,550</span>
+                          <span>تومان</span>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm text-lowBlue py-3">
+                      (1) عدد در سبد خرید شما
                     </p>
                   </div>
                 </div>
@@ -2114,7 +2524,7 @@
         </div>
       </section>
       <section>
-        <div class="container">
+        <div class="2xl:container p-4">
           <img
             loading="lazy"
             src="assets/images/خشکبار.jpg"
@@ -2124,7 +2534,7 @@
         </div>
       </section>
       <section>
-        <div class="container">
+        <div class="2xl:container p-4">
           <div
             class="bg-lowerGray boxBorder rounded-md flex flex-col gap-2 p-5"
           >
@@ -2142,7 +2552,7 @@
             <div class="swiper miveSabzSlider w-full">
               <div class="swiper-wrapper select-none">
                 <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
+                  class="swiper-slide min-w-[200px] max-w-[300px] bg-whiteColor rounded-md overflow-hidden space-y-2 p-3"
                 >
                   <a
                     href="#"
@@ -2151,269 +2561,53 @@
                   >
                     <img
                       loading="lazy"
-                      class="max-w-[200px]"
+                      class="w-[200px]"
                       src="assets/images/6260108399909-300x300.jpg"
                       alt="عکس"
                     />
                     <p
                       class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
                     >
-                      بهار روغن سرخ کردنی کم جذب 1620 گرم
+                      سبزان سبزی جعفری خشک 100گرمی
                     </p>
                   </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>90,200</span>
-                      <span>تومان</span>
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
-                >
-                  <a
-                    href="#"
-                    target="_blank"
-                    class="flex gap-2 flex-col justify-center items-center"
-                  >
-                    <img
-                      loading="lazy"
-                      class="max-w-[200px]"
-                      src="assets/images/6260108399909-300x300.jpg"
-                      alt="عکس"
-                    />
-                    <p
-                      class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
-                    >
-                      بهار روغن سرخ کردنی کم جذب 1620 گرم
-                    </p>
-                  </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>90,200</span>
-                      <span>تومان</span>
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
-                >
-                  <a
-                    href="#"
-                    target="_blank"
-                    class="flex gap-2 flex-col justify-center items-center"
-                  >
-                    <img
-                      loading="lazy"
-                      class="max-w-[200px]"
-                      src="assets/images/6260108399909-300x300.jpg"
-                      alt="عکس"
-                    />
-                    <p
-                      class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
-                    >
-                      بهار روغن سرخ کردنی کم جذب 1620 گرم
-                    </p>
-                  </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>90,200</span>
-                      <span>تومان</span>
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
-                >
-                  <a
-                    href="#"
-                    target="_blank"
-                    class="flex gap-2 flex-col justify-center items-center"
-                  >
-                    <img
-                      loading="lazy"
-                      class="max-w-[200px]"
-                      src="assets/images/6260108399909-300x300.jpg"
-                      alt="عکس"
-                    />
-                    <p
-                      class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
-                    >
-                      بهار روغن سرخ کردنی کم جذب 1620 گرم
-                    </p>
-                  </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>90,200</span>
-                      <span>تومان</span>
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
-                >
-                  <a
-                    href="#"
-                    target="_blank"
-                    class="flex gap-2 flex-col justify-center items-center"
-                  >
-                    <img
-                      loading="lazy"
-                      class="max-w-[200px]"
-                      src="assets/images/6260108399909-300x300.jpg"
-                      alt="عکس"
-                    />
-                    <p
-                      class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
-                    >
-                      بهار روغن سرخ کردنی کم جذب 1620 گرم
-                    </p>
-                  </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>90,200</span>
-                      <span>تومان</span>
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
-                >
-                  <a
-                    href="#"
-                    target="_blank"
-                    class="flex gap-2 flex-col justify-center items-center"
-                  >
-                    <img
-                      loading="lazy"
-                      class="max-w-[200px]"
-                      src="assets/images/6260108399909-300x300.jpg"
-                      alt="عکس"
-                    />
-                    <p
-                      class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
-                    >
-                      بهار روغن سرخ کردنی کم جذب 1620 گرم
-                    </p>
-                  </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>90,200</span>
-                      <span>تومان</span>
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
-                >
-                  <a
-                    href="#"
-                    target="_blank"
-                    class="flex gap-2 flex-col justify-center items-center"
-                  >
-                    <img
-                      loading="lazy"
-                      class="max-w-[200px]"
-                      src="assets/images/6260108399909-300x300.jpg"
-                      alt="عکس"
-                    />
-                    <p
-                      class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
-                    >
-                      بهار روغن سرخ کردنی کم جذب 1620 گرم
-                    </p>
-                  </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>90,200</span>
-                      <span>تومان</span>
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide bg-whiteColor rounded-md overflow-hidden space-y-2 p-3 sm:max-h-[320px] sm:h-[320px] sm:grid grid-rows[75% 25%]"
-                >
-                  <a
-                    href="#"
-                    target="_blank"
-                    class="flex gap-2 flex-col justify-center items-center"
-                  >
-                    <img
-                      loading="lazy"
-                      class="max-w-[200px]"
-                      src="assets/images/6260108399909-300x300.jpg"
-                      alt="عکس"
-                    />
-                    <p
-                      class="text-sm text-lowGray max-h-[45px] overflow-hidden text-ellipsis"
-                    >
-                      بهار روغن سرخ کردنی کم جذب 1620 گرم
-                    </p>
-                  </a>
-                  <div class="flex gap-2 justify-between items-start py-2">
-                    <a
-                      href="#"
-                      class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                    <p class="price">
-                      <span>90,200</span>
-                      <span>تومان</span>
+                  <div class="py-2">
+                    <div class="flex gap-2 justify-between items-start">
+                      <a
+                        href="#"
+                        class="p-3 flex justify-center items-center bg-primary text-whiteColor rounded-md"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <div class="price">
+                        <div class="text-[12px] flex gap-2">
+                          <del class="text-mdGray">
+                            54,550
+                            <span>تومان</span>
+                          </del>
+                          <span
+                            class="px-2 text-sm text-whiteColor bg-primary rounded-2xl"
+                            >13%</span
+                          >
+                        </div>
+                        <p class="text-end">
+                          <span>54,550</span>
+                          <span>تومان</span>
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm text-lowBlue py-3">
+                      (1) عدد در سبد خرید شما
                     </p>
                   </div>
                 </div>
               </div>
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
             </div>
           </div>
         </div>
       </section>
       <section>
-        <div class="container">
+        <div class="2xl:container p-4">
           <div class="flex flex-col gap-2 p-5">
             <div>
               <div class="flex justify-between">
@@ -2426,7 +2620,7 @@
             <div class="swiper miveSabzSlider w-full">
               <div class="swiper-wrapper select-none">
                 <div
-                  class="swiper-slide rounded-md overflow-hidden space-y-2 p-3 boxBorder"
+                  class="swiper-slide min-w-[200px] max-w-[300px] rounded-md overflow-hidden space-y-2 p-3 boxBorder"
                 >
                   <div class="flex justify-center items-center">
                     <img
@@ -2438,7 +2632,7 @@
                   </div>
                 </div>
                 <div
-                  class="swiper-slide rounded-md overflow-hidden space-y-2 p-3 boxBorder"
+                  class="swiper-slide min-w-[200px] max-w-[300px] rounded-md overflow-hidden space-y-2 p-3 boxBorder"
                 >
                   <div class="flex justify-center items-center">
                     <img
@@ -2450,7 +2644,7 @@
                   </div>
                 </div>
                 <div
-                  class="swiper-slide rounded-md overflow-hidden space-y-2 p-3 boxBorder"
+                  class="swiper-slide min-w-[200px] max-w-[300px] rounded-md overflow-hidden space-y-2 p-3 boxBorder"
                 >
                   <div class="flex justify-center items-center">
                     <img
@@ -2462,7 +2656,7 @@
                   </div>
                 </div>
                 <div
-                  class="swiper-slide rounded-md overflow-hidden space-y-2 p-3 boxBorder"
+                  class="swiper-slide min-w-[200px] max-w-[300px] rounded-md overflow-hidden space-y-2 p-3 boxBorder"
                 >
                   <div class="flex justify-center items-center">
                     <img
@@ -2474,7 +2668,7 @@
                   </div>
                 </div>
                 <div
-                  class="swiper-slide rounded-md overflow-hidden space-y-2 p-3 boxBorder"
+                  class="swiper-slide min-w-[200px] max-w-[300px] rounded-md overflow-hidden space-y-2 p-3 boxBorder"
                 >
                   <div class="flex justify-center items-center">
                     <img
@@ -2486,7 +2680,7 @@
                   </div>
                 </div>
                 <div
-                  class="swiper-slide rounded-md overflow-hidden space-y-2 p-3 boxBorder"
+                  class="swiper-slide min-w-[200px] max-w-[300px] rounded-md overflow-hidden space-y-2 p-3 boxBorder"
                 >
                   <div class="flex justify-center items-center">
                     <img
@@ -2498,7 +2692,7 @@
                   </div>
                 </div>
                 <div
-                  class="swiper-slide rounded-md overflow-hidden space-y-2 p-3 boxBorder"
+                  class="swiper-slide min-w-[200px] max-w-[300px] rounded-md overflow-hidden space-y-2 p-3 boxBorder"
                 >
                   <div class="flex justify-center items-center">
                     <img
@@ -2510,7 +2704,7 @@
                   </div>
                 </div>
                 <div
-                  class="swiper-slide rounded-md overflow-hidden space-y-2 p-3 boxBorder"
+                  class="swiper-slide min-w-[200px] max-w-[300px] rounded-md overflow-hidden space-y-2 p-3 boxBorder"
                 >
                   <div class="flex justify-center items-center">
                     <img
@@ -2529,7 +2723,7 @@
     </main>
     <footer class="divide-y-2 divide-submitPageColorBorderLowBlack">
       <section class="border-t border-submitPageColorBorderLowBlack">
-        <div class="container">
+        <div class="2xl:container p-4">
           <p class="text-lowGray py-4">آدرس: | تلفن: ‎ | پست الکترونیک:</p>
           <div
             class="grid lg:grid-cols-[repeat(auto-fit,minmax(100px,150px))] grid-cols-2 grid-rows-[100px] justify-around items-center gap-6"
@@ -2574,7 +2768,7 @@
         </div>
       </section>
       <section>
-        <div class="container">
+        <div class="2xl:container p-4">
           <div
             class="sm:flex grid grid-cols-2 gap-10 px-2 justify-around scale-90"
           >
@@ -2657,7 +2851,9 @@
       </section>
 
       <section>
-        <div class="container flex sm:flex-row flex-col justify-between gap-2">
+        <div
+          class="2xl:container p-4 flex sm:flex-row flex-col justify-between gap-2"
+        >
           <div class="basis-[60%]">
             <p>زاگرس مارکت</p>
             <p class="text-lowGray text-sm">
@@ -2696,7 +2892,7 @@
       </section>
       <section>
         <div
-          class="container flex gap-2 justify-center text-[12px] text-lowGray"
+          class="2xl:container p-4 py-2 flex gap-2 justify-center text-[12px] text-lowGray"
         >
           <p>
             © تمامی حقوق این سایت متعلق به زاگرس مارکت می باشد. | طراحی و کد
@@ -2708,7 +2904,9 @@
         </div>
       </section>
       <section>
-        <div class="container flex flex-col gap-4 items-center justify-center">
+        <div
+          class="2xl:container p-4 flex flex-col gap-4 items-center justify-center"
+        >
           <a
             class="flex flex-col gap-4 items-center justify-center"
             href="http://patterndp.ir"
@@ -2716,12 +2914,20 @@
           >
             <img
               src="assets/images/logo-pattern.png"
-              class="sm:max-w-[400px]"
+              class="max-w-[150px]"
               alt="گروه پترن"
             />
-            <span>گروه پَتِرن</span>
+            <span class="text-lowGray text-sm">گروه پَتِرن</span>
           </a>
         </div>
+      </section>
+      <section>
+        <button
+          id="scrollTop"
+          class="w-[30px] h-[30px] bg-redColor opacity-80 text-whiteColor p-5 rounded z-[9] hover:opacity-100 flex justify-center items-center fixed bottom-[30px] left-[20px]"
+        >
+          <i class="fa fa-arrow-up"></i>
+        </button>
       </section>
     </footer>
     <script src="scripts/main.js"></script>
@@ -2729,36 +2935,54 @@
       const swiper = new Swiper(".miveSabzSlider", {
         direction: "horizontal",
         rtl: true,
-        slidesPerView: 2,
-        centeredSlides: false,
         loop: false,
-
         breakpoints: {
-          1200: {
+          1400: {
             slidesPerView: 6,
             spaceBetween: 10,
+            width: null,
+          },
+          1200: {
+            slidesPerView: 5,
+            spaceBetween: 10,
+            width: null,
           },
           1024: {
             slidesPerView: 4,
             spaceBetween: 10,
+            width: null,
           },
           768: {
             slidesPerView: 3,
             spaceBetween: 10,
-          },
-          350: {
-            slidesPerView: 2,
-            spaceBetween: 5,
+            width: null,
           },
           0: {
-            slidesPerView: 1,
+            slidesPerView: "auto",
             spaceBetween: 5,
+            width: 200,
           },
+        },
+        freeMode: {
+          enabled: true,
+          sticky: true,
         },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
+      });
+      swiper.forEach((obj) => {
+        if (obj.length === 0) {
+          $(".swiper-button-next").remove();
+          $(".swiper-button-prev").remove();
+        } else if (obj.activeIndex === 0) {
+          $(".swiper-button-next").hide();
+          $(".swiper-button-prev").show();
+        } else if (obj.activeIndex === obj.length - 1) {
+          $(".swiper-button-next").show();
+          $(".swiper-button-prev").hide();
+        }
       });
     </script>
   </body>
