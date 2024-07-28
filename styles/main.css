@@ -1963,6 +1963,17 @@ body {
   visibility: hidden;
 }
 
+#scrollTop {
+  display: none;
+}
+
+#scrollTop.active {
+  display: flex;
+  opacity: 1;
+  transition: all 0.3s;
+  animation: opacityShow .3s linear;
+}
+
 @media screen and (width<500) {
   .swiper-button-prev,
         .swiper-button-next {

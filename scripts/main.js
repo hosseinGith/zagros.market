@@ -112,3 +112,7 @@ mainMenuNavBarsec.onanimationend = () => {
 
 closeMainMenuNavBar.addEventListener("click", () => mainMenuNavBarsec.click());
 scrollTop.addEventListener("click", () => scrollTo(0, 0));
+window.addEventListener("scroll", () => {
+  if (scrollY > 100) scrollTop.classList.add("active");
+  else scrollTop.classList.remove("active");
+});
