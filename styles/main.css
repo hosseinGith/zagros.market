@@ -892,8 +892,16 @@ video {
   min-width: 300px;
 }
 
+.min-w-\[30px\] {
+  min-width: 30px;
+}
+
 .min-w-\[338px\] {
   min-width: 338px;
+}
+
+.min-w-\[40px\] {
+  min-width: 40px;
 }
 
 .max-w-\[114px\] {
@@ -1893,6 +1901,19 @@ body {
 
 .filterContWithAnimate.hideFilterSec>div {
   transform: translateY(100%);
+}
+
+.paginationLiActive a {
+  color: #fff;
+  background: #ef4056;
+}
+
+.dotesPagination a:hover {
+  background-color: #fff;
+}
+
+.paginationLiActive a:hover {
+  background: #ef4056;
 }
 
 @keyframes opacityShow {

@@ -337,6 +337,18 @@
         transform: translateY(100%);
     }
 
+    .paginationLiActive a {
+        color: #fff;
+        background: #ef4056;
+    }
+
+    .dotesPagination a:hover {
+        background-color: #fff;
+    }
+
+    .paginationLiActive a:hover {
+        background: #ef4056;
+    }
 
     @keyframes opacityShow {
         0% {
