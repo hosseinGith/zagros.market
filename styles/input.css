@@ -23,9 +23,12 @@
             url('../assets/fonts/IRANSANS\ EDITORTEAM.TTF') format('truetype'),
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+
     body {
         font-family: iranYekan, vazir, iransans;
-        scroll-behavior: smooth;
     }
 
     .container:not(.disableP) {

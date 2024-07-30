@@ -1031,7 +1031,7 @@
               <img
                 src="../../assets/images/6262092001912-300x300.jpg"
                 alt="xxx"
-                class="w-full max-w-[600px]"
+                class="w-full object-contain max-h-[700px] h-[95%]"
               />
               <button
                 class="absolute sm:bg-[transparent] bg-lowOpacityColorBg text-whiteColor left-[20px] text-2xl top-[10px] px-2 py-1 bg-red"
@@ -1306,7 +1306,7 @@
       $("#imagesShowCont").on("click", () => {
         $("#imagesShow").toggleClass("showImagesShow");
       });
-      $("#imagesShow button").on("click", () => {
+      $("#imagesShow ").on("click", () => {
         $("#imagesShow").removeClass("showImagesShow");
       });
 

@@ -840,6 +840,10 @@ video {
   height: 60px;
 }
 
+.h-\[95\%\] {
+  height: 95%;
+}
+
 .h-auto {
   height: auto;
 }
@@ -862,6 +866,10 @@ video {
 
 .max-h-\[50px\] {
   max-height: 50px;
+}
+
+.max-h-\[700px\] {
+  max-height: 700px;
 }
 
 .max-h-fit {
@@ -980,10 +988,6 @@ video {
 
 .max-w-\[300px\] {
   max-width: 300px;
-}
-
-.max-w-\[600px\] {
-  max-width: 600px;
 }
 
 .max-w-full {
@@ -1715,9 +1719,12 @@ video {
             url('../assets/fonts/IRANSANS\ EDITORTEAM.TTF') format('truetype'),
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: iranYekan, vazir, iransans;
-  scroll-behavior: smooth;
 }
 
 .\!container:not(.disableP) {
