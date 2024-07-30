@@ -11,6 +11,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="../../styles/jalalidatepicker.min.css" />
+    <link href="../../styles/nouislider.css" rel="stylesheet" />
+    <script src="../../scripts/nouislider.js"></script>
     <title>محصولات</title>
   </head>
   <body>
@@ -999,104 +1002,371 @@
       ></section>
       <section>
         <div
-          class="container flex gap-2 text-lowGray text-[12px] text-nowrap overflow-auto"
+          class="container flex gap-2 text-lowGray text-[12px] text-[12px] text-nowrap overflow-auto"
         >
           <a href="#">صفحه اصلی</a>
-          <span class="cursor-default select-none">/</span>
-          <a href="#">خواربار</a>
-          <span class="cursor-default select-none">/</span>
-          <a href="#">نان و غلات</a>
-          <span class="cursor-default select-none">/</span>
-          <a href="#">غلات</a>
-          <span class="cursor-default select-none">/</span>
-          <a href="#">جو</a>
-          <span class="cursor-default select-none">/</span>
-          <p>هاتی کارا جو دو سر پرک 500گرمی</p>
+          <span>/</span>
+          <p>خواربار</p>
         </div>
       </section>
       <section>
-        <div class="container flex lg:flex-row flex-col">
-          <div class="lg:basis-[25%] w-full relative">
-            <img
-              class="w-full"
-              src="../../assets/images/6262092001912-300x300.jpg"
-              alt="xxx"
-            />
-            <button
-              id="imagesShowCont"
-              class="p-2 absolute text-lowGray text-xl top-0 lg:right-0 max-w-max left-4"
-            >
-              <i class="fa fa-search"></i>
-            </button>
-            <div
-              id="imagesShow"
-              class="sm:bg-lowOpacityColorBg hidden py-2 backdrop-filter-[blur(50px)] transition-all bg-blackColor fixed top-0 left-0 w-full h-full items-center justify-center z-10"
-            >
-              <img
-                src="../../assets/images/6262092001912-300x300.jpg"
-                alt="xxx"
-                class="w-full object-contain max-h-[700px] h-[95%]"
-              />
-              <button
-                class="absolute sm:bg-[transparent] bg-lowOpacityColorBg text-whiteColor left-[20px] text-2xl top-[10px] px-2 py-1 bg-red"
-              >
-                <i class="fa fa-remove"></i>
-              </button>
-            </div>
-          </div>
-          <div class="lg:basis-[75%] w-full">
-            <h1 class="py-2 border-b border-submitPageColorBorderLowBlack">
-              هاتی کارا جو دو سر پرک 500گرمی
-            </h1>
-            <div class="space-y-2 text-sm py-4">
-              <div class="flex gap-4">
-                <p>
-                  <i class="fa fa-barcode"></i> کد محصول: <span>101893</span>
-                </p>
-                <p>
-                  <i class="far fa-folder-open"></i> دسته بندی:
-                  <a href="#" class="text-lowGray hover:text-blackColor">جو</a>
-                </p>
-              </div>
-              <p class="priceProduct text-lg">
-                129,900
-                <span>تومان</span>
-              </p>
-              <form class="flex gap-2 flex-wrap">
-                <div
-                  id="pcsProduct"
-                  class="flex justify-between p-2 max-w-[200px] w-full rounded-lg gap-2 boxBorder"
-                >
-                  <button type="button">
-                    <i class="text-lg fa fa-plus"></i>
-                  </button>
-                  <input
-                    type="text"
-                    class="bg-[transparent] text-center w-full outline-none"
-                    name="asd"
-                    value="0"
-                  />
-                  <button type="button">
-                    <i class="text-lg fa fa-minus"></i>
-                  </button>
+        <div class="container text-lowGray px-4 boxBorder rounded-lg mb-5">
+          <div class="boxBorder rounded-lg">
+            <table class="lg:table hidden w-full">
+              <thead>
+                <tr>
+                  <th class="text-start px-4 py-4">#</th>
+                  <th class="text-start px-4 py-4">
+                    <img
+                      src="../../assets/images/imageicon.png"
+                      class="max-w-[40px]"
+                      alt="xxx"
+                    />
+                  </th>
+                  <th class="text-start px-4 py-4">نام محصول</th>
+                  <th class="text-start px-4 py-4">تعداد</th>
+                  <th class="text-start px-4 py-4">قیمت</th>
+                  <th class="text-start px-4 py-4">جمع</th>
+                  <th class="text-start px-4 py-4"></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd:bg-lowerGray">
+                  <td class="text-sm px-4">1</td>
+                  <td class="text-sm px-4">
+                    <img
+                      src="../../assets/images/IMG-0066-500x500.jpg"
+                      alt="xxx"
+                      class="max-w-[80px] max-y-[100px] aspect-[16/9] object-contain"
+                    />
+                  </td>
+                  <td class="text-sm px-4">چی توز خلال سیب زمینی ویژه</td>
+                  <td class="text-sm px-4">
+                    <div
+                      class="flex pcsProduct bg-whiteColor justify-between p-2 max-w-[200px] w-full rounded-lg gap-2 boxBorder"
+                    >
+                      <button type="button">
+                        <i class="text-lg fa fa-plus"></i>
+                      </button>
+                      <input
+                        type="text"
+                        class="bg-[transparent] text-center w-full outline-none"
+                        name="asd"
+                        value="0"
+                      />
+                      <button type="button">
+                        <i class="text-lg fa fa-minus"></i>
+                      </button>
+                    </div>
+                    عدد
+                  </td>
+                  <td class="text-sm px-4">
+                    18,000
+                    <span>تومان</span>
+                  </td>
+                  <td class="text-sm px-4">
+                    18,000
+                    <span>تومان</span>
+                  </td>
+                  <td class="text-sm">
+                    <a href="?remove-item=44246 " class="hover:text-primary"
+                      ><i class="fa fa-trash fa-lg"></i
+                    ></a>
+                  </td>
+                </tr>
+                <tr class="odd:bg-lowerGray">
+                  <td class="text-sm px-4">1</td>
+                  <td class="text-sm px-4">
+                    <img
+                      src="../../assets/images/IMG-0066-500x500.jpg"
+                      alt="xxx"
+                      class="max-w-[80px] max-y-[100px] aspect-[16/9] object-contain"
+                    />
+                  </td>
+                  <td class="text-sm px-4">چی توز خلال سیب زمینی ویژه</td>
+                  <td class="text-sm px-4">
+                    <div
+                      class="pcsProduct bg-whiteColor flex justify-between p-2 max-w-[200px] w-full rounded-lg gap-2 boxBorder"
+                    >
+                      <button type="button">
+                        <i class="text-lg fa fa-plus"></i>
+                      </button>
+                      <input
+                        type="text"
+                        class="bg-[transparent] text-center w-full outline-none"
+                        name="asd"
+                        value="0"
+                      />
+                      <button type="button">
+                        <i class="text-lg fa fa-minus"></i>
+                      </button>
+                    </div>
+                    عدد
+                  </td>
+                  <td class="text-sm px-4">
+                    18,000
+                    <span>تومان</span>
+                  </td>
+                  <td class="text-sm px-4">
+                    18,000
+                    <span>تومان</span>
+                  </td>
+                  <td class="text-sm">
+                    <a href="?remove-item=44246 " class="hover:text-primary"
+                      ><i class="fa fa-trash fa-lg"></i
+                    ></a>
+                  </td>
+                </tr>
+                <tr class="odd:bg-lowerGray">
+                  <td class="text-sm px-4">1</td>
+                  <td class="text-sm px-4">
+                    <img
+                      src="../../assets/images/IMG-0066-500x500.jpg"
+                      alt="xxx"
+                      class="max-w-[80px] max-y-[100px] aspect-[16/9] object-contain"
+                    />
+                  </td>
+                  <td class="text-sm px-4">چی توز خلال سیب زمینی ویژه</td>
+                  <td class="text-sm px-4">
+                    <div
+                      class="pcsProduct bg-whiteColor flex justify-between p-2 max-w-[200px] w-full rounded-lg gap-2 boxBorder"
+                    >
+                      <button type="button">
+                        <i class="text-lg fa fa-plus"></i>
+                      </button>
+                      <input
+                        type="text"
+                        class="bg-[transparent] text-center w-full outline-none"
+                        name="asd"
+                        value="0"
+                      />
+                      <button type="button">
+                        <i class="text-lg fa fa-minus"></i>
+                      </button>
+                    </div>
+                    عدد
+                  </td>
+                  <td class="text-sm px-4">
+                    18,000
+                    <span>تومان</span>
+                  </td>
+                  <td class="text-sm px-4">
+                    18,000
+                    <span>تومان</span>
+                  </td>
+                  <td class="text-sm">
+                    <a href="?remove-item=44246 " class="hover:text-primary"
+                      ><i class="fa fa-trash fa-lg"></i
+                    ></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <ul class="lg:hidden flex gap-2 flex-col">
+              <li class="p-2 odd:bg-lowerGray flex gap-2 flex-col">
+                <div class="flex justify-between items-center py-2">
+                  <span>ردیف</span>
+                  <span>234</span>
                 </div>
-                <button
-                  type="submit"
-                  class="p-2 py-2 bg-redColor max-w-[200px] w-full opacity-75 hover:opacity-100 transition-all text-[16px] text-whiteColor rounded-lg"
+                <div class="flex justify-between items-center py-2">
+                  <span>نام محصول</span>
+                  <span>234</span>
+                </div>
+                <div class="flex justify-between items-center py-2">
+                  <span>تعداد</span>
+                  <div>
+                    <div
+                      class="pcsProduct bg-whiteColor flex justify-between p-2 max-w-[150px] w-full rounded-lg gap-2 boxBorder"
+                    >
+                      <button type="button">
+                        <i class="text-lg fa fa-plus"></i>
+                      </button>
+                      <input
+                        type="text"
+                        class="bg-[transparent] text-center w-full outline-none"
+                        name="asd"
+                        value="0"
+                      />
+                      <button type="button">
+                        <i class="text-lg fa fa-minus"></i>
+                      </button>
+                    </div>
+                    <span class="text-sm text-end w-full block">عدد</span>
+                  </div>
+                </div>
+                <div class="flex justify-between items-center py-2">
+                  <span>قیمت</span>
+                  <span class="text-sm">
+                    18,000
+                    <span>تومان</span>
+                  </span>
+                </div>
+
+                <div class="flex justify-between items-center py-2">
+                  <span>جمع</span>
+                  <span class="text-sm">
+                    18,000
+                    <span>تومان</span>
+                  </span>
+                </div>
+
+                <div class="flex justify-between items-center py-2">
+                  <span></span>
+                  <span
+                    ><a href="?remove-item=44246 " class="hover:text-primary"
+                      ><i class="fa fa-trash fa-lg"></i></a
+                  ></span>
+                </div>
+              </li>
+              <li class="p-2 odd:bg-lowerGray flex gap-2 flex-col">
+                <div class="flex justify-between items-center py-2">
+                  <span>ردیف</span>
+                  <span>234</span>
+                </div>
+                <div class="flex justify-between items-center py-2">
+                  <span>نام محصول</span>
+                  <span>234</span>
+                </div>
+                <div class="flex justify-between items-center py-2">
+                  <span>تعداد</span>
+                  <div>
+                    <div
+                      class="pcsProduct bg-whiteColor flex justify-between p-2 max-w-[150px] w-full rounded-lg gap-2 boxBorder"
+                    >
+                      <button type="button">
+                        <i class="text-lg fa fa-plus"></i>
+                      </button>
+                      <input
+                        type="text"
+                        class="bg-[transparent] text-center w-full outline-none"
+                        name="asd"
+                        value="0"
+                      />
+                      <button type="button">
+                        <i class="text-lg fa fa-minus"></i>
+                      </button>
+                    </div>
+                    <span class="text-sm text-end w-full block">عدد</span>
+                  </div>
+                </div>
+                <div class="flex justify-between items-center py-2">
+                  <span>قیمت</span>
+                  <span class="text-sm">
+                    18,000
+                    <span>تومان</span>
+                  </span>
+                </div>
+
+                <div class="flex justify-between items-center py-2">
+                  <span>جمع</span>
+                  <span class="text-sm">
+                    18,000
+                    <span>تومان</span>
+                  </span>
+                </div>
+
+                <div class="flex justify-between items-center py-2">
+                  <span></span>
+                  <span
+                    ><a href="?remove-item=44246 " class="hover:text-primary"
+                      ><i class="fa fa-trash fa-lg"></i></a
+                  ></span>
+                </div>
+              </li>
+              <li class="p-2 odd:bg-lowerGray flex gap-2 flex-col">
+                <div class="flex justify-between items-center py-2">
+                  <span>ردیف</span>
+                  <span>234</span>
+                </div>
+                <div class="flex justify-between items-center py-2">
+                  <span>نام محصول</span>
+                  <span>234</span>
+                </div>
+                <div class="flex justify-between items-center py-2">
+                  <span>تعداد</span>
+                  <div>
+                    <div
+                      class="pcsProduct bg-whiteColor flex justify-between p-2 max-w-[150px] w-full rounded-lg gap-2 boxBorder"
+                    >
+                      <button type="button">
+                        <i class="text-lg fa fa-plus"></i>
+                      </button>
+                      <input
+                        type="text"
+                        class="bg-[transparent] text-center w-full outline-none"
+                        name="asd"
+                        value="0"
+                      />
+                      <button type="button">
+                        <i class="text-lg fa fa-minus"></i>
+                      </button>
+                    </div>
+                    <span class="text-sm text-end w-full block">عدد</span>
+                  </div>
+                </div>
+                <div class="flex justify-between items-center py-2">
+                  <span>قیمت</span>
+                  <span class="text-sm">
+                    18,000
+                    <span>تومان</span>
+                  </span>
+                </div>
+
+                <div class="flex justify-between items-center py-2">
+                  <span>جمع</span>
+                  <span class="text-sm">
+                    18,000
+                    <span>تومان</span>
+                  </span>
+                </div>
+
+                <div class="flex justify-between items-center py-2">
+                  <span></span>
+                  <span
+                    ><a href="?remove-item=44246 " class="hover:text-primary"
+                      ><i class="fa fa-trash fa-lg"></i></a
+                  ></span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="flex justify-end py-2">
+            <div class="md:w-1/2 w-full flex flex-col gap-4">
+              <h1 class="flex flex-col gap-1">
+                جمع کل سبد خرید
+                <span
+                  class="w-full max-w-[60px] border-[1.5px] border-primary"
+                ></span>
+              </h1>
+              <div class="flex gap-2 flex-col">
+                <div
+                  class="flex justify-between border-b p-2 border-submitPageColorBorderLowBlack"
                 >
-                  <i class="fas fa-shopping-cart"></i>
-                  افزودن به سبد خرید
-                </button>
-              </form>
+                  <span>جمع:</span>
+                  <p>
+                    <span>63,000</span>
+                    <span>تومان</span>
+                  </p>
+                </div>
+                <div class="flex justify-between p-2">
+                  <span>مبلغ قابل پرداخت:</span>
+                  <p>
+                    <span>63,000</span>
+                    <span>تومان</span>
+                  </p>
+                </div>
+                <div class="flex justify-end">
+                  <a
+                    href="#"
+                    class="py-2 px-3 w-max bg-redColor opacity-75 hover:opacity-100 transition-all text-[16px] text-whiteColor rounded-lg"
+                    >ادامه فرآیند خرید</a
+                  >
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-      <section>
-        <div class="container"></div>
-      </section>
-      <section>
-        <div class="container"></div>
       </section>
     </main>
     <footer class="divide-y-2 divide-submitPageColorBorderLowBlack">
@@ -1303,26 +1573,25 @@
         </button>
       </section>
     </footer>
-
+    <script
+      type="text/javascript"
+      src="../../scripts/jalalidatepicker.min.js"
+    ></script>
     <script src="../../scripts/jquery.js"></script>
     <script src="../../scripts/main.js"></script>
     <script>
-      $("#imagesShowCont").on("click", () => {
-        $("#imagesShow").toggleClass("showImagesShow");
-      });
-      $("#imagesShow ").on("click", () => {
-        $("#imagesShow").removeClass("showImagesShow");
-      });
-
-      let maxLength = 10;
       let minLength = 1;
-      $("#pcsProduct button").on("click", function () {
-        if (this.children[0].classList.contains("fa-plus")) {
-          if ($("#pcsProduct input")[0].value < maxLength)
-            $("#pcsProduct input").val(
-              Number($("#pcsProduct input")[0].value) + 1
-            );
-        } else if ($("#pcsProduct input")[0].value > minLength) $("#pcsProduct input").val(Number($("#pcsProduct input")[0].value) - 1);
+
+      Array.from($(".pcsProduct button")).forEach((btn) => {
+        btn.addEventListener("click", () => {
+          if (btn.children[0].classList.contains("fa-plus")) {
+            let input = btn.nextElementSibling;
+            input.value = Number(input.value) + 1;
+          } else if (btn.previousElementSibling.value > minLength) {
+            btn.previousElementSibling.value =
+              Number(btn.previousElementSibling.value) - 1;
+          }
+        });
       });
     </script>
   </body>

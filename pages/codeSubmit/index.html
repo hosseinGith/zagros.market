@@ -41,10 +41,10 @@
       </section>
       <section>
         <div class="flex flex-col gap-10">
-          <h1 class="text-xl text-lowGray">ورود | ثبت‌نام</h1>
+          <h1 class="text-xl text-lowGray">کد تایید را وارد کنید</h1>
           <div>
-            <label class="text-sm text-lowGray">
-              لطفا شماره موبایل یا ایمیل خود را وارد کنید
+            <label for="input" class="text-sm text-lowGray">
+              کد تایید به شماره <span>09212978638</span> پیامک شد
             </label>
             <input
               type="text"
@@ -52,6 +52,11 @@
               class="border-submitPageColorBorderLowBlack border-2 w-full py-2 px-2 outline-none focus:border-submitPageColorBorderBlue transition-all"
             />
           </div>
+          <a class="text-center text-sm">
+            ارسال مجدد کد تا
+            <span id="timer"></span>
+            دیگر
+          </a>
           <button
             class="bg-redColor opacity-80 hover:opacity-100 transition-opacity duration-300 text-whiteColor py-3 w-full rounded-md"
           >
@@ -59,15 +64,25 @@
           </button>
         </div>
       </section>
-      <section>
-        <p class="text-[11px] text-center">
-          ورود شما به معنای پذیرش
-          <a href="#" class="text-linkColor"> شرایط سایت </a>
-          و
-          <a href="#" class="text-linkColor"> قوانین حریم خصوصی </a>
-          است.
-        </p>
-      </section>
     </main>
+    <script>
+      const timerLink = document.querySelector("#timer");
+
+      let sec = 1;
+      let linkHref = "#";
+      function timer() {
+        if (sec <= 0) {
+          timerLink.parentElement.href = linkHref;
+          timerLink.parentElement.textContent = "دریافت مجدد کد تایید";
+          clearInterval(interval);
+          return;
+        }
+        sec--;
+
+        timerLink.textContent = sec;
+      }
+      interval = setInterval(() => timer(), 1000);
+      timer();
+    </script>
   </body>
 </html>
