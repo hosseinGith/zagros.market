@@ -262,7 +262,7 @@
         transition: all .3s;
     }
 
-    .dropDownBtn+form {
+    .dropDownBtn+div {
         max-height: 0;
         overflow: hidden;
         transition: all .3s;
@@ -272,7 +272,7 @@
         rotate: 180deg;
     }
 
-    .dropDownBtn.showFilter+form {
+    .dropDownBtn.showFilter+div {
         max-height: 600px;
         transition: all 1s;
         padding-top: 10px;
@@ -317,16 +317,19 @@
         transition-delay: .3s;
     }
 
-    .filterContWithAnimate>div {
+    .filterContWithAnimate form,
+    .filterContWithAnimate div {
         transition: all .3s;
     }
 
-    .filterContWithAnimate.showFilterSec>div {
+    .filterContWithAnimate.showFilterSec form,
+    .filterContWithAnimate.showFilterSec div {
         opacity: 1;
         animation: translateYShow .3s linear;
     }
 
-    .filterContWithAnimate.showFilterSec>div {
+    .filterContWithAnimate.showFilterSec form,
+    .filterContWithAnimate.showFilterSec div {
         transform: translateY(0%);
     }
 
@@ -334,7 +337,8 @@
         opacity: 0;
     }
 
-    .filterContWithAnimate.hideFilterSec>div {
+    .filterContWithAnimate.hideFilterSec form,
+    .filterContWithAnimate.hideFilterSec div {
         transform: translateY(100%);
     }
 
@@ -369,6 +373,10 @@
         opacity: 1;
         transition: all 0.3s;
         animation: opacityShow .3s linear;
+    }
+
+    #imagesShow.showImagesShow {
+        display: flex;
     }
 
     @media screen and (width<500) {
