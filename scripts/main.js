@@ -113,7 +113,7 @@ mainMenuNavBarsec.onanimationend = () => {
 closeMainMenuNavBar.addEventListener("click", () => mainMenuNavBarsec.click());
 
 scrollTop.addEventListener("click", () => {
-  location.hash = "#";
+  scrollTo(0, 0);
 });
 
 window.addEventListener("scroll", () => {
