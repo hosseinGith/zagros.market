@@ -5,13 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preload" href="styles/main.css" as="style" />
     <link rel="stylesheet" href="styles/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="styles/FontAwesome.Pro.6.5.2/css/all.css" />
 
     <link rel="stylesheet" href="styles/swiper.min.css" />
     <script src="scripts/jquery.js"></script>
@@ -31,7 +25,11 @@
             <form
               class="bg-inputSearchBar lg:w-[500px] w-[350px] flex items-center"
             >
-              <button type="submit" class="flex items-center px-2 py-2">
+              <button
+                type="submit"
+                name="searchSubmit"
+                class="flex items-center px-2 py-2"
+              >
                 <i class="fa fa-search"></i>
               </button>
               <input
@@ -65,6 +63,7 @@
           >
             <button
               id="accountSetting"
+              name="showDropDown"
               class="lg:flex hidden items-center justify-center relative"
             >
               <i class="text-[20px] far fa-user"></i>

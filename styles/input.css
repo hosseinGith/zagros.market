@@ -464,6 +464,23 @@
         transform: rotate(45deg);
     }
 
+    .divTextAlert {
+        width: 100%;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+    }
+
+    .divTextAlert.danger {
+        background-color: #ef4056;
+        color: #fff;
+    }
+
+    .divTextAlert.success {
+        background-color: rgb(75, 170, 75);
+        color: #fff;
+    }
+
     @media screen and (width<500) {
 
         .swiper-button-prev,

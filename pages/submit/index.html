@@ -7,10 +7,7 @@
     <link rel="stylesheet" href="../../styles/main.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      href="../../styles/FontAwesome.Pro.6.5.2/css/all.css"
     />
 
     <title>ثبت نام</title>
@@ -41,15 +38,26 @@
         </div>
       </section>
       <section>
-        <form class="flex flex-col gap-10">
+        <form class="flex flex-col gap-5">
           <h1 class="text-xl text-lowGray">ورود | ثبت‌نام</h1>
           <div>
-            <label class="text-sm text-lowGray">
+            <label for="userName" class="text-sm text-lowGray">
               لطفا شماره موبایل یا ایمیل خود را وارد کنید
             </label>
             <input
               type="text"
-              id="input"
+              id="userName"
+              name="asd"
+              class="border-submitPageColorBorderLowBlack border-2 w-full py-2 px-2 outline-none focus:border-submitPageColorBorderBlue transition-all"
+            />
+          </div>
+          <div>
+            <label for="userPass" class="text-sm text-lowGray">
+              لطفا رمز خود را وارد کنید
+            </label>
+            <input
+              type="password"
+              id="userPass"
               name="asd"
               class="border-submitPageColorBorderLowBlack border-2 w-full py-2 px-2 outline-none focus:border-submitPageColorBorderBlue transition-all"
             />

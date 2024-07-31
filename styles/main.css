@@ -1558,6 +1558,11 @@ video {
   padding-bottom: 0.25rem;
 }
 
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -1576,11 +1581,6 @@ video {
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-}
-
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
 }
 
 .pb-10 {
@@ -2249,6 +2249,23 @@ body {
   transform: rotate(45deg);
 }
 
+.divTextAlert {
+  width: 100%;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+
+.divTextAlert.danger {
+  background-color: #ef4056;
+  color: #fff;
+}
+
+.divTextAlert.success {
+  background-color: rgb(75, 170, 75);
+  color: #fff;
+}
+
 @media screen and (width<500) {
   .swiper-button-prev,
         .swiper-button-next {
@@ -2554,6 +2571,11 @@ body {
     font-size: 14px;
   }
 
+  .sm\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
   .sm\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
@@ -2596,13 +2618,13 @@ body {
     padding-top: 20px;
   }
 
-  .md\:text-\[12px\] {
-    font-size: 12px;
-  }
-
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .md\:text-\[12px\] {
+    font-size: 12px;
   }
 
   .md\:boxBorder {
