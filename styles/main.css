@@ -2557,6 +2557,10 @@ body {
     position: static;
   }
 
+  .sm\:absolute {
+    position: absolute;
+  }
+
   .sm\:inline-block {
     display: inline-block;
   }
