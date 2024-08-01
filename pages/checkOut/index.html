@@ -1494,7 +1494,8 @@
     <script src="../../scripts/main.js"></script>
     <script>
       let oldAddresses = localStorage.getItem("address");
-      if (oldAddresses.length > 0) oldAddresses = JSON.parse(oldAddresses);
+      if (oldAddresses && oldAddresses.length > 0)
+        oldAddresses = JSON.parse(oldAddresses);
       else oldAddresses = [];
       let closeFilterWindowInterVal = null;
       let addAddresLiHtml = `
