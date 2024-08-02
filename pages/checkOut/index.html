@@ -1196,7 +1196,7 @@
       </section>
       <section
         id="editCard"
-        class="filterContWithAnimate hidden flex items-center justify-center bg-lowOpacityColorBg fixed w-full h-screen top-0 left-0 z-40 showFilterSec"
+        class="filterContWithAnimate hidden items-center justify-center bg-lowOpacityColorBg fixed w-full h-screen top-0 left-0 z-40 showFilterSec"
       >
         <div
           class="flex flex-col relative gap-4 text-sm bg-whiteColor h-full lg:h-max p-4 rounded-md lg:min-h-[400px] lg:w-1/2 w-full"
@@ -1648,6 +1648,7 @@
       const showEditLiCont = function (id, createNew = false) {
         $("#editCard").addClass("showFilterSec");
         $("#editCard").removeClass("hidden");
+        $("#editCard").addClass("flex");
         document.body.classList.add("overflow-hidden");
         if (createNew) {
           $("#setAddres").attr("isCreateNew", 1);
