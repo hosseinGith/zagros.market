@@ -1035,10 +1035,6 @@
           <p>تسویه حساب</p>
         </div>
       </section>
-      <section
-        id="hiddenContent"
-        class="bg-lowOpacityColorBg items-start hidden fixed z-[9] top-0 right-0 w-full h-screen"
-      ></section>
       <section>
         <div
           class="container flex lg:flex-row justify-between items-start flex-col p-2 gap-5"
@@ -1046,57 +1042,6 @@
           <div
             class="flex flex-col w-full gap-4 divide-submitPageColorBorderLowBlack"
           >
-            <div
-              class="w-full border-b-4 border-submitPageColorBorderLowBlack lg:border-0 space-y-5 lg:boxBorder rounded-md p-3"
-            >
-              <h2 class="flex flex-col gap-2 py-4 w-[max-content]">
-                <span>آدرس تحویل سفارش را انتخاب کنید:</span>
-                <span class="w-1/3 bg-primary h-[2px]"></span>
-              </h2>
-              <div class="space-y-4">
-                <div class="relative flex">
-                  <select
-                    type="text"
-                    id="statusSelect"
-                    name="status"
-                    class="hidden"
-                    value="all"
-                  >
-                    <option value="all">همه</option>
-                  </select>
-                  <div
-                    id="statusSelectCont"
-                    class="outline-none select-none relative z-[1] cursor-pointer p-2 rounded border-2 bg-whiteColor border-submitPageColorBorderLowBlack focus:border-2 focus:border-submitPageColorBorderBlue sm:max-w-[300px] w-full"
-                  >
-                    همه
-                  </div>
-                  <div
-                    id="statusSelectOptions"
-                    class="absolute z-[2] top-[0px] right-0 border-submitPageColorBorderBlue border hidden"
-                  >
-                    <ul
-                      class="max-h-[150px] overflow-auto bg-whiteColor flex flex-col"
-                    >
-                      <li valueli="all" class="p-2 liActive">همه</li>
-                      <li valueli="value2" class="p-2">در انتضار پرداخت</li>
-                      <li valueli="value3" class="p-2">در حال پردازش</li>
-                      <li valueli="value4" class="p-2">پردازش شده</li>
-                      <li valueli="value5" class="p-2">تحویل داده شده</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <ul class="flex flex-wrap gap-2">
-                  <li
-                    id="addressCont"
-                    class="cursor-pointer boxBorder relative flex items-center justify-center rounded-md min-h-[200px] max-w-[300px] w-full"
-                  >
-                    <i class="fa fa-plus"></i>
-                    <span>افزودن ادرس</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
             <div
               class="w-full border-b-4 border-submitPageColorBorderLowBlack lg:border-0 space-y-5 lg:boxBorder rounded-md p-3"
             >
@@ -1172,6 +1117,43 @@
                 </div>
               </div>
               <form class="flex flex-col gap-4 py-4">
+                <div class="space-y-4">
+                  <a href="#" class="text-lowBlue" id="addressCont"
+                    >اضافه کردن آدرس جدید</a
+                  >
+                  <div class="relative flex">
+                    <select
+                      type="text"
+                      id="statusSelect"
+                      name="status"
+                      class="hidden"
+                      value="all"
+                    >
+                      <option value="all">همه</option>
+                    </select>
+                    <div
+                      id="statusSelectCont"
+                      class="outline-none select-none relative z-[1] cursor-pointer p-2 rounded border-2 bg-whiteColor border-submitPageColorBorderLowBlack focus:border-2 focus:border-submitPageColorBorderBlue sm:max-w-[300px] w-full"
+                    >
+                      همه
+                    </div>
+                    <div
+                      id="statusSelectOptions"
+                      class="absolute z-[2] top-[0px] right-0 border-submitPageColorBorderBlue border hidden"
+                    >
+                      <ul
+                        class="max-h-[150px] overflow-auto bg-whiteColor flex flex-col"
+                      >
+                        <li valueli="all" class="p-2 liActive">همه</li>
+                        <li valueli="value2" class="p-2">در انتضار پرداخت</li>
+                        <li valueli="value3" class="p-2">در حال پردازش</li>
+                        <li valueli="value4" class="p-2">پردازش شده</li>
+                        <li valueli="value5" class="p-2">تحویل داده شده</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
                 <label for="melate" class="payMethodCheckBox">
                   <input
                     type="radio"
@@ -1218,6 +1200,12 @@
                 >
                   ثبت سفارش
                 </button>
+                <input
+                  type="text"
+                  name="dsc_text"
+                  class="hidden"
+                  id="user_dsc"
+                />
               </form>
             </nav>
           </aside>
@@ -1233,10 +1221,10 @@
           <div
             class="flex absolute right-0 px-4 z-10 bg-whiteColor top-0 w-full justify-between items-center border-b-4 border-submitPageColorBorderLowBlack py-2"
           >
-            <h1>ویرایش آدرس</h1>
+            <h1>اضافه کردن آدرس</h1>
             <button id="closeWindow"><i class="fa fa-remove"></i></button>
           </div>
-          <div
+          <form
             class="sm:pb-[10px] pt-[60px] pb-[60px] overflow-y-auto space-y-4"
           >
             <div class="flex flex-col sm:flex-row gap-4">
@@ -1255,7 +1243,7 @@
               </div>
               <div class="flex flex-col basis-[50%] py-2">
                 <label for="user_city">
-                  استان
+                  شهر
                   <strong class="text-primary">*</strong>
                 </label>
                 <select id="user_city" name="asd" class="bg-lowerGray p-2">
@@ -1327,19 +1315,21 @@
               class="flex gap-2 px-4 z-10 bg-whiteColor w-full justify-end items-center py-2"
             >
               <button
+                type="button"
                 id="closeAddresCont"
                 class="bg-lowerGray py-3 px-5 rounded-md"
               >
                 بستن
               </button>
               <button
+                type="submit"
                 id="setAddres"
                 class="bg-redColor opacity-80 hover:opacity-100 transition-opacity duration-300 text-whiteColor py-3 px-5 rounded-md"
               >
                 ثبت
               </button>
             </div>
-          </div>
+          </form>
         </div>
       </section>
     </main>
@@ -1555,41 +1545,8 @@
     <script src="../../scripts/main.js"></script>
     <script>
       let interValOpenEditCard = null;
-      function closeSectionFilters(interVal, filterCont, classes) {
-        if (interVal) clearInterval(interVal);
-        filterCont.removeClass(classes[0]);
-        filterCont.addClass(classes[1]);
-        interVal = setTimeout(() => {
-          interVal = null;
-          filterCont.removeClass(classes[1]);
-          filterCont.addClass(classes[2]);
-          document.body.classList.remove("overflow-hidden");
-        }, 500);
-      }
-
-      $("#addressCont").on("click", function () {
-        $("#editCard").addClass("showFilterSec");
-        $("#editCard").removeClass("hidden");
-        $("#editCard").addClass("flex");
-        document.body.classList.add("overflow-hidden");
-      });
-      $("#editCard ,  #closeAddresCont,#closeWindow ").on(
-        "click",
-        function (e) {
-          if (
-            this === e.target ||
-            this.id === "closeAddresCont" ||
-            this.id === "closeWindow"
-          ) {
-            closeSectionFilters(interValOpenEditCard, $("#editCard"), [
-              "showFilterSec",
-              "hideFilterSec",
-              "hidden",
-            ]);
-          }
-        }
-      );
       let isTouchLi = false;
+
       function clickLiHand(
         nameCont,
         li,
@@ -1627,6 +1584,59 @@
           $("#statusSelectCont")[0].scrollHeight + "px"
         );
       }
+
+      (async function () {
+        try {
+          let res = await (
+            await fetch("../../assets/json/yazdCity.json")
+          ).json();
+          let option = $("<option value=''>شهر</option>");
+          $("#user_city").empty();
+          $("#user_city").append(option);
+          res.forEach((item) => {
+            option = $(
+              `<option value='${item.cityName}'>${item.cityName}</option>`
+            );
+            $("#user_city").append(option);
+          });
+        } catch {}
+      })();
+
+      function closeSectionFilters(interVal, filterCont, classes) {
+        if (interVal) clearInterval(interVal);
+        filterCont.removeClass(classes[0]);
+        filterCont.addClass(classes[1]);
+        interVal = setTimeout(() => {
+          interVal = null;
+          filterCont.removeClass(classes[1]);
+          filterCont.addClass(classes[2]);
+          document.body.classList.remove("overflow-hidden");
+        }, 500);
+      }
+
+      $("#addressCont").on("click", function () {
+        $("#editCard").addClass("showFilterSec");
+        $("#editCard").removeClass("hidden");
+        $("#editCard").addClass("flex");
+        document.body.classList.add("overflow-hidden");
+      });
+      $("#editCard ,  #closeAddresCont,#closeWindow ").on(
+        "click",
+        function (e) {
+          if (
+            this === e.target ||
+            this.id === "closeAddresCont" ||
+            this.id === "closeWindow"
+          ) {
+            closeSectionFilters(interValOpenEditCard, $("#editCard"), [
+              "showFilterSec",
+              "hideFilterSec",
+              "hidden",
+            ]);
+          }
+        }
+      );
+
       new ResizeObserver(resizestatusSelectCont).observe(
         $("#statusSelectCont")[0]
       );
@@ -1681,6 +1691,10 @@
             $("#statusSelectCont")[0]
           );
         }
+      });
+
+      $("#user_dsc_textArea").on("keyup", function () {
+        $("#user_dsc").val(encodeURIComponent(this.value.trim()));
       });
     </script>
   </body>
