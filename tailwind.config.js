@@ -23,6 +23,9 @@ module.exports = {
       lowerGray: "#f0f1f2",
       lowBlue: "#0275d8",
       skyColor: "#17a2b8",
+      yellowColor: "#ffff00",
+      skyColor2: "#00bfd6",
+      darkBlueColor: "#117a8b",
     },
     container: {
       center: true,
