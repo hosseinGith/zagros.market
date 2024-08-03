@@ -1053,19 +1053,48 @@
                 <span>آدرس تحویل سفارش را انتخاب کنید:</span>
                 <span class="w-1/3 bg-primary h-[2px]"></span>
               </h2>
-              <div>
-                <div id="selectedLiOptions">
-                  <p id="selectedLiOptionsUserAddres"></p>
-                  <p>
-                    <i class="far fa-user"></i>
-                    <span id="selectedLiOptionsUserName"></span>
-                  </p>
+              <div class="space-y-4">
+                <div class="relative flex">
+                  <select
+                    type="text"
+                    id="statusSelect"
+                    name="status"
+                    class="hidden"
+                    value="all"
+                  >
+                    <option value="all">همه</option>
+                  </select>
+                  <div
+                    id="statusSelectCont"
+                    class="outline-none select-none relative z-[1] cursor-pointer p-2 rounded border-2 bg-whiteColor border-submitPageColorBorderLowBlack focus:border-2 focus:border-submitPageColorBorderBlue sm:max-w-[300px] w-full"
+                  >
+                    همه
+                  </div>
+                  <div
+                    id="statusSelectOptions"
+                    class="absolute z-[2] top-[0px] right-0 border-submitPageColorBorderBlue border hidden"
+                  >
+                    <ul
+                      class="max-h-[150px] overflow-auto bg-whiteColor flex flex-col"
+                    >
+                      <li valueli="all" class="p-2 liActive">همه</li>
+                      <li valueli="value2" class="p-2">در انتضار پرداخت</li>
+                      <li valueli="value3" class="p-2">در حال پردازش</li>
+                      <li valueli="value4" class="p-2">پردازش شده</li>
+                      <li valueli="value5" class="p-2">تحویل داده شده</li>
+                    </ul>
+                  </div>
                 </div>
-                <button id="showList" class="text-lowBlue text-sm">
-                  افزودن یا ویرایش آدرس
-                </button>
 
-                <ul class="flex flex-wrap gap-2" id="addressCont"></ul>
+                <ul class="flex flex-wrap gap-2">
+                  <li
+                    id="addressCont"
+                    class="cursor-pointer boxBorder relative flex items-center justify-center rounded-md min-h-[200px] max-w-[300px] w-full"
+                  >
+                    <i class="fa fa-plus"></i>
+                    <span>افزودن ادرس</span>
+                  </li>
+                </ul>
               </div>
             </div>
             <div
@@ -1525,17 +1554,7 @@
     ></script>
     <script src="../../scripts/main.js"></script>
     <script>
-      let oldAddresses = localStorage.getItem("address");
-      if (oldAddresses && oldAddresses.length > 0)
-        oldAddresses = JSON.parse(oldAddresses);
-      else oldAddresses = [];
-      let closeFilterWindowInterVal = null;
-      let addAddresLiHtml = `
-        <li onclick="showEditLiCont('',true)" class="cursor-pointer boxBorder relative flex items-center justify-center rounded-md min-h-[200px] max-w-[300px] w-full">
-            <i class="fa fa-plus"></i>
-          <span>افزودن ادرس</span>
-          </li>`;
-
+      let interValOpenEditCard = null;
       function closeSectionFilters(interVal, filterCont, classes) {
         if (interVal) clearInterval(interVal);
         filterCont.removeClass(classes[0]);
@@ -1546,304 +1565,122 @@
           filterCont.addClass(classes[2]);
           document.body.classList.remove("overflow-hidden");
         }, 500);
-        $("#setAddres").attr("isCreateNew", 0);
       }
-      (async function () {
-        try {
-          let res = await (
-            await fetch("../../assets/json/yazdCity.json")
-          ).json();
-          $("#user_city").empty();
-          res.forEach((item) => {
-            let option = $(
-              `<option value="${item.cityName}">${item.cityName}</option>`
-            );
-            $("#user_city").append(option);
-          });
-        } catch {}
-      })();
-      const createLi = function (
-        id,
-        addres,
-        userFulName,
-        userNumber,
-        isSelected
-      ) {
-        let item = `
-        <li class="border border-primary relative rounded-md min-h-[200px] max-w-[300px] w-full">
-          <div>
-            <label
-              for="${id}"
-              onclick="selectOption()"
-              class="border-b border-primary p-2 text-sm payMethodCheckBox"
-            >
-              <input
-                type="radio"
-                name="addresMethod"
-                value="${id}"
-                id="${id}"
-                onchange="changeSelectOptionAddr(${id})"
-                ${isSelected == true ? "checked=''" : ""}
-              />
-              <span class="checkmark right-[50%] translate-y-[20%] -translate-x-[50%]"></span>
-              <span class="px-10">ارسال به این آدرس</span>
-            </label>
-          </div>
-          <div class="py-2 px-4 flex flex-col gap-2">
-            <p>${addres}</p>
-            <p class="text-lowGray">
-              <i class="far fa-user"></i>
-              <span>${userFulName}</span>
-            </p>
-            <p class="text-lowGray">
-              <i class="far fa-phone"></i>
-              <span>${userNumber}</span>
-            </p>
-          </div>
-           <div
-            class="absolute bottom-3 left-3 flex items-center gap-2"
-          >
-            <button class="text-lowBlue" onclick="removeLi(${id})">حذف</button>
-            <span>|</span>
-            <button class="text-lowBlue" onclick="showEditLiCont(
-              ${id}
-            )">ویرایش</button>
-          </div>
-        </li>`;
-        return item;
-      };
-      const removeLi = function (id) {
-        oldAddresses = oldAddresses.filter((item) => item.id !== id);
-        if (oldAddresses > 1) oldAddresses[0].isSelected = true;
-        localStorage.setItem("address", JSON.stringify(oldAddresses));
-        showLiAddresses();
-      };
-      const selectOption = function () {
-        let isFound = false;
-        oldAddresses.forEach((item) => {
-          if (item.isSelected) {
-            $("#selectedLiOptions").addClass("showListAddresOption");
-            $("#addressCont").removeClass("showListAddres");
-            $("#showList").removeClass("none");
-            $("#selectedLiOptionsUserAddres").text(item.addres);
-            $("#selectedLiOptionsUserName").text(
-              item.firstName + " " + item.lastName
-            );
-            isFound = true;
-          }
-        });
-        return isFound;
-      };
-      const changeSelectOptionAddr = function (id) {
-        oldAddresses.forEach((item) => {
-          item.isSelected = false;
-        });
-        oldAddresses.forEach((item) => {
-          if (item.id == id) {
-            item.isSelected = true;
-          }
-        });
-        selectOption();
-      };
-      const showEditLiCont = function (id, createNew = false) {
+
+      $("#addressCont").on("click", function () {
         $("#editCard").addClass("showFilterSec");
         $("#editCard").removeClass("hidden");
         $("#editCard").addClass("flex");
         document.body.classList.add("overflow-hidden");
-        if (createNew) {
-          $("#setAddres").attr("isCreateNew", 1);
-        } else {
-          oldAddresses.forEach((item) => {
-            if (id === item.id) {
-              $("#user_name").val(item.firstName);
-              $("#user_last_name").val(item.lastName);
-              $("#user_addres").val(item.addres);
-              $("#user_number").val(item.number);
-              $("#user_city").val(item.city);
-              $("#user_postCode").val(item.postCode);
-            }
-          });
-          $("#setAddres").attr("isCreateNew", id);
-        }
-      };
-      const showLiAddresses = function () {
-        $("#addressCont").empty();
-        if (oldAddresses.length == 0) {
-          $("#addressCont")[0].innerHTML = addAddresLiHtml;
-          return;
-        }
-        oldAddresses.sort((a, b) => new Date(b.id) - new Date(a.id));
-        oldAddresses.forEach((item) => {
-          let userFulName = item.firstName + " " + item.lastName;
-          let li = createLi(
-            item.id,
-            item.addres,
-            userFulName,
-            item.number,
-            item.isSelected
-          );
-          $("#addressCont")[0].innerHTML += li;
-        });
-        $("#addressCont")[0].innerHTML += addAddresLiHtml;
-      };
-      const addLiAddresses = function (
-        firstName,
-        lastName,
-        addres,
-        number,
-        postCode,
-        selected,
-        city
-      ) {
-        let userFulName = firstName + " " + lastName;
-        let id = Date.now();
-
-        let li = createLi(id, addres, userFulName, number, selected);
-        let liOption = {
-          id: id,
-          lastName: lastName,
-          addres: addres,
-          number: number,
-          firstName: firstName,
-          postCode: postCode,
-          city: city,
-          isSelected: selected,
-        };
-        oldAddresses.push(liOption);
-      };
-      const clearAddress = function () {
-        showLiAddresses();
-        localStorage.setItem("address", JSON.stringify(oldAddresses));
-        closeSectionFilters(closeFilterWindowInterVal, $("#editCard"), [
-          "showFilterSec",
-          "hideFilterSec",
-          "hidden",
-        ]);
-        $("#addressCont").removeClass("showListAddres");
-        $("#selectedLiOptionsUserAddres").text("");
-        $("#selectedLiOptionsUserName").text("");
-        $("#editCard input").val("");
-
-        $("#showList").removeClass("none");
-        console.log(selectOption());
-        if (selectOption())
-          $("#selectedLiOptions").addClass("showListAddresOption");
-      };
-      $("#closeWindow").on("click", function () {
-        clearAddress();
       });
-      $("#editCard").on("click", function (e) {
-        if (e.target === this) clearAddress();
-      });
-      $("#showList").on("click", () => {
-        $("#addressCont").addClass("showListAddres");
-        $("#selectedLiOptions").removeClass("showListAddresOption");
-        $("#showList").addClass("none");
-        console.log(1);
-        showLiAddresses();
-      });
-      $("#closeAddresCont").on("click", () => $("#closeWindow").click());
-
-      $("#setAddres").on("click", function () {
-        let allowed = false;
-        if (this.getAttribute("iscreatenew") == 1) {
-          oldAddresses.forEach((item) => {
-            item.isSelected = false;
-          });
-          let user_name = $("#user_name")[0].value,
-            user_last_name = $("#user_last_name")[0].value,
-            user_addres = $("#user_addres")[0].value,
-            user_number = $("#user_number")[0].value,
-            user_city = $("#user_city")[0].value,
-            user_postCode = $("#user_postCode")[0].value;
-
+      $("#editCard ,  #closeAddresCont,#closeWindow ").on(
+        "click",
+        function (e) {
           if (
-            user_name &&
-            user_last_name &&
-            user_addres &&
-            user_number &&
-            user_city
+            this === e.target ||
+            this.id === "closeAddresCont" ||
+            this.id === "closeWindow"
           ) {
-            allowed = true;
-            addLiAddresses(
-              user_name,
-              user_last_name,
-              user_addres,
-              user_number,
-              user_postCode,
-              true,
-              user_city
-            );
+            closeSectionFilters(interValOpenEditCard, $("#editCard"), [
+              "showFilterSec",
+              "hideFilterSec",
+              "hidden",
+            ]);
           }
-        } else {
-          oldAddresses.forEach((item) => {
-            if (this.getAttribute("iscreatenew") == item.id) {
-              let user_name = $("#user_name")[0].value,
-                user_last_name = $("#user_last_name")[0].value,
-                user_addres = $("#user_addres")[0].value,
-                user_number = $("#user_number")[0].value,
-                user_city = $("#user_city")[0].value,
-                user_postCode = $("#user_postCode")[0].value;
-
-              if (
-                user_name &&
-                user_last_name &&
-                user_addres &&
-                user_number &&
-                user_city
-              ) {
-                allowed = true;
-
-                item.lastName = user_last_name;
-                item.addres = user_addres;
-                item.number = user_number;
-                item.firstName = user_name;
-                item.postCode = user_postCode;
-                item.city = user_city;
-                item.isSelected = true;
-              }
-            }
-          });
         }
-        if (!allowed) return;
-        clearAddress();
+      );
+      let isTouchLi = false;
+      function clickLiHand(
+        nameCont,
+        li,
+        showClass,
+        select,
+        statusCont,
+        isLi = true
+      ) {
+        document.querySelector(nameCont).classList.remove(showClass);
+        document.querySelector(nameCont).classList.add("hidden");
+        if (!isLi) return;
+        isTouchLi = true;
+        select.options[0].textContent = li.textContent;
+        select.options[0].value = li.getAttribute("valueli");
+        select.value = select.options[0].value;
+        statusCont.text(li.textContent);
+      }
+
+      function searchLi(arr, select) {
+        arr.forEach((li) => {
+          if (select.innerText === li.innerText) {
+            li.classList.add("liActive");
+          } else {
+            li.classList.remove("liActive");
+          }
+        });
+      }
+      function resizestatusSelectCont() {
+        $("#statusSelectOptions").css(
+          "width",
+          $("#statusSelectCont")[0].scrollWidth + "px"
+        );
+        $("#statusSelectOptions").css(
+          "top",
+          $("#statusSelectCont")[0].scrollHeight + "px"
+        );
+      }
+      new ResizeObserver(resizestatusSelectCont).observe(
+        $("#statusSelectCont")[0]
+      );
+      $("#statusSelectCont").on("click", function (e) {
+        e.preventDefault();
+        $("#statusSelectOptions").css(
+          "width",
+          $("#statusSelectCont")[0].scrollWidth + "px"
+        );
+        $("#statusSelectOptions").toggleClass("block");
+        $("#statusSelectOptions").toggleClass("hidden");
       });
-      showLiAddresses();
-      selectOption();
-      $("form").on("submit", (e) => e.preventDefault());
-      $("#submitProducts").on("click", () => {
-        let allinputs = Array.from($("input"));
-        let namesAndValue = "";
-        let selected = oldAddresses.filter((item) => item.isSelected)[0];
-        if (!selected) return;
-        let link = document.createElement("a");
-        let pageToQuery = "/eample?";
-        // set your varible name in " here "
-        let addres = "addres",
-          city = "city",
-          firstName = "firstName",
-          lastName = "lastName",
-          number = "number",
-          postCode = "postCode";
-        let payMethodBank = "payMethodBank";
-        let payMethodName = $("input[name='payMethodName']:checked")[0].value;
-        let user_dsc_textArea = document.querySelector("#user_dsc_textArea");
-        let user_dsc_name = "user_dsc_name";
-        console.log(payMethodName);
-        namesAndValue = JSON.stringify(selected);
-        namesAndValue = `${city}=${encodeURI(
-          selected.city.trim()
-        )}&${firstName}=${encodeURI(
-          selected.firstName.trim()
-        )}&${lastName}=${encodeURI(
-          selected.lastName.trim()
-        )}&${postCode}=${encodeURI(
-          selected.postCode.trim()
-        )}&${payMethodBank}=${payMethodName}&${user_dsc_name}=${encodeURI(
-          user_dsc_textArea.value
-        )}`;
-        link.href = pageToQuery + namesAndValue;
-        link.click();
+
+      $("#statusSelectOptions li").on("click", function () {
+        isTouchLi = true;
+        clickLiHand(
+          "#statusSelectOptions",
+          this,
+          "block",
+          $("#statusSelect")[0],
+          $("#statusSelectCont")
+        );
+        searchLi(
+          Array.from($("#statusSelectOptions li")),
+          $("#statusSelectCont")[0]
+        );
+      });
+
+      $("#statusSelectOptions li").on("mouseover", function () {
+        $("#statusSelectOptions li").removeClass("liActive");
+        this.classList.add("liActive");
+      });
+
+      $("#payMethodOptions li").on("mouseover", function () {
+        $("#payMethodOptions li").removeClass("liActive");
+        this.classList.add("liActive");
+      });
+
+      // set to defualt show selects
+      $(window).on("click", function (e) {
+        if (e.target.id != "statusSelectCont") {
+          clickLiHand("#statusSelectOptions", "", "block", "", "", false);
+          searchLi(
+            Array.from($("#statusSelectOptions li")),
+            $("#statusSelectCont")[0]
+          );
+        }
+
+        if (!isTouchLi && $("#statusSelect")[0].value) {
+          searchLi(
+            Array.from($("#statusSelectOptions li")),
+            $("#statusSelectCont")[0]
+          );
+        }
       });
     </script>
   </body>

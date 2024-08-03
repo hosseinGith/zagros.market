@@ -22,6 +22,7 @@ module.exports = {
       mdGray: "#acacac",
       lowerGray: "#f0f1f2",
       lowBlue: "#0275d8",
+      skyColor: "#17a2b8",
     },
     container: {
       center: true,

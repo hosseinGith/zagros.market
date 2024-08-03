@@ -10,7 +10,7 @@
       href="../../styles/FontAwesome.Pro.6.5.2/css/all.css"
     />
     <link rel="stylesheet" href="../../styles/jalalidatepicker.min.css" />
-    <title>حساب من</title>
+    <title>پروفایل</title>
   </head>
   <body>
     <header
@@ -1040,11 +1040,33 @@
               <ul class="space-y-3">
                 <li class="flex flex-col gap-4 px-4">
                   <div class="flex items-center gap-4">
-                    <img
-                      src="https://www.zagros.market/themes/shop-theme1/images/avatar.svg"
-                      alt="پروفایل"
-                      class="w-[44px]"
-                    />
+                    <svg class="w-[44px]" viewBox="0 0 116 116" version="1.1">
+                      <g
+                        id="profile-change-avatar"
+                        stroke="none"
+                        stroke-width="1"
+                        fill="none"
+                        fill-rule="evenodd"
+                        transform="translate(-635.000000, -282.000000)"
+                      >
+                        <g
+                          id="hamedof"
+                          transform="translate(634.000000, 281.000000)"
+                          fill="#DDDDDD"
+                          fill-rule="nonzero"
+                        >
+                          <g
+                            id="noun_956179_cc"
+                            transform="translate(1.000000, 1.000000)"
+                          >
+                            <path
+                              d="M58,0 C25.973913,0 0,25.973913 0,58 C0,68.8434783 3.02608696,79.0565217 8.32173913,87.7565217 C9.33043478,89.5217391 10.5913043,91.2869565 11.726087,92.8 C13.4913043,95.1956522 15.3826087,97.3391304 17.526087,99.3565217 C19.4173913,101.121739 21.3086957,102.886957 23.4521739,104.4 C33.0347826,111.713043 45.0130435,116 58,116 C70.9869565,116 82.9652174,111.713043 92.5478261,104.526087 C94.6913043,103.013043 96.5826087,101.247826 98.473913,99.4826087 C100.617391,97.4652174 102.508696,95.1956522 104.273913,92.926087 C105.534783,91.2869565 106.669565,89.6478261 107.678261,87.8826087 C112.973913,79.1826087 116,68.9695652 116,58.126087 C116,25.973913 90.026087,0 58,0 Z M58,11.473913 C73.2565217,11.473913 85.7391304,23.9565217 85.7391304,39.2130435 C85.7391304,54.4695652 73.2565217,66.9521739 58,66.9521739 C42.7434783,66.9521739 30.2608696,54.4695652 30.2608696,39.2130435 C30.2608696,23.9565217 42.7434783,11.473913 58,11.473913 Z M104.904348,82.5869565 C104.021739,84.226087 103.013043,85.8652174 102.004348,87.5043478 C98.9782609,92.0434783 95.1956522,96.0782609 90.9086957,99.4826087 C88.5130435,101.373913 85.9913043,103.013043 83.3434783,104.526087 C75.7782609,108.56087 67.2043478,110.956522 58.126087,110.956522 C49.0478261,110.956522 40.3478261,108.56087 32.9086957,104.526087 C30.2608696,103.013043 27.7391304,101.373913 25.3434783,99.4826087 C21.0565217,96.0782609 17.273913,92.0434783 14.2478261,87.5043478 C13.2391304,85.9913043 12.2304348,84.3521739 11.3478261,82.5869565 C16.7695652,74.5173913 25.4695652,68.7173913 35.6826087,67.3304348 C36.3130435,67.2043478 36.9434783,67.4565217 37.573913,67.8347826 C43.626087,72.2478261 50.8130435,74.6434783 58.2521739,74.6434783 C65.6913043,74.6434783 73.0043478,72.373913 78.9304348,67.8347826 C79.4347826,67.4565217 80.0652174,67.3304348 80.8217391,67.3304348 C90.7826087,68.7173913 99.4826087,74.5173913 104.904348,82.5869565 Z"
+                              id="Shape"
+                            />
+                          </g>
+                        </g>
+                      </g>
+                    </svg>
                     <p>09000000000</p>
                   </div>
                   <span class="w-full boxBorder"></span>
@@ -1176,358 +1198,128 @@
               </ul>
             </nav>
           </aside>
-          <div class="w-full space-y-5 lg:boxBorder rounded-md p-3">
-            <h2 class="lg:flex hidden flex-col gap-2 py-4 w-[max-content]">
-              <span>سفارش ها</span>
-              <span class="w-full bg-primary h-[2px]"></span>
+          <form class="w-full space-y-5 lg:boxBorder rounded-md p-3">
+            <h2 class="lg:flex hidden flex-col gap-2 py-4">
+              <span>اطلاعات حساب کاربری</span>
+              <span class="w-[50px] bg-primary h-[2px]"></span>
             </h2>
-            <form>
-              <fieldset
-                class="text-lowGray boxBorder p-2 flex gap-4 lg:flex-row flex-col"
+            <ul>
+              <li
+                class="space-y-4 p-4 rounded-md border border-submitPageColorBorderLowBlack"
               >
-                <legend class="mr-4">فیلتر اطلاعات</legend>
-                <div
-                  class="boxBorder flex lg:w-max w-full lg:flex-row flex-col items-end gap-2 px-2 py-3"
-                >
-                  <div class="flex flex-col w-full lg:max-w-[200px]">
-                    <p>از تاریخ</p>
-                    <input
-                      type="text"
-                      name="dateFrom"
-                      class="outline-none w-full px-2 py-1 rounded border-2 border-submitPageColorBorderLowBlack focus:border-2 focus:border-submitPageColorBorderBlue"
-                      data-jdp="true"
-                    />
-                  </div>
-                  <div class="flex flex-col w-full lg:max-w-[200px]">
-                    <p>تا تاریخ</p>
-                    <input
-                      type="text"
-                      name="dateTo"
-                      class="outline-none w-full px-2 py-1 rounded border-2 border-submitPageColorBorderLowBlack focus:border-2 focus:border-submitPageColorBorderBlue"
-                      data-jdp="true"
-                    />
-                  </div>
+                <div class="text-lowGray space-y-2">
+                  <p class="text-blackColor">
+                    ایران، یزد، یزد، صفائیه، تیمسار فلاحی، شهید نیرنگ
+                  </p>
+                  <p>
+                    <i class="far fa-user"></i>
+                    <span>asd asd</span>
+                  </p>
+                  <p>
+                    <i class="far fa-phone"></i>
+                    <span>090000000</span>
+                  </p>
                 </div>
-                <div
-                  class="grid md:grid-cols-[minmax(150px,350px)_minmax(150px,350px)_.3fr] grid-cols-1 gap-2"
-                >
-                  <div
-                    class="flex flex-col gap-2 p-2 boxBorder relative w-full"
+                <div class="text-lg flex gap-2">
+                  <button
+                    type="submit"
+                    class="border-primary border rounded-md py-1 px-3 text-primary"
                   >
-                    <p>وضعیت</p>
-                    <select
-                      type="text"
-                      id="statusSelect"
-                      name="status"
-                      class="hidden"
-                      value="all"
-                    >
-                      <option value="all">همه</option>
-                    </select>
-                    <div
-                      id="statusSelectCont"
-                      class="outline-none select-none relative z-[1] cursor-pointer p-2 rounded border-2 bg-whiteColor border-submitPageColorBorderLowBlack focus:border-2 focus:border-submitPageColorBorderBlue sm:max-w-[350px] w-full"
-                    >
-                      همه
-                    </div>
-                    <div
-                      id="statusSelectOptions"
-                      class="absolute z-[2] hidden top-[81px] right-2 w-full border-submitPageColorBorderBlue border"
-                    >
-                      <ul
-                        class="max-h-[150px] overflow-auto bg-whiteColor flex flex-col"
-                      >
-                        <li valueli="all" class="p-2">همه</li>
-                        <li valueli="value2" class="p-2">در انتضار پرداخت</li>
-                        <li valueli="value3" class="p-2">در حال پردازش</li>
-                        <li valueli="value4" class="p-2">پردازش شده</li>
-                        <li valueli="value5" class="p-2">تحویل داده شده</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div
-                    class="flex flex-col gap-2 p-2 boxBorder relative w-full"
-                  >
-                    <p>روش پردتخت</p>
-                    <select
-                      type="text"
-                      id="payMethod"
-                      name="payMethod"
-                      class="hidden"
-                      value="all"
-                    >
-                      <option value="all">همه</option>
-                    </select>
-                    <div
-                      id="payMethodCont"
-                      class="outline-none select-none relative z-[1] cursor-pointer p-2 rounded border-2 bg-whiteColor border-submitPageColorBorderLowBlack focus:border-2 focus:border-submitPageColorBorderBlue sm:max-w-[350px] w-full"
-                    >
-                      همه
-                    </div>
-                    <div
-                      id="payMethodOptions"
-                      class="absolute z-[2] hidden top-[81px] right-2 w-full border-submitPageColorBorderBlue border"
-                    >
-                      <ul
-                        class="max-h-[150px] overflow-auto bg-whiteColor flex flex-col"
-                      >
-                        <li valueli="all" class="p-2">همه</li>
-                        <li valueli="value2" class="p-2">در انتضار پرداخت</li>
-                        <li valueli="value3" class="p-2">در حال پردازش</li>
-                        <li valueli="value4" class="p-2">پردازش شده</li>
-                        <li valueli="value5" class="p-2">تحویل داده شده</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="flex items-end h-full">
-                      <button
-                        type="submit"
-                        class="bg-redColor border-none opacity-80 hover:opacity-100 transition-opacity duration-300 text-whiteColor px-5 py-2 rounded-md"
-                      >
-                        نمایش
-                      </button>
-                    </div>
-                  </div>
+                    <i class="fa fa-pencil"></i>
+                    <span>حذف</span>
+                  </button>
                 </div>
-              </fieldset>
-            </form>
-            <table
-              class="lg:table hidden w-full boxBorder text-sm text-lowGray"
-            >
-              <thead>
-                <tr>
-                  <th class="text-start px-4 py-4">#</th>
-                  <th class="text-start px-4 py-4">
-                    <a href="#"> شماره سفارش </a>
-                  </th>
-                  <th class="text-start px-4 py-4">
-                    <a href="#">کد پیگیری سفارش</a>
-                  </th>
-                  <th class="text-start px-4 py-4">
-                    <a href="#">تاریخ</a>
-                  </th>
-                  <th class="text-start px-4 py-4"><a href="#">وضعیت</a></th>
-                  <th class="text-start px-4 py-4">
-                    <a href="#">روش پرداخت</a>
-                  </th>
-                  <th class="text-start px-4 py-4"><a href="#">جمع</a></th>
-                  <th class="text-start px-4 py-4"><a href="#"> عملیات</a></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="odd:bg-lowerGray">
-                  <td class="text-sm px-4">1</td>
-                  <td class="text-sm px-4">
-                    <a href="#"> ZM-130 </a>
-                  </td>
-                  <td class="text-sm px-4">8944322715</td>
-                  <td class="text-sm px-4">
-                    <span> 10 مرداد 1403</span>
-                  </td>
-                  <td class="text-sm px-4">
-                    <span class="danger px-2 py-1 rounded-md"> لغو شده </span>
-                  </td>
-                  <td class="text-sm px-4">
-                    <span>درگاه ملت</span>
-                  </td>
-                  <td class="text-sm px-4">
-                    <p>290,000 <span>تومان </span></p>
-                  </td>
-                  <td class="text-sm py-4">
-                    <a
-                      href="#"
-                      class="bg-skyColor text-whiteColor rounded-md py-1 px-4"
-                      >چاپ</a
-                    >
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="boxBorder rounded-lg">
-              <ul class="lg:hidden flex gap-2 flex-col">
-                <li class="p-2 odd:bg-lowerGray flex gap-2 flex-col">
-                  <div class="flex justify-between items-center py-2">
-                    <span>ردیف</span>
-                    <span>234</span>
-                  </div>
-                  <div class="flex justify-between items-center py-2">
-                    <span>شماره سفارش:</span>
-                    <a href="#">234</a>
-                  </div>
-                  <div class="flex justify-between items-center py-2">
-                    <span>کد پیگیری سفارش:</span>
-                    <span>564</span>
-                  </div>
-                  <div class="flex justify-between items-center py-2">
-                    <span>تاریخ:</span>
-                    <span>10 مرداد 1403</span>
-                  </div>
-
-                  <div class="flex justify-between items-center py-2">
-                    <span>وضعیت:</span>
-                    <span class="danger px-2 py-1 rounded-md">لغو شده</span>
-                  </div>
-
-                  <div class="flex justify-between items-center py-2">
-                    <span>روش پرداخت:</span>
-                    <span>درگاه ملت</span>
-                  </div>
-
-                  <div class="flex justify-between items-center py-2">
-                    <span>مبلغ قابل پرداخت:</span>
-                    <p>290,000 <span>تومان</span></p>
-                  </div>
-                  <div class="flex justify-between items-center py-2">
-                    <span>عملیات:</span>
-                    <a
-                      href="#"
-                      class="bg-skyColor text-whiteColor rounded-md py-1 px-4"
-                      >چاپ</a
-                    >
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
+              </li>
+              <li
+                class="space-y-4 p-4 rounded-md border border-submitPageColorBorderLowBlack"
+              >
+                <div class="text-lowGray space-y-2">
+                  <p class="text-blackColor">
+                    ایران، یزد، یزد، صفائیه، تیمسار فلاحی، شهید نیرنگ
+                  </p>
+                  <p>
+                    <i class="far fa-user"></i>
+                    <span>asd asd</span>
+                  </p>
+                  <p>
+                    <i class="far fa-phone"></i>
+                    <span>090000000</span>
+                  </p>
+                </div>
+                <div class="text-lg flex gap-2">
+                  <button
+                    type="submit"
+                    class="border-primary border rounded-md py-1 px-3 text-primary"
+                  >
+                    <i class="fa fa-pencil"></i>
+                    <span>حذف</span>
+                  </button>
+                </div>
+              </li>
+              <li
+                class="space-y-4 p-4 rounded-md border border-submitPageColorBorderLowBlack"
+              >
+                <div class="text-lowGray space-y-2">
+                  <p class="text-blackColor">
+                    ایران، یزد، یزد، صفائیه، تیمسار فلاحی، شهید نیرنگ
+                  </p>
+                  <p>
+                    <i class="far fa-user"></i>
+                    <span>asd asd</span>
+                  </p>
+                  <p>
+                    <i class="far fa-phone"></i>
+                    <span>090000000</span>
+                  </p>
+                </div>
+                <div class="text-lg flex gap-2">
+                  <button
+                    type="submit"
+                    class="border-primary border rounded-md py-1 px-3 text-primary"
+                  >
+                    <i class="fa fa-pencil"></i>
+                    <span>حذف</span>
+                  </button>
+                </div>
+              </li>
+              <li
+                class="space-y-4 p-4 rounded-md border border-submitPageColorBorderLowBlack"
+              >
+                <div class="text-lowGray space-y-2">
+                  <p class="text-blackColor">
+                    ایران، یزد، یزد، صفائیه، تیمسار فلاحی، شهید نیرنگ
+                  </p>
+                  <p>
+                    <i class="far fa-user"></i>
+                    <span>asd asd</span>
+                  </p>
+                  <p>
+                    <i class="far fa-phone"></i>
+                    <span>090000000</span>
+                  </p>
+                </div>
+                <div class="text-lg flex gap-2">
+                  <button
+                    type="submit"
+                    class="border-primary border rounded-md py-1 px-3 text-primary"
+                  >
+                    <i class="fa fa-pencil"></i>
+                    <span>حذف</span>
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </form>
+          <div class="lg:block hidden"></div>
         </div>
       </section>
     </main>
     <footer></footer>
-    <script src="../../scripts/jquery.js"></script>
     <script
       type="text/javascript"
       src="../../scripts/jalalidatepicker.min.js"
     ></script>
     <script src="../../scripts/main.js"></script>
-    <script>
-      console.log();
-      let isTouchLi = false;
-      function clickLiHand(
-        nameCont,
-        li,
-        showClass,
-        select,
-        statusCont,
-        isLi = true
-      ) {
-        document.querySelector(nameCont).classList.remove(showClass);
-        document.querySelector(nameCont).classList.add("hidden");
-        if (!isLi) return;
-        isTouchLi = true;
-        select.options[0].textContent = li.textContent;
-        select.options[0].value = li.getAttribute("valueli");
-        select.value = select.options[0].value;
-        statusCont.text(li.textContent);
-      }
-
-      function searchLi(arr, select) {
-        arr.forEach((li) => {
-          if (select.innerText === li.innerText) {
-            li.classList.add("liActive");
-          } else {
-            li.classList.remove("liActive");
-          }
-        });
-      }
-      window.addEventListener("resize", () => {
-        $("#statusSelectOptions").css(
-          "width",
-          $("#statusSelectCont")[0].scrollWidth + "px"
-        );
-        $("#payMethodtOptions").css(
-          "width",
-          $("#payMethodtCont")[0].scrollWidth + "px"
-        );
-      });
-      $("#statusSelectCont").on("click", function (e) {
-        e.preventDefault();
-        $("#statusSelectOptions").css(
-          "width",
-          $("#statusSelectCont")[0].scrollWidth + "px"
-        );
-        $("#statusSelectOptions").toggleClass("block");
-        $("#statusSelectOptions").toggleClass("hidden");
-      });
-
-      $("#payMethodCont").on("click", function (e) {
-        e.preventDefault();
-        $("#payMethodOptions").css(
-          "width",
-          $("#payMethodCont")[0].scrollWidth + "px"
-        );
-        $("#payMethodOptions").toggleClass("block");
-        $("#payMethodOptions").toggleClass("hidden");
-      });
-
-      $("#statusSelectOptions li").on("click", function () {
-        isTouchLi = true;
-        clickLiHand(
-          "#statusSelectOptions",
-          this,
-          "block",
-          $("#statusSelect")[0],
-          $("#statusSelectCont")
-        );
-        searchLi(
-          Array.from($("#statusSelectOptions li")),
-          $("#statusSelectCont")[0]
-        );
-      });
-
-      $("#payMethodOptions li").on("click", function () {
-        isTouchLi = true;
-        clickLiHand(
-          "#payMethodOptions",
-          this,
-          "block",
-          $("#payMethod")[0],
-          $("#payMethodCont")
-        );
-        searchLi(
-          Array.from($("#statusSelectOptions li")),
-          $("#statusSelectCont")[0]
-        );
-      });
-
-      $("#statusSelectOptions li").on("mouseover", function () {
-        $("#statusSelectOptions li").removeClass("liActive");
-        this.classList.add("liActive");
-      });
-
-      $("#payMethodOptions li").on("mouseover", function () {
-        $("#payMethodOptions li").removeClass("liActive");
-        this.classList.add("liActive");
-      });
-
-      // set to defualt show selects
-      $(window).on("click", function (e) {
-        if (e.target.id != "statusSelectCont") {
-          clickLiHand("#statusSelectOptions", "", "block", "", "", false);
-          searchLi(
-            Array.from($("#statusSelectOptions li")),
-            $("#statusSelectCont")[0]
-          );
-        }
-        if (e.target.id != "payMethodCont") {
-          clickLiHand("#payMethodOptions", "", "block", "", "", false);
-          searchLi(
-            Array.from($("#payMethodOptions li")),
-            $("#payMethodCont")[0]
-          );
-        }
-        if (!isTouchLi && $("#statusSelect")[0].value) {
-          searchLi(
-            Array.from($("#statusSelectOptions li")),
-            $("#statusSelectCont")[0]
-          );
-          searchLi(
-            Array.from($("#payMethodOptions li")),
-            $("#payMethodCont")[0]
-          );
-        }
-      });
-    </script>
     <script>
       let addUs_birthday = document.querySelector("#user_birthday");
       jalaliDatepicker.startWatch({
