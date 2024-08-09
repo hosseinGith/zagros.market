@@ -24,14 +24,12 @@ let istouch = true;
 productName.forEach((input) => {
   input.addEventListener("focus", () => {
     hiddenContent.classList.add("show");
-    document.body.classList.add("overflow-hidden");
     input.parentElement.classList.add("headerFormFoucsStyle");
     input.id = "search";
     location.hash = input.id;
   });
   input.addEventListener("blur", () => {
     hiddenContent.classList.remove("show");
-    document.body.classList.remove("overflow-hidden");
     input.parentElement.classList.remove("headerFormFoucsStyle");
     input.id = "";
     location.hash = "";
@@ -43,11 +41,9 @@ navBarLinks.addEventListener("mouseover", () => {
     input.blur();
   });
   hiddenContent.classList.add("show");
-  document.body.classList.add("overflow-hidden");
 });
 navBarLinks.addEventListener("mouseleave", () => {
   hiddenContent.classList.remove("show");
-  document.body.classList.remove("overflow-hidden");
 });
 
 window.addEventListener("scroll", () => {
