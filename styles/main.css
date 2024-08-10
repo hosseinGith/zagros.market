@@ -869,6 +869,10 @@ video {
   height: 430px;
 }
 
+.h-\[45px\] {
+  height: 45px;
+}
+
 .h-\[60px\] {
   height: 60px;
 }
@@ -893,10 +897,6 @@ video {
   max-height: 150px;
 }
 
-.max-h-\[45px\] {
-  max-height: 45px;
-}
-
 .max-h-\[50px\] {
   max-height: 50px;
 }
@@ -912,6 +912,10 @@ video {
 
 .max-h-full {
   max-height: 100%;
+}
+
+.max-h-\[45px\] {
+  max-height: 45px;
 }
 
 .min-h-\[450px\] {
