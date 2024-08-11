@@ -74,14 +74,16 @@ window.addEventListener("click", (e) => {
     e.target !== accountSetting &&
     e.target !== accountSetting.children[0] &&
     e.target !== accountSetting.children[1]
-  )
-    accountSettingCont.classList.remove("show");
+  ) {
+    if (accountSettingCont) accountSettingCont.classList.remove("show");
+  }
 });
-accountSetting.addEventListener("click", () => {
-  accountSettingCont.classList.toggle("show");
+if (accountSetting)
+  accountSetting.addEventListener("click", () => {
+    accountSettingCont.classList.toggle("show");
 
-  istouch = true;
-});
+    istouch = true;
+  });
 mainMenuNavBarClickElement.forEach((btn, index) => {
   btn.addEventListener("click", () => {
     mainMenuNavBarClickElementUls[index].classList.toggle("showUl");
@@ -107,7 +109,6 @@ mainMenuNavBarsec.onanimationend = () => {
 };
 
 closeMainMenuNavBar.addEventListener("click", () => mainMenuNavBarsec.click());
-
 scrollTop.addEventListener("click", () => {
   scrollTo(0, 0);
 });
