@@ -117,3 +117,16 @@ window.addEventListener("scroll", () => {
   if (scrollY > 100) scrollTop.classList.add("active");
   else scrollTop.classList.remove("active");
 });
+
+// error
+// success
+// info
+let icon = "info";
+
+let dsc = "توضیحات";
+
+Swal.fire({
+  text: dsc,
+  icon: icon,
+  confirmButtonText: "تایید",
+});
