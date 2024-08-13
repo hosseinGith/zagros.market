@@ -70,6 +70,7 @@ Array.from(sortsProductsLinkCont).forEach((link, index) => {
   });
 });
 window.addEventListener("click", (e) => {
+  if (!accountSetting) return;
   if (
     e.target !== accountSetting &&
     e.target !== accountSetting.children[0] &&
