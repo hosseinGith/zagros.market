@@ -1018,33 +1018,96 @@
         <div
           class="2xl:container p-4 md:flex block gap-[20px] md:space-y-0 space-y-4"
         >
-          <div
-            class="flex w-full md:w-[max-content] flex-shrink-[3] overflow-hidden rounded-md"
-          >
-            <img
-              loading="lazy"
-              src="assets/images/slidezagros-1.jpg"
-              class="h-auto max-w-full max-h-fit w-full"
-              alt="عکس"
-            />
+          <div class="flex-shrink-[3] w-full md:w-[73%]">
+            <div class="swiper firstSectionSlider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    loading="lazy"
+                    src="assets/images/slidezagros-1.jpg"
+                    class="h-auto max-w-full max-h-fit w-full"
+                    alt="عکس"
+                  />
+                </div>
+
+                <div class="swiper-slide">
+                  <img
+                    loading="lazy"
+                    src="assets/images/slidezagros-1.jpg"
+                    class="h-auto max-w-full max-h-fit w-full"
+                    alt="عکس"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    loading="lazy"
+                    src="assets/images/slidezagros-1.jpg"
+                    class="h-auto max-w-full max-h-fit w-full"
+                    alt="عکس"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
-          <a
-            href="#"
-            class="md:flex block flex-shrink-[3] flex-col justify-between items-end flex-[1 0 5px] md:space-y-0 space-y-4"
-          >
-            <img
-              loading="lazy"
-              src="assets/images/banerchaei.jpg"
-              class="max-w-full rounded-md md:max-h-[240px] inline-block"
-              alt="عکس"
-            />
-            <img
-              loading="lazy"
-              src="assets/images/banerchaei.jpg"
-              class="max-w-full rounded-md md:max-h-[240px] inline-block"
-              alt="عکس"
-            />
-          </a>
+          <div class="flex-shrink-[3] w-full md:w-[22.6%]">
+            <div class="swiper firstSectionSlider mb-4">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    loading="lazy"
+                    src="assets/images/banerchaei.jpg"
+                    class="max-w-full rounded-md md:max-h-[240px] inline-block"
+                    alt="عکس"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    loading="lazy"
+                    src="assets/images/banerchaei.jpg"
+                    class="max-w-full rounded-md md:max-h-[240px] inline-block"
+                    alt="عکس"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    loading="lazy"
+                    src="assets/images/banerchaei.jpg"
+                    class="max-w-full rounded-md md:max-h-[240px] inline-block"
+                    alt="عکس"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper firstSectionSlider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    loading="lazy"
+                    src="assets/images/banerchaei.jpg"
+                    class="max-w-full rounded-md md:max-h-[240px] inline-block"
+                    alt="عکس"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    loading="lazy"
+                    src="assets/images/banerchaei.jpg"
+                    class="max-w-full rounded-md md:max-h-[240px] inline-block"
+                    alt="عکس"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    loading="lazy"
+                    src="assets/images/banerchaei.jpg"
+                    class="max-w-full rounded-md md:max-h-[240px] inline-block"
+                    alt="عکس"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section>
@@ -2933,6 +2996,22 @@
 
     <script src="scripts/main.js"></script>
     <script>
+      const sw = new Swiper(".firstSectionSlider", {
+        direction: "horizontal",
+        rtl: true,
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 10,
+        effect: "fade",
+        fadeEffect: {
+          crossFade: true,
+        },
+        speed: 2500,
+        autoplay: {
+          delay: 5000,
+        },
+      });
+
       const swiper = new Swiper(".miveSabzSlider", {
         direction: "horizontal",
         rtl: true,
@@ -2973,6 +3052,7 @@
           prevEl: ".swiper-button-prev",
         },
       });
+
       swiper.forEach((obj) => {
         if (obj.length === 0) {
           $(".swiper-button-next").remove();
