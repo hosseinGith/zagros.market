@@ -1772,6 +1772,12 @@
       $("#user_dsc_textArea").on("keyup", function () {
         $("#user_dsc").val(encodeURIComponent(this.value.trim()));
       });
+      $("#user_addres").on("input", function (e) {
+        const persianAndNumbersPattern = /^[\u0600-\u06FF0-9\s]+$/;
+        if (!persianAndNumbersPattern.test(this.value)) {
+          this.value = this.value.replace(/[^ا-ی0-9\s]/g, "");
+        }
+      });
     </script>
   </body>
 </html>
