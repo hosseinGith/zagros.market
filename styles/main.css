@@ -1617,6 +1617,11 @@ video {
   padding-right: 2.25rem;
 }
 
+.px-\[5px\] {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 .py-0 {
   padding-top: 0px;
   padding-bottom: 0px;
@@ -1650,6 +1655,11 @@ video {
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+}
+
+.px-\[0_\!important\] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .pb-10 {
