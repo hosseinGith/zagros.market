@@ -1419,6 +1419,7 @@
       });
 
       let minLength = 1;
+      let methodNumber = 1;
       function methodPcsProduct(e) {
         if ($("#pcsProduct input")[0].value) {
           $("#productPriceMathMethod").text(
@@ -1433,7 +1434,7 @@
       $("#pcsProduct button").on("click", function () {
         if (this.children[0].classList.contains("fa-plus")) {
           $("#pcsProduct input").val(
-            Number($("#pcsProduct input")[0].value) + 1
+            Number($("#pcsProduct input")[0].value) + Number(methodNumber)
           );
         } else if ($("#pcsProduct input")[0].value > minLength) $("#pcsProduct input").val(Number($("#pcsProduct input")[0].value) - 1);
         methodPcsProduct();
