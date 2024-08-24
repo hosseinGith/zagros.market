@@ -1168,18 +1168,18 @@
                     <div
                       class="flex pcsProduct bg-whiteColor justify-between p-2 max-w-[200px] w-full rounded-lg gap-2 boxBorder"
                     >
-                      <a href="#" type="button">
+                      <button href="#" type="button">
                         <i class="text-lg fa fa-plus"></i>
-                      </a>
+                      </button>
                       <input
                         type="text"
                         class="bg-[transparent] text-center w-full outline-none"
                         name="asd"
                         value="0"
                       />
-                      <a href="#" type="button">
+                      <button href="#" type="button">
                         <i class="text-lg fa fa-minus"></i>
-                      </a>
+                      </button>
                     </div>
                     عدد
                   </td>
@@ -1692,19 +1692,27 @@
     <script src="../../scripts/jquery.js"></script>
     <script src="../../scripts/main.js"></script>
     <script>
-      let minLength = 1;
-
-      Array.from($(".pcsProduct a")).forEach((btn) => {
+      let methodNumber = 0.1;
+      let minLength = methodNumber;
+      let maxFloat = 1;
+      Array.from($(".pcsProduct button")).forEach((btn) => {
         btn.addEventListener("click", () => {
           if (btn.children[0].classList.contains("fa-plus")) {
-            let input = btn.nextElementSibling;
-            input.value = Number(input.value) + 1;
+            let value =
+              Number(btn.nextElementSibling.value) + Number(methodNumber);
+            if (String(value).includes(".")) value = value.toFixed(maxFloat);
+            btn.nextElementSibling.value = value;
           } else if (btn.previousElementSibling.value > minLength) {
-            btn.previousElementSibling.value =
-              Number(btn.previousElementSibling.value) - 1;
+            let value =
+              Number(btn.previousElementSibling.value) - Number(methodNumber);
+            if (String(value).includes(".")) value = value.toFixed(maxFloat);
+            console.log(btn.previousElementSibling);
+            btn.previousElementSibling.value = value;
           }
         });
       });
+
+      $("#pcsProduct button").on("click", function () {});
     </script>
   </body>
 </html>
