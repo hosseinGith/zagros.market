@@ -1418,15 +1418,8 @@
         $("#imagesShow").removeClass("showImagesShow");
       });
 
-      let maxLength = 10;
       let minLength = 1;
-      $("#pcsProduct button").on("click", function () {
-        if (this.children[0].classList.contains("fa-plus")) {
-          if ($("#pcsProduct input")[0].value < maxLength)
-            $("#pcsProduct input").val(
-              Number($("#pcsProduct input")[0].value) + 1
-            );
-        } else if ($("#pcsProduct input")[0].value > minLength) $("#pcsProduct input").val(Number($("#pcsProduct input")[0].value) - 1);
+      function methodPcsProduct(e) {
         if ($("#pcsProduct input")[0].value) {
           $("#productPriceMathMethod").text(
             Number(
@@ -1435,6 +1428,15 @@
             ).toLocaleString()
           );
         }
+      }
+      $("#pcsProduct input").on("input", methodPcsProduct);
+      $("#pcsProduct button").on("click", function () {
+        if (this.children[0].classList.contains("fa-plus")) {
+          $("#pcsProduct input").val(
+            Number($("#pcsProduct input")[0].value) + 1
+          );
+        } else if ($("#pcsProduct input")[0].value > minLength) $("#pcsProduct input").val(Number($("#pcsProduct input")[0].value) - 1);
+        methodPcsProduct();
       });
     </script>
   </body>
