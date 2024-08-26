@@ -922,6 +922,14 @@ video {
   min-height: 450px;
 }
 
+.min-h-4 {
+  min-height: 1rem;
+}
+
+.min-h-5 {
+  min-height: 1.25rem;
+}
+
 .w-1\/2 {
   width: 50%;
 }
@@ -2670,6 +2678,10 @@ body {
 
   .sm\:items-center {
     align-items: center;
+  }
+
+  .sm\:justify-start {
+    justify-content: flex-start;
   }
 
   .sm\:bg-\[transparent\] {
