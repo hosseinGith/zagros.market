@@ -918,16 +918,12 @@ video {
   max-height: 100%;
 }
 
-.min-h-\[450px\] {
-  min-height: 450px;
-}
-
-.min-h-4 {
-  min-height: 1rem;
-}
-
 .min-h-5 {
   min-height: 1.25rem;
+}
+
+.min-h-\[450px\] {
+  min-height: 450px;
 }
 
 .w-1\/2 {
@@ -2381,6 +2377,12 @@ body {
   color: #fff;
 }
 
+.warning {
+  background-color: #fff000;
+  color: #000;
+  box-shadow: 0 0 5px #00000056;
+}
+
 #selectedLiOptions {
   max-height: 0;
   transition: all .5s;
@@ -2678,10 +2680,6 @@ body {
 
   .sm\:items-center {
     align-items: center;
-  }
-
-  .sm\:justify-start {
-    justify-content: flex-start;
   }
 
   .sm\:bg-\[transparent\] {

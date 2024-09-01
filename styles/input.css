@@ -481,6 +481,12 @@
         color: #fff;
     }
 
+    .warning {
+        background-color: #fff000;
+        color: #000;
+        box-shadow: 0 0 5px #00000056;
+    }
+
     #selectedLiOptions {
         max-height: 0;
         transition: all .5s;
