@@ -119,15 +119,14 @@ window.addEventListener("scroll", () => {
   else scrollTop.classList.remove("active");
 });
 
-// error
-// success
-// info
-let icon = "info";
-
-let dsc = "توضیحات";
-
-Swal.fire({
-  text: dsc,
-  icon: icon,
-  confirmButtonText: "تایید",
-});
+(function () {
+  const setFormatNumber = document.querySelectorAll(".setFormatNumber");
+  setFormatNumber.forEach((item) => {
+    if (item.value)
+      item.value = Number(item.value.replace(/\,/g, "")).toLocaleString();
+    else
+      item.textContent = Number(
+        item.textContent.replace(/\,/g, "")
+      ).toLocaleString();
+  });
+})();
