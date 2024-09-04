@@ -23,10 +23,13 @@ const header = document.querySelector("header");
 const main = document.querySelector("main");
 if (document.body.children[0] === header) {
   header.classList.add("lg:fixed");
-  main.classList.add("lg:pt-[140px]");
+  if (innerWidth > 1023)
+    main.style.paddingTop = header.scrollHeight + 20 + "px";
+  else main.style.paddingTop = "";
 } else {
   header.classList.remove("lg:fixed");
-  main.classList.remove("lg:pt-[140px]");
+  main.style.paddingTop = "0px";
+  main.className = "";
   header.style.zIndex = "100";
   header.style.position = "relative";
 }
@@ -70,7 +73,8 @@ window.addEventListener("scroll", () => {
       header.style.position = "fixed";
       main.classList.add("lg:pt-[140px]");
     } else {
-      main.classList.remove("lg:pt-[140px]");
+      main.style.paddingTop = "0px";
+      main.className = "";
       header.style.position = "relative";
       header.style.zIndex = "100";
     }
@@ -84,11 +88,20 @@ window.addEventListener("scroll", () => {
   }
 });
 window.addEventListener("resize", () => {
+  let padTop = 0;
+  if (document.body.children[0] === header) {
+    padTop = header.scrollHeight + 20;
+  } else {
+    padTop = children[0].scrollHeight + header.scrollHeight + 20;
+  }
   if (innerWidth < 1023) {
-    header.style.position = "";
+    main.style.paddingTop = "";
+  } else {
+    main.style.paddingTop = padTop;
   }
   if (header.style.position === "relative") {
-    main.classList.remove("lg:pt-[140px]");
+    main.style.paddingTop = "0px";
+    main.className = "";
   }
 });
 Array.from(sortsProductsLinkCont).forEach((link, index) => {
