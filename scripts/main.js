@@ -19,6 +19,17 @@ const mainMenuNavBarsec = document.querySelector("#mainMenuNavBarsec");
 const openMainMenuNavBar = document.querySelector("#openMainMenuNavBar");
 const scrollTop = document.querySelector("#scrollTop");
 
+const header = document.querySelector("header");
+const main = document.querySelector("main");
+if (document.body.children[0] === header) {
+  header.classList.add("lg:fixed");
+  main.classList.add("lg:pt-[120px]");
+} else {
+  header.classList.remove("lg:fixed");
+  main.classList.remove("lg:pt-[120px]");
+  header.style.zIndex = "100";
+  header.style.position = "relative";
+}
 let oldScrollY = scrollY;
 let istouch = true;
 productName.forEach((input) => {
@@ -54,8 +65,32 @@ window.addEventListener("scroll", () => {
     oldScrollY = scrollY;
     hiddenScrollDiv.parentElement.classList.add("hideWithTranslateY");
   }
+  if (innerWidth > 1023 && document.body.children[0] !== header) {
+    if (header.offsetTop < scrollY) {
+      header.style.position = "fixed";
+      main.classList.add("lg:pt-[120px]");
+    } else {
+      main.classList.remove("lg:pt-[120px]");
+      header.style.position = "relative";
+      header.style.zIndex = "100";
+    }
+  } else if (document.body.children[0] === header) {
+    header.classList.add("lg:fixed");
+    main.classList.add("lg:pt-[120px]");
+    header.style.position = "";
+  } else if (innerWidth < 1023) {
+    header.style.position = "relative";
+    header.style.zIndex = "100";
+  }
 });
-
+window.addEventListener("resize", () => {
+  if (innerWidth < 1023) {
+    header.style.position = "";
+  }
+  if (header.style.position === "relative") {
+    main.classList.remove("lg:pt-[120px]");
+  }
+});
 Array.from(sortsProductsLinkCont).forEach((link, index) => {
   link.addEventListener("mouseover", () => {
     Array.from(sortsProductsLinkCont).forEach((item, ind) => {
