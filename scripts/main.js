@@ -23,10 +23,10 @@ const header = document.querySelector("header");
 const main = document.querySelector("main");
 if (document.body.children[0] === header) {
   header.classList.add("lg:fixed");
-  main.classList.add("lg:pt-[120px]");
+  main.classList.add("lg:pt-[140px]");
 } else {
   header.classList.remove("lg:fixed");
-  main.classList.remove("lg:pt-[120px]");
+  main.classList.remove("lg:pt-[140px]");
   header.style.zIndex = "100";
   header.style.position = "relative";
 }
@@ -68,15 +68,15 @@ window.addEventListener("scroll", () => {
   if (innerWidth > 1023 && document.body.children[0] !== header) {
     if (header.offsetTop < scrollY) {
       header.style.position = "fixed";
-      main.classList.add("lg:pt-[120px]");
+      main.classList.add("lg:pt-[140px]");
     } else {
-      main.classList.remove("lg:pt-[120px]");
+      main.classList.remove("lg:pt-[140px]");
       header.style.position = "relative";
       header.style.zIndex = "100";
     }
   } else if (document.body.children[0] === header) {
     header.classList.add("lg:fixed");
-    main.classList.add("lg:pt-[120px]");
+    main.classList.add("lg:pt-[140px]");
     header.style.position = "";
   } else if (innerWidth < 1023) {
     header.style.position = "relative";
@@ -88,7 +88,7 @@ window.addEventListener("resize", () => {
     header.style.position = "";
   }
   if (header.style.position === "relative") {
-    main.classList.remove("lg:pt-[120px]");
+    main.classList.remove("lg:pt-[140px]");
   }
 });
 Array.from(sortsProductsLinkCont).forEach((link, index) => {
