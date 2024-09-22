@@ -1126,7 +1126,7 @@
         </div>
       </section>
       <section>
-        <div
+        <form
           class="container flex lg:flex-row justify-between items-start flex-col p-2 gap-5"
         >
           <div
@@ -1136,17 +1136,289 @@
               class="w-full border-b-4 border-submitPageColorBorderLowBlack lg:border-0 space-y-5 lg:boxBorder rounded-md p-3"
             >
               <h2 class="flex flex-col gap-2 py-4 w-[max-content]">
+                <span>زمان و روش ارسال سفارش:</span>
+                <span class="w-1/3 bg-primary h-[2px]"></span>
+              </h2>
+              <div class="space-y-4">
+                <div class="space-y-4">
+                  <p class="opacity-60">
+                    مرسوله <span>1</span> از <span>1</span> (ارسال عادی)
+                  </p>
+                  <select
+                    name=""
+                    id="sendProductsType"
+                    class="px-2 rounded-md boxBorder w-full py-2 outline-none border border-[transparent] transition-all focus:border-submitPageColorBorderBlue"
+                  >
+                    <option value="">تحویل زماندا</option>
+                    <option value="">تحویل فوری</option>
+                  </select>
+                </div>
+                <div
+                  class="boxBorder rounded-md py-2 divide-y divide-submitPageColorBorderLowBlack px-2"
+                >
+                  <div>
+                    <ul
+                      class="flex flex-wrap gap-2 text-sm"
+                      id="daysSendProducts"
+                    >
+                      <li
+                        dateText="1403/7/1"
+                        class="checkOutDaysBaseStyle checkOutDaysActive"
+                        data-dayId="1"
+                      >
+                        <span>یکشنبه</span>
+                        <span>1</span>
+                      </li>
+                      <li
+                        dateText="1403/7/2"
+                        class="checkOutDaysBaseStyle"
+                        data-dayId="2"
+                      >
+                        <span>دوشنبه</span>
+                        <span>2</span>
+                      </li>
+                      <li
+                        dateText="1403/7/3"
+                        class="checkOutDaysBaseStyle"
+                        data-dayId="3"
+                      >
+                        <span>سه‌شنبه</span>
+                        <span>3</span>
+                      </li>
+                      <li
+                        dateText="1403/7/4"
+                        class="checkOutDaysBaseStyle"
+                        data-dayId="4"
+                      >
+                        <span>چهارشنبه</span>
+                        <span>4</span>
+                      </li>
+                      <li
+                        dateText="1403/7/5"
+                        class="checkOutDaysBaseStyle"
+                        data-dayId="5"
+                      >
+                        <span>پنج‌شنبه</span>
+                        <span>5</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="py-2">
+                    <ul data-uldayId="1" class="flex w-full flex-wrap gap-2">
+                      <li
+                        dayText="1"
+                        class="checkOutliBaseStyle checkOutliUnAvi"
+                      >
+                        <span>10:00</span>
+                        <span>تا</span>
+                        <span>12:00</span>
+                      </li>
+                      <li
+                        dayText="2"
+                        class="checkOutliBaseStyle checkOutliUnAvi"
+                      >
+                        <span>12:00</span>
+                        <span>تا</span>
+                        <span>14:00</span>
+                      </li>
+                      <li dayText="3" class="checkOutliBaseStyle checkOutliAvi">
+                        <span>16:00</span>
+                        <span>تا</span>
+                        <span>18:00</span>
+                      </li>
+                      <li dayText="4" class="checkOutliBaseStyle checkOutliAvi">
+                        <span>18:00</span>
+                        <span>تا</span>
+                        <span>20:00</span>
+                      </li>
+                      <li dayText="5" class="checkOutliBaseStyle checkOutliAvi">
+                        <span>20:00</span>
+                        <span>تا</span>
+                        <span>22:00</span>
+                      </li>
+                    </ul>
+
+                    <ul data-uldayId="2" class="hidden w-full flex-wrap gap-2">
+                      <li
+                        dayText="1"
+                        class="checkOutliBaseStyle checkOutliUnAvi"
+                      >
+                        <span>10:00</span>
+                        <span>تا</span>
+                        <span>12:00</span>
+                      </li>
+                      <li
+                        dayText="2"
+                        class="checkOutliBaseStyle checkOutliUnAvi"
+                      >
+                        <span>12:00</span>
+                        <span>تا</span>
+                        <span>14:00</span>
+                      </li>
+                      <li dayText="3" class="checkOutliBaseStyle checkOutliAvi">
+                        <span>16:00</span>
+                        <span>تا</span>
+                        <span>18:00</span>
+                      </li>
+                      <li dayText="4" class="checkOutliBaseStyle checkOutliAvi">
+                        <span>18:00</span>
+                        <span>تا</span>
+                        <span>20:00</span>
+                      </li>
+                      <li dayText="5" class="checkOutliBaseStyle checkOutliAvi">
+                        <span>20:00</span>
+                        <span>تا</span>
+                        <span>22:00</span>
+                      </li>
+                    </ul>
+
+                    <ul data-uldayId="3" class="hidden w-full flex-wrap gap-2">
+                      <li
+                        dayText="1"
+                        class="checkOutliBaseStyle checkOutliUnAvi"
+                      >
+                        <span>10:00</span>
+                        <span>تا</span>
+                        <span>12:00</span>
+                      </li>
+                      <li
+                        dayText="2"
+                        class="checkOutliBaseStyle checkOutliUnAvi"
+                      >
+                        <span>12:00</span>
+                        <span>تا</span>
+                        <span>14:00</span>
+                      </li>
+                      <li dayText="3" class="checkOutliBaseStyle checkOutliAvi">
+                        <span>16:00</span>
+                        <span>تا</span>
+                        <span>18:00</span>
+                      </li>
+                      <li dayText="4" class="checkOutliBaseStyle checkOutliAvi">
+                        <span>18:00</span>
+                        <span>تا</span>
+                        <span>20:00</span>
+                      </li>
+                      <li dayText="5" class="checkOutliBaseStyle checkOutliAvi">
+                        <span>20:00</span>
+                        <span>تا</span>
+                        <span>22:00</span>
+                      </li>
+                    </ul>
+
+                    <ul data-uldayId="4" class="hidden w-full flex-wrap gap-2">
+                      <li
+                        dayText="1"
+                        class="checkOutliBaseStyle checkOutliUnAvi"
+                      >
+                        <span>10:00</span>
+                        <span>تا</span>
+                        <span>12:00</span>
+                      </li>
+                      <li
+                        dayText="2"
+                        class="checkOutliBaseStyle checkOutliUnAvi"
+                      >
+                        <span>12:00</span>
+                        <span>تا</span>
+                        <span>14:00</span>
+                      </li>
+                      <li dayText="3" class="checkOutliBaseStyle checkOutliAvi">
+                        <span>16:00</span>
+                        <span>تا</span>
+                        <span>18:00</span>
+                      </li>
+                      <li dayText="4" class="checkOutliBaseStyle checkOutliAvi">
+                        <span>18:00</span>
+                        <span>تا</span>
+                        <span>20:00</span>
+                      </li>
+                      <li dayText="5" class="checkOutliBaseStyle checkOutliAvi">
+                        <span>20:00</span>
+                        <span>تا</span>
+                        <span>22:00</span>
+                      </li>
+                    </ul>
+
+                    <ul data-uldayId="5" class="hidden w-full flex-wrap gap-2">
+                      <li
+                        dayText="1"
+                        class="checkOutliBaseStyle checkOutliUnAvi"
+                      >
+                        <span>10:00</span>
+                        <span>تا</span>
+                        <span>12:00</span>
+                      </li>
+                      <li
+                        dayText="2"
+                        class="checkOutliBaseStyle checkOutliUnAvi"
+                      >
+                        <span>12:00</span>
+                        <span>تا</span>
+                        <span>14:00</span>
+                      </li>
+                      <li dayText="3" class="checkOutliBaseStyle checkOutliAvi">
+                        <span>16:00</span>
+                        <span>تا</span>
+                        <span>18:00</span>
+                      </li>
+                      <li dayText="4" class="checkOutliBaseStyle checkOutliAvi">
+                        <span>18:00</span>
+                        <span>تا</span>
+                        <span>20:00</span>
+                      </li>
+                      <li dayText="5" class="checkOutliBaseStyle checkOutliAvi">
+                        <span>20:00</span>
+                        <span>تا</span>
+                        <span>22:00</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <ul class="flex gap-2 flex-wrap">
+                  <li class="w-[120px] h-[120px]">
+                    <a href="#" class="h-full inline-block">
+                      <img src="" alt="محصول" width="120" height="120" />
+                    </a>
+                  </li>
+                  <li class="w-[120px] h-[120px]">
+                    <a href="#" class="h-full inline-block">
+                      <img src="" alt="محصول" width="120" height="120" />
+                    </a>
+                  </li>
+                  <li class="w-[120px] h-[120px]">
+                    <a href="#" class="h-full inline-block">
+                      <img src="" alt="محصول" width="120" height="120" />
+                    </a>
+                  </li>
+                  <li class="w-[120px] h-[120px]">
+                    <a href="#" class="h-full inline-block">
+                      <img src="" alt="محصول" width="120" height="120" />
+                    </a>
+                  </li>
+                  <li class="w-[120px] h-[120px]">
+                    <a href="#" class="h-full inline-block">
+                      <img src="" alt="محصول" width="120" height="120" />
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="w-full border-b-4 border-submitPageColorBorderLowBlack lg:border-0 space-y-5 lg:boxBorder rounded-md p-3"
+            >
+              <h2 class="flex flex-col gap-2 py-4 w-[max-content]">
                 <span>توضیحات سفارش (اختیاری):</span>
                 <span class="w-1/3 bg-primary h-[2px]"></span>
               </h2>
-              <form>
+              <div>
                 <textarea
                   name="user_dsc_textArea"
                   id="user_dsc_textArea"
                   class="w-full resize-y boxBorder h-[300px] border-submitPageColorBorderLowBlack border-2 py-2 px-2 outline-none focus:border-submitPageColorBorderBlue transition-[border]"
                 >
                 </textarea>
-              </form>
+              </div>
             </div>
           </div>
           <aside
@@ -1206,7 +1478,7 @@
                   <span>63,000<span>تومان</span></span>
                 </div>
               </div>
-              <form class="flex flex-col gap-4 py-4">
+              <div class="flex flex-col gap-4 py-4">
                 <div class="space-y-4">
                   <a href="#" class="text-lowBlue" id="addressCont"
                     >اضافه کردن آدرس جدید</a
@@ -1296,10 +1568,14 @@
                   class="hidden"
                   id="user_dsc"
                 />
-              </form>
+              </div>
             </nav>
           </aside>
-        </div>
+          <div class="hidden">
+            <input type="text" name="" id="dateSendPorduct" />
+            <input type="text" name="" id="hourSendProduct" />
+          </div>
+        </form>
       </section>
       <section
         id="editCard"
@@ -1777,6 +2053,43 @@
         if (!persianAndNumbersPattern.test(this.value)) {
           this.value = this.value.replace(/[^ا-ی0-9\s]/g, "");
         }
+      });
+      $("#sendProductsType").change(function () {
+        if (this.children[1].selected) {
+          this.parentElement.nextElementSibling.classList.add("hidden");
+        } else {
+          this.parentElement.nextElementSibling.classList.remove("hidden");
+        }
+      });
+
+      $("#dateSendPorduct").val(
+        $(`li[data-dayId].checkOutDaysActive`)[0].getAttribute("dateText")
+      );
+
+      $("#daysSendProducts li").click(function () {
+        let dayId = this.dataset.dayid;
+
+        $(`li[data-dayId]`).removeClass("checkOutDaysActive");
+        $(`li[data-dayId=${dayId}]`).addClass("checkOutDaysActive");
+
+        $(`ul[data-uldayId]`).removeClass("flex");
+        $(`ul[data-uldayId]`).addClass("hidden");
+        $(`ul[data-uldayId=${dayId}]`).removeClass("hidden");
+        $(`ul[data-uldayId=${dayId}]`).addClass("flex");
+
+        $("#dateSendPorduct").val(this.getAttribute("dateText"));
+        console.log($("#hourSendProduct")[0].textContent);
+        console.log($("#dateSendPorduct")[0].value);
+      });
+
+      $(`ul[data-uldayId] li:not(.checkOutliUnAvi)`).click(function () {
+        $(`ul[data-uldayId] li:not(.checkOutliUnAvi)`).removeClass(
+          "checkOutliAviActive"
+        );
+        this.classList.add("checkOutliAviActive");
+        $("#hourSendProduct").val(this.getAttribute("dayText"));
+        console.log($("#hourSendProduct")[0].value);
+        console.log($("#dateSendPorduct")[0].value);
       });
     </script>
   </body>

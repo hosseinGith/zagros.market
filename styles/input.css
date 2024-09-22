@@ -501,6 +501,30 @@
         display: none;
     }
 
+    .checkOutDaysBaseStyle {
+        @apply flex flex-col items-center px-2 cursor-pointer;
+    }
+
+    .checkOutDaysActive {
+        @apply text-redColor font-bold border-b-redColor border-b-[3px]
+    }
+
+    .checkOutliBaseStyle {
+        @apply rounded flex flex-col items-center py-2 px-5 text-sm border-2 border-[transparent]
+    }
+
+    .checkOutliUnAvi {
+        @apply bg-lowerGray
+    }
+
+    .checkOutliAvi {
+        @apply border-lowerGray cursor-pointer
+    }
+
+    .checkOutliAviActive {
+        @apply border-primary
+    }
+
     @media screen and (width<500) {
 
         .swiper-button-prev,
