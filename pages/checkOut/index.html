@@ -1456,7 +1456,7 @@
                 </ul>
                 <div class="flex justify-between text-blackColor">
                   <span>جمع</span>
-                  <span>63,000<span>تومان</span></span>
+                  <span class="collectPrice">63,000<span>تومان</span></span>
                 </div>
                 <div
                   data-dec="for show replace hidden with flex"
@@ -1470,12 +1470,14 @@
                     >هزینه ارسال
                     <span class="text-sm px-2 text-[aqua]">1 مرسوله</span>
                   </span>
-                  <span>30,000<span>تومان</span></span>
+                  <span class="collectPrice">30,000<span>تومان</span></span>
                 </div>
 
                 <div class="flex justify-between text-blackColor">
                   <span>مبلغ قابل پرداخت </span>
-                  <span>63,000<span>تومان</span></span>
+                  <span class="resultCollectPrice"
+                    >63,000<span>تومان</span></span
+                  >
                 </div>
               </div>
               <div class="flex flex-col gap-4 py-4">
@@ -2089,13 +2091,26 @@
         );
         this.classList.add("checkOutliAviActive");
         $("#hourSendProduct").val(this.getAttribute("dayText"));
-        console.log($("#hourSendProduct")[0].value);
-        console.log($("#dateSendPorduct")[0].value);
       });
       $("#sendTypeProduct").val($("#sendProductsType")[0].value);
       $("#sendProductsType").change(function () {
         $("#sendTypeProduct").val(this.value);
       });
+
+      (function () {
+        let result = Array.from($(".collectPrice")).reduce((a, b) => {
+          let total = Number(
+            a.textContent.replace(/\,/g, "").replace("تومان", "").trim()
+          );
+          let num = Number(
+            b.textContent.replace(/\,/g, "").replace("تومان", "").trim()
+          );
+          return total + num;
+        });
+        $(".resultCollectPrice").text(
+          Number(result).toLocaleString() + "تومان"
+        );
+      })();
     </script>
   </body>
 </html>
