@@ -1572,6 +1572,7 @@
             </nav>
           </aside>
           <div class="hidden">
+            <input type="text" name="" id="sendTypeProduct" />
             <input type="text" name="" id="dateSendPorduct" />
             <input type="text" name="" id="hourSendProduct" />
           </div>
@@ -2090,6 +2091,10 @@
         $("#hourSendProduct").val(this.getAttribute("dayText"));
         console.log($("#hourSendProduct")[0].value);
         console.log($("#dateSendPorduct")[0].value);
+      });
+      $("#sendTypeProduct").val($("#sendProductsType")[0].value);
+      $("#sendProductsType").change(function () {
+        $("#sendTypeProduct").val(this.value);
       });
     </script>
   </body>
