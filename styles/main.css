@@ -2759,6 +2759,10 @@ body {
     align-items: center;
   }
 
+  .sm\:overflow-y-hidden {
+    overflow-y: hidden;
+  }
+
   .sm\:bg-\[transparent\] {
     background-color: transparent;
   }
