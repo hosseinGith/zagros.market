@@ -12,7 +12,7 @@
 
     <title>ثبت نام</title>
   </head>
-  <body>
+  <body class="overflow-y-auto">
     <main
       class="sm:max-w-[400px] flex flex-col gap-7 border border-submitPageColorBorderLowBlack py-3 px-9 min-h-[450px] fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full"
     >
@@ -79,5 +79,22 @@
         </p>
       </section>
     </main>
+    <script>
+      const main = document.querySelector("main");
+      function resizeWin() {
+        console.log(main.scrollHeight, innerHeight);
+        if (main.scrollHeight > innerHeight) {
+          main.style.position = "static";
+          main.style.transform = "translate(0)";
+          main.style.margin = "0 auto";
+        } else {
+          main.style.position = "fixed";
+          main.style.transform = "translate(-50%,-50%)";
+          main.style.margin = "0";
+        }
+      }
+      window.addEventListener("resize", resizeWin);
+      document.addEventListener("DOMContentLoaded", resizeWin);
+    </script>
   </body>
 </html>
