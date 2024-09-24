@@ -1470,9 +1470,7 @@
                     >هزینه ارسال
                     <span class="text-sm px-2 text-[aqua]">1 مرسوله</span>
                   </span>
-                  <span class="collectPrice sendProductPrice"
-                    >30,000<span>تومان</span></span
-                  >
+                  <span class="collectPrice">30,000<span>تومان</span></span>
                 </div>
 
                 <div class="flex justify-between text-blackColor">
@@ -1997,58 +1995,6 @@
       new ResizeObserver(resizestatusSelectCont).observe(
         $("#statusSelectCont")[0]
       );
-      $("#statusSelectCont").on("click", function (e) {
-        e.preventDefault();
-        $("#statusSelectOptions").css(
-          "width",
-          $("#statusSelectCont")[0].scrollWidth + "px"
-        );
-        $("#statusSelectOptions").toggleClass("block");
-        $("#statusSelectOptions").toggleClass("hidden");
-      });
-
-      $("#statusSelectOptions li").on("click", function () {
-        isTouchLi = true;
-        clickLiHand(
-          "#statusSelectOptions",
-          this,
-          "block",
-          $("#statusSelect")[0],
-          $("#statusSelectCont")
-        );
-        searchLi(
-          Array.from($("#statusSelectOptions li")),
-          $("#statusSelectCont")[0]
-        );
-      });
-
-      $("#statusSelectOptions li").on("mouseover", function () {
-        $("#statusSelectOptions li").removeClass("liActive");
-        this.classList.add("liActive");
-      });
-
-      $("#payMethodOptions li").on("mouseover", function () {
-        $("#payMethodOptions li").removeClass("liActive");
-        this.classList.add("liActive");
-      });
-
-      // set to defualt show selects
-      $(window).on("click", function (e) {
-        if (e.target.id != "statusSelectCont") {
-          clickLiHand("#statusSelectOptions", "", "block", "", "", false);
-          searchLi(
-            Array.from($("#statusSelectOptions li")),
-            $("#statusSelectCont")[0]
-          );
-        }
-
-        if (!isTouchLi && $("#statusSelect")[0].value) {
-          searchLi(
-            Array.from($("#statusSelectOptions li")),
-            $("#statusSelectCont")[0]
-          );
-        }
-      });
 
       $("#user_dsc_textArea").on("keyup", function () {
         $("#user_dsc").val(encodeURIComponent(this.value.trim()));
