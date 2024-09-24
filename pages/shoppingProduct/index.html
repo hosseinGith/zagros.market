@@ -1706,7 +1706,6 @@
             let value =
               Number(btn.previousElementSibling.value) - Number(methodNumber);
             if (String(value).includes(".")) value = value.toFixed(maxFloat);
-            console.log(btn.previousElementSibling);
             btn.previousElementSibling.value = value;
           }
         });
