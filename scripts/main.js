@@ -92,7 +92,7 @@ window.addEventListener("resize", () => {
   if (document.body.children[0] === header) {
     padTop = header.scrollHeight + 20;
   } else {
-    padTop = children[0].scrollHeight + header.scrollHeight + 20;
+    padTop = document.body.children[0].scrollHeight + header.scrollHeight + 20;
   }
   if (innerWidth < 1023) {
     main.style.paddingTop = "";
