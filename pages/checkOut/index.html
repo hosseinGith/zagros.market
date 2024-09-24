@@ -1470,7 +1470,9 @@
                     >هزینه ارسال
                     <span class="text-sm px-2 text-[aqua]">1 مرسوله</span>
                   </span>
-                  <span class="collectPrice">30,000<span>تومان</span></span>
+                  <span class="collectPrice sendProductPrice"
+                    >30,000<span>تومان</span></span
+                  >
                 </div>
 
                 <div class="flex justify-between text-blackColor">
@@ -2057,12 +2059,19 @@
           this.value = this.value.replace(/[^ا-ی0-9\s]/g, "");
         }
       });
+      let oldTextSendProductPrice = $(".sendProductPrice")[0].textContent;
+      let sendProductRealPrice = 1000;
       $("#sendProductsType").change(function () {
         if (this.children[1].selected) {
           this.parentElement.nextElementSibling.classList.add("hidden");
+          $(".sendProductPrice").text(
+            Number(sendProductRealPrice).toLocaleString() + "تومان"
+          );
         } else {
           this.parentElement.nextElementSibling.classList.remove("hidden");
+          $(".sendProductPrice").text(oldTextSendProductPrice);
         }
+        collectPriceHand();
       });
 
       $("#dateSendPorduct").val(
@@ -2081,8 +2090,6 @@
         $(`ul[data-uldayId=${dayId}]`).addClass("flex");
 
         $("#dateSendPorduct").val(this.getAttribute("dateText"));
-        console.log($("#hourSendProduct")[0].textContent);
-        console.log($("#dateSendPorduct")[0].value);
       });
 
       $(`ul[data-uldayId] li:not(.checkOutliUnAvi)`).click(function () {
@@ -2097,7 +2104,7 @@
         $("#sendTypeProduct").val(this.value);
       });
 
-      (function () {
+      function collectPriceHand() {
         let result = Array.from($(".collectPrice")).reduce((a, b) => {
           let total = Number(
             a.textContent.replace(/\,/g, "").replace("تومان", "").trim()
@@ -2111,7 +2118,8 @@
         $(".resultCollectPrice").text(
           Number(result).toLocaleString() + "تومان"
         );
-      })();
+      }
+      collectPriceHand();
     </script>
   </body>
 </html>
