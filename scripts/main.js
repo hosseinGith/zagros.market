@@ -1,4 +1,4 @@
-const productName = document.querySelectorAll(".productName");
+const productNameSearch = document.querySelectorAll(".productName");
 const navBarLinks = document.querySelector("#navBarLinks");
 const hiddenContent = document.querySelector("#hiddenContent");
 const hiddenScrollDiv = document.querySelector("#hiddenScrollDiv");
@@ -35,7 +35,7 @@ if (document.body.children[0] === header) {
 }
 let oldScrollY = scrollY;
 let istouch = true;
-productName.forEach((input) => {
+productNameSearch.forEach((input) => {
   input.addEventListener("focus", () => {
     hiddenContent.classList.add("show");
     input.parentElement.classList.add("headerFormFoucsStyle");
@@ -51,7 +51,7 @@ productName.forEach((input) => {
 });
 
 navBarLinks.addEventListener("mouseover", () => {
-  productName.forEach((input) => {
+  productNameSearch.forEach((input) => {
     input.blur();
   });
   hiddenContent.classList.add("show");
