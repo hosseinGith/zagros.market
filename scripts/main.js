@@ -147,7 +147,6 @@ openMainMenuNavBar.addEventListener("click", () => {
 });
 
 mainMenuNavBarsec.addEventListener("click", (e) => {
-  console.log(e.target);
   if (e.target !== mainMenuNavBarsec && e.target !== openMainMenuNavBar) return;
   mainMenuNavBarsec.classList.remove("active");
 });
