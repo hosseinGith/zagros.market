@@ -2579,7 +2579,6 @@
       rangeSlider.on("update", () => {
         $("#fromPrice").text(Math.round(rangeSlider.get()[0]).toLocaleString());
         $("#toPrice").text(Math.round(rangeSlider.get()[1]).toLocaleString());
-        console.log($("#fromPrice")[0].previousElementSibling);
         $("#fromPrice")[0].previousElementSibling.value = Math.round(
           rangeSlider.get()[0]
         );
