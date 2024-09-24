@@ -1456,7 +1456,7 @@
                 </ul>
                 <div class="flex justify-between text-blackColor">
                   <span>جمع</span>
-                  <span class="collectPrice">63,000<span>تومان</span></span>
+                  <span>63,000<span>تومان</span></span>
                 </div>
                 <div
                   data-dec="for show replace hidden with flex"
@@ -1475,9 +1475,7 @@
 
                 <div class="flex justify-between text-blackColor">
                   <span>مبلغ قابل پرداخت </span>
-                  <span class="resultCollectPrice"
-                    >63,000<span>تومان</span></span
-                  >
+                  <span class="collectPrice">63,000<span>تومان</span></span>
                 </div>
               </div>
               <div class="flex flex-col gap-4 py-4">
@@ -2013,7 +2011,7 @@
           sendProductPrice = sendProductPriceBackUp;
         } else {
           this.parentElement.nextElementSibling.classList.remove("hidden");
-          sendProductPrice = 0;
+          sendProductPrice = -sendProductPriceBackUp;
         }
         collectPriceHand();
       });
@@ -2049,20 +2047,13 @@
       });
 
       function collectPriceHand() {
-        let result = Array.from($(".collectPrice")).reduce((a, b) => {
-          let total = Number(
-            a.textContent.replace(/\,/g, "").replace("تومان", "").trim()
-          );
+        Array.from($(".collectPrice")).forEach((item) => {
           let num = Number(
-            b.textContent.replace(/\,/g, "").replace("تومان", "").trim()
+            item.textContent.replace(/\,/g, "").replace("تومان", "")
           );
-          if (!num) num = 0;
-          return total + num;
+          item.textContent =
+            Number(num + sendProductPrice).toLocaleString() + "تومان";
         });
-        result += sendProductPrice;
-        $(".resultCollectPrice").text(
-          Number(result).toLocaleString() + "تومان"
-        );
       }
       collectPriceHand();
     </script>
