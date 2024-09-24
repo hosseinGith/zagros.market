@@ -2059,17 +2059,15 @@
           this.value = this.value.replace(/[^ا-ی0-9\s]/g, "");
         }
       });
-      let oldTextSendProductPrice = $(".sendProductPrice")[0].textContent;
-      let sendProductRealPrice = 1000;
+      let sendProductPriceBackUp = 1000;
+      let sendProductPrice = 0;
       $("#sendProductsType").change(function () {
         if (this.children[1].selected) {
           this.parentElement.nextElementSibling.classList.add("hidden");
-          $(".sendProductPrice").text(
-            Number(sendProductRealPrice).toLocaleString() + "تومان"
-          );
+          sendProductPrice = sendProductPriceBackUp;
         } else {
           this.parentElement.nextElementSibling.classList.remove("hidden");
-          $(".sendProductPrice").text(oldTextSendProductPrice);
+          sendProductPrice = 0;
         }
         collectPriceHand();
       });
@@ -2115,6 +2113,7 @@
           if (!num) num = 0;
           return total + num;
         });
+        result += sendProductPrice;
         $(".resultCollectPrice").text(
           Number(result).toLocaleString() + "تومان"
         );
