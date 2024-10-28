@@ -1601,6 +1601,7 @@
           <form
             class="sm:pb-[10px] pt-[60px] pb-[60px] overflow-y-auto space-y-4"
           >
+            <input type="hidden" name="offsets" id="offsetsMap" />
             <div class="flex flex-col sm:flex-row gap-4">
               <div class="flex flex-col basis-[50%] py-2">
                 <label>
@@ -1631,7 +1632,7 @@
                 <strong class="text-primary">*</strong>
               </label>
               <input
-                placeholder="مثال : تهران ولیعصر محتشم ادیب"
+                placeholder="مثال : یزد، امام خمینی، یک امام"
                 type="text"
                 name="user_addres"
                 class="border-submitPageColorBorderLowBlack border-2 w-full py-2 px-2 outline-none focus:border-submitPageColorBorderBlue transition-all"
@@ -2071,7 +2072,7 @@
         poi: false,
         traffic: false,
         view: new ol.View({
-          center: ol.proj.fromLonLat([51.338076, 35.699756]),
+          center: ol.proj.fromLonLat([54.36241555, 31.888434099999998]),
           zoom: 14,
         }),
       });
@@ -2112,12 +2113,13 @@
           })
         ).json();
         $("#user_addres").val(res.formatted_address);
+        $("#offsetsMap").val(JSON.stringify([x, y]));
       }
       neshanMap.on("click", mapClickHand);
       let user_addresTimeOut;
       $("#user_addres").on("keyup", async function () {
         if (user_addresTimeOut) clearTimeout(user_addresTimeOut);
-        console.log(this.value);
+
         user_addresTimeOut = setTimeout(async () => {
           let res = await (
             await fetch(
@@ -2143,6 +2145,35 @@
               zoom: 14,
             }),
           });
+          neshanMap.removeLayer(vectorLayer);
+
+          let marker = new ol.Feature({
+            geometry: new ol.geom.Point(
+              ol.proj.fromLonLat([res.location.x, res.location.y])
+            ),
+          });
+          marker.setStyle(
+            new ol.style.Style({
+              image: new ol.style.Icon({
+                anchor: [0.5, 1],
+                scale: 0.5,
+                src: "/assets/images/marker-icon-2x-red.png",
+              }),
+            })
+          );
+
+          let vectorSource = new ol.source.Vector({
+            features: [marker],
+          });
+
+          vectorLayer = new ol.layer.Vector({
+            source: vectorSource,
+          });
+
+          neshanMap.addLayer(vectorLayer);
+          $("#offsetsMap").val(
+            JSON.stringify([res.location.x, res.location.y])
+          );
           neshanMap.on("click", mapClickHand);
         }, 2000);
       });
