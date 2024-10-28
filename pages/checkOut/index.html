@@ -11,6 +11,13 @@
     />
 
     <link rel="stylesheet" href="../../styles/jalalidatepicker.min.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://static.neshan.org/sdk/openlayers/v8.1.0/neshan-sdk/v1.0.5/index.css"
+    />
+    <script src="https://static.neshan.org/sdk/openlayers/v8.1.0/neshan-sdk/v1.0.5/index.js"></script>
+
     <title>تسویه حساب</title>
   </head>
   <body>
@@ -1580,10 +1587,10 @@
       </section>
       <section
         id="editCard"
-        class="z-[100] filterContWithAnimate hidden items-center justify-center bg-lowOpacityColorBg fixed w-full h-screen top-0 left-0 showFilterSec"
+        class="z-[100] filterContWithAnimate hidden items-center justify-center bg-lowOpacityColorBg absolute w-full h-screen top-0 left-0 showFilterSec"
       >
         <div
-          class="flex flex-col relative gap-4 text-sm bg-whiteColor h-full lg:h-max p-4 rounded-md lg:min-h-[400px] lg:w-1/2 w-full"
+          class="flex flex-col relative gap-4 text-sm bg-whiteColor h-full lg:h-max p-4 rounded-md lg:min-h-[400px] max-h-[500px] lg:w-1/2 w-full"
         >
           <div
             class="flex absolute right-0 px-4 z-10 bg-whiteColor top-0 w-full justify-between items-center border-b-4 border-submitPageColorBorderLowBlack py-2"
@@ -1624,6 +1631,7 @@
                 <strong class="text-primary">*</strong>
               </label>
               <input
+                placeholder="مثال : تهران ولیعصر محتشم ادیب"
                 type="text"
                 name="user_addres"
                 class="border-submitPageColorBorderLowBlack border-2 w-full py-2 px-2 outline-none focus:border-submitPageColorBorderBlue transition-all"
@@ -1678,6 +1686,7 @@
                 id="user_last_name"
               />
             </div>
+            <div id="map" class="w-[90%] mx-auto h-[300px]"></div>
             <div
               class="flex gap-2 px-4 z-10 bg-whiteColor w-full justify-end items-center py-2"
             >
@@ -1966,7 +1975,6 @@
           document.body.classList.remove("overflow-hidden");
         }, 500);
       }
-
       $("#addressCont").on("click", function () {
         $("#editCard").addClass("showFilterSec");
         $("#editCard").removeClass("hidden");
@@ -2056,6 +2064,88 @@
         });
       }
       collectPriceHand();
+      var neshanMap = new ol.Map({
+        target: "map",
+        key: "web.a9369db4dd2046048a8a33ecbe79ee35", // Get your own API Key on https://platform.neshan.org/panel
+        maptype: "neshan",
+        poi: false,
+        traffic: false,
+        view: new ol.View({
+          center: ol.proj.fromLonLat([51.338076, 35.699756]),
+          zoom: 14,
+        }),
+      });
+
+      // add Marker to the map
+      let vectorLayer;
+      async function mapClickHand(e) {
+        let [x, y] = ol.proj.toLonLat(e.coordinate);
+        let marker = new ol.Feature({
+          geometry: new ol.geom.Point(ol.proj.fromLonLat([x, y])),
+        });
+        // add Marker to the map
+        neshanMap.removeLayer(vectorLayer);
+        marker.setStyle(
+          new ol.style.Style({
+            image: new ol.style.Icon({
+              anchor: [0.5, 1],
+              scale: 0.5,
+              src: "/assets/images/marker-icon-2x-red.png",
+            }),
+          })
+        );
+
+        let vectorSource = new ol.source.Vector({
+          features: [marker],
+        });
+
+        vectorLayer = new ol.layer.Vector({
+          source: vectorSource,
+        });
+
+        neshanMap.addLayer(vectorLayer);
+        let res = await (
+          await fetch(`https://api.neshan.org/v5/reverse?lat=${y}&lng=${x}`, {
+            headers: {
+              "Api-Key": "service.d0a379eb12ed4add9bd77f8d02332b55",
+            },
+          })
+        ).json();
+        $("#user_addres").val(res.formatted_address);
+      }
+      neshanMap.on("click", mapClickHand);
+      let user_addresTimeOut;
+      $("#user_addres").on("keyup", async function () {
+        if (user_addresTimeOut) clearTimeout(user_addresTimeOut);
+        console.log(this.value);
+        user_addresTimeOut = setTimeout(async () => {
+          let res = await (
+            await fetch(
+              `https://api.neshan.org/v4/geocoding?address=${this.value}`,
+              {
+                headers: {
+                  "Api-Key": "service.a52856d59808418c90354a688c84ec05",
+                },
+              }
+            )
+          ).json();
+          if (!res.location) return;
+          $("#map").empty();
+          neshanMap = null;
+          neshanMap = new ol.Map({
+            target: "map",
+            key: "web.a9369db4dd2046048a8a33ecbe79ee35", // Get your own API Key on https://platform.neshan.org/panel
+            maptype: "neshan",
+            poi: false,
+            traffic: false,
+            view: new ol.View({
+              center: ol.proj.fromLonLat([res.location.x, res.location.y]),
+              zoom: 14,
+            }),
+          });
+          neshanMap.on("click", mapClickHand);
+        }, 2000);
+      });
     </script>
   </body>
 </html>
