@@ -1976,11 +1976,24 @@
           document.body.classList.remove("overflow-hidden");
         }, 500);
       }
-      $("#addressCont").on("click", function () {
+      $("#addressCont").on("click", async function () {
         $("#editCard").addClass("showFilterSec");
         $("#editCard").removeClass("hidden");
         $("#editCard").addClass("flex");
         document.body.classList.add("overflow-hidden");
+        $("#map").empty();
+        neshanMap = new ol.Map({
+          target: "map",
+          key: "web.a9369db4dd2046048a8a33ecbe79ee35", // Get your own API Key on https://platform.neshan.org/panel
+          maptype: "neshan",
+          poi: false,
+          traffic: false,
+          view: new ol.View({
+            center: ol.proj.fromLonLat([54.36241555, 31.888434099999998]),
+            zoom: 14,
+          }),
+        });
+        neshanMap.on("click", mapClickHand);
       });
       $("#editCard ,  #closeAddresCont,#closeWindow ").on(
         "click",
@@ -2065,18 +2078,7 @@
         });
       }
       collectPriceHand();
-      var neshanMap = new ol.Map({
-        target: "map",
-        key: "web.a9369db4dd2046048a8a33ecbe79ee35", // Get your own API Key on https://platform.neshan.org/panel
-        maptype: "neshan",
-        poi: false,
-        traffic: false,
-        view: new ol.View({
-          center: ol.proj.fromLonLat([54.36241555, 31.888434099999998]),
-          zoom: 14,
-        }),
-      });
-
+      let neshanMap;
       // add Marker to the map
       let vectorLayer;
       async function mapClickHand(e) {
@@ -2115,9 +2117,8 @@
         $("#user_addres").val(res.formatted_address);
         $("#offsetsMap").val(JSON.stringify([x, y]));
       }
-      neshanMap.on("click", mapClickHand);
       let user_addresTimeOut;
-      $("#user_addres").on("keyup", async function () {
+      $("#user_addres").on("input", async function () {
         if (user_addresTimeOut) clearTimeout(user_addresTimeOut);
 
         user_addresTimeOut = setTimeout(async () => {
