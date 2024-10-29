@@ -12,11 +12,8 @@
 
     <link rel="stylesheet" href="../../styles/jalalidatepicker.min.css" />
 
-    <link
-      rel="stylesheet"
-      href="https://static.neshan.org/sdk/openlayers/v8.1.0/neshan-sdk/v1.0.5/index.css"
-    />
-    <script src="https://static.neshan.org/sdk/openlayers/v8.1.0/neshan-sdk/v1.0.5/index.js"></script>
+    <link rel="stylesheet" href="../../styles/openlayers.css" />
+    <script src="../../scripts/openlayers.js"></script>
 
     <title>تسویه حساب</title>
   </head>
@@ -1909,7 +1906,8 @@
     <script>
       let interValOpenEditCard = null;
       let isTouchLi = false;
-
+      let apiService = "service.1d6799984e2b455996701efdd5b38c4c";
+      let apiWeb = "web.e8b01a5c76134dccaae6f10a58ae9341";
       function clickLiHand(
         nameCont,
         li,
@@ -1984,7 +1982,7 @@
         $("#map").empty();
         neshanMap = new ol.Map({
           target: "map",
-          key: "web.a9369db4dd2046048a8a33ecbe79ee35", // Get your own API Key on https://platform.neshan.org/panel
+          key: apiWeb, // Get your own API Key on https://platform.neshan.org/panel
           maptype: "neshan",
           poi: false,
           traffic: false,
@@ -2110,7 +2108,7 @@
         let res = await (
           await fetch(`https://api.neshan.org/v5/reverse?lat=${y}&lng=${x}`, {
             headers: {
-              "Api-Key": "service.d0a379eb12ed4add9bd77f8d02332b55",
+              "Api-Key": apiService,
             },
           })
         ).json();
@@ -2127,7 +2125,7 @@
               `https://api.neshan.org/v4/geocoding?address=${this.value}`,
               {
                 headers: {
-                  "Api-Key": "service.a52856d59808418c90354a688c84ec05",
+                  "Api-Key": apiService,
                 },
               }
             )
@@ -2137,7 +2135,7 @@
           neshanMap = null;
           neshanMap = new ol.Map({
             target: "map",
-            key: "web.a9369db4dd2046048a8a33ecbe79ee35", // Get your own API Key on https://platform.neshan.org/panel
+            key: apiWeb, // Get your own API Key on https://platform.neshan.org/panel
             maptype: "neshan",
             poi: false,
             traffic: false,
